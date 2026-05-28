@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/sitemap.xml
