@@ -261,6 +261,263 @@ ARTICLES = [
 ]
 
 
+ARTICLES += [
+    {
+        "slug": "inheritance-renounce",
+        "title": "相続放棄の方法と期限｜3ヶ月以内の家庭裁判所手続き",
+        "h1": "相続放棄の方法と期限",
+        "desc": "相続放棄は相続開始を知った日から3ヶ月以内に家庭裁判所への申述が必要。手続きの流れ、必要書類、代襲不発生・撤回不可など重要ルールを解説。",
+        "keywords": "相続放棄,3ヶ月,家庭裁判所,熟慮期間,限定承認,代襲相続",
+        "lead": "借金が多い、相続トラブルを避けたい等の場合、<strong>相続放棄</strong>で相続人の地位を放棄できます（民法939条）。ただし期限と要件が厳格です。",
+        "sections": [
+            ("3ヶ月の熟慮期間", "<p>相続放棄は<strong>相続開始を知った日から3ヶ月以内</strong>に家庭裁判所へ申述する必要があります（民法915条）。期間内に判断できない場合は<strong>期間伸長の申立て</strong>が可能。</p>"),
+            ("手続きの流れ", "<ol><li>被相続人の最後の住所地を管轄する家庭裁判所を確認</li><li>申述書・戸籍謄本・住民票除票等を準備</li><li>収入印紙800円＋郵便切手を添付して申述</li><li>家庭裁判所からの照会書に回答</li><li>受理通知書が届く</li></ol>"),
+            ("代襲は発生しない", "<p>相続放棄者の子は<strong>代襲相続しません</strong>（民法939条）。これは死亡や欠格による代襲との大きな違いです。次順位の相続人に権利が移ります。</p>"),
+            ("放棄の撤回はできない", "<p>家庭裁判所が受理した相続放棄は<strong>原則撤回不可</strong>です（民法919条）。詐欺・強迫等の例外を除き取消しできないため、慎重な判断が必要。</p>"),
+            ("限定承認という選択肢", "<p>プラス財産の範囲でマイナス財産を引き受ける<strong>限定承認</strong>もあります（民法922条）。ただし相続人全員での申述が必要で、税務上のみなし譲渡課税にも注意。</p>"),
+        ],
+        "faqs": [
+            ("形見分けを受け取ると放棄できなくなりますか？", "経済的価値のある財産を処分・消費すると<strong>単純承認とみなされ放棄不可</strong>になります（民法921条）。形見分け程度の常識的な範囲なら問題ないとされますが、慎重を期すなら避けるべきです。"),
+            ("全員が放棄したらどうなりますか？", "法定相続人全員が放棄すると、最終的に相続財産は<strong>国庫に帰属</strong>します（民法959条）。ただしその前に相続財産管理人選任の手続きが必要で、申立費用と予納金が必要です。"),
+            ("3ヶ月を過ぎたら絶対に放棄できませんか？", "債務を知らなかった等の事情があれば、<strong>知った時から3ヶ月以内</strong>とする例外運用が判例上認められています（最判昭59.4.27）。専門家への早急な相談を推奨。"),
+        ],
+    },
+    {
+        "slug": "post-death-timeline",
+        "title": "死後手続きタイムライン｜7日以内〜10ヶ月以内の全手続き",
+        "h1": "死後手続きの完全タイムライン",
+        "desc": "死亡届の7日以内提出から相続税申告の10ヶ月以内まで、期限ごとに必要な手続きを時系列でまとめた完全ガイド。",
+        "keywords": "死後手続き,死亡届,相続手続き,スケジュール,7日以内,10ヶ月以内",
+        "lead": "親族が亡くなった後、期限の決まった手続きが続きます。期限を逃すと不利益や追加費用が発生するため、本記事の<strong>タイムライン</strong>に沿って漏れなく対応しましょう。",
+        "sections": [
+            ("7日以内：死亡届の提出", "<ul><li>死亡診断書を医師から受け取る</li><li>死亡届を市区町村役場へ提出</li><li>火葬許可証を受領</li><li>葬儀・埋葬の手配</li></ul>"),
+            ("14日以内：年金・健康保険の手続き", "<ul><li>年金受給権者死亡届（厚生年金10日以内、国民年金14日以内）</li><li>健康保険の資格喪失届</li><li>世帯主変更届（同一世帯に新世帯主候補がいる場合）</li><li>介護保険資格喪失届</li></ul>"),
+            ("3ヶ月以内：相続放棄の判断", "<ul><li>遺言書の有無確認（自筆証書は検認）</li><li>法定相続人の確定（戸籍収集）</li><li>財産・負債の概要把握</li><li>相続放棄・限定承認の判断と申述</li></ul>"),
+            ("4ヶ月以内：所得税準確定申告", "<p>被相続人の<strong>準確定申告</strong>を相続人全員で行います（所得税法125条）。1月1日から死亡日までの所得を申告。事業所得・年金所得などがある場合は必須。</p>"),
+            ("10ヶ月以内：相続税申告・納付", "<ul><li>遺産分割協議書の作成</li><li>不動産・預貯金・有価証券の名義変更</li><li>相続税申告書の作成・税務署提出</li><li>納付（金銭一括が原則、延納・物納制度あり）</li></ul>"),
+            ("1年以内：遺留分侵害額請求", "<p>遺留分侵害を知った時から<strong>1年</strong>で時効消滅します（民法1048条）。内容証明郵便での意思表示が必須。</p>"),
+            ("3年以内：相続登記の義務化", "<p>2024年4月から不動産の<strong>相続登記が義務化</strong>。相続開始を知った日から3年以内に登記しないと過料10万円以下のリスク。</p>"),
+        ],
+        "faqs": [
+            ("葬儀費用は誰が負担しますか？", "原則として喪主負担ですが、相続税の計算上は<strong>債務控除</strong>として遺産から差し引けます（相続税法13条）。領収書は必ず保管しましょう。"),
+            ("預貯金は葬儀費用に使えますか？", "2019年改正で<strong>仮払い制度</strong>が新設され、150万円を上限に各金融機関から仮払い可能になりました（民法909条の2）。"),
+            ("遺品整理はいつ始めるべきですか？", "相続放棄の判断（3ヶ月）が終わってからが安全です。それ以前に処分すると単純承認とみなされる恐れがあります。"),
+        ],
+    },
+    {
+        "slug": "family-trust",
+        "title": "家族信託の活用法｜認知症対策と事業承継の柔軟設計",
+        "h1": "家族信託（民事信託）の活用法",
+        "desc": "認知症による財産凍結を回避し、事業承継・障害者支援にも使える家族信託の仕組みと、遺言・成年後見との違いを解説。",
+        "keywords": "家族信託,民事信託,認知症対策,事業承継,信託契約,委託者,受託者",
+        "lead": "<strong>家族信託（民事信託）</strong>は、信頼できる家族に財産管理を任せる仕組みです。認知症対策・事業承継・障害者支援など幅広い場面で活用されています。",
+        "sections": [
+            ("基本構造：委託者・受託者・受益者", "<ul><li><strong>委託者</strong>：財産を預ける人（例：親）</li><li><strong>受託者</strong>：財産を管理・運用する人（例：子）</li><li><strong>受益者</strong>：利益を受け取る人（多くの場合は委託者本人＝自益信託）</li></ul>"),
+            ("遺言・成年後見との違い", """
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
+  <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">手段</th><th style="padding:.6rem;border:1px solid #ddd;">特徴</th><th style="padding:.6rem;border:1px solid #ddd;">柔軟性</th></tr></thead>
+  <tbody>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">遺言書</td><td style="padding:.6rem;border:1px solid #ddd;">死後に効力</td><td style="padding:.6rem;border:1px solid #ddd;">低</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">成年後見</td><td style="padding:.6rem;border:1px solid #ddd;">家裁監督・柔軟性低</td><td style="padding:.6rem;border:1px solid #ddd;">低</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">家族信託</td><td style="padding:.6rem;border:1px solid #ddd;">生前から死後まで連続設計可</td><td style="padding:.6rem;border:1px solid #ddd;">高</td></tr>
+  </tbody>
+</table>
+"""),
+            ("活用シーン1：認知症対策", "<p>親が認知症になると預貯金引出・不動産売却ができなくなり「資産凍結」状態に。元気なうちに信託契約を結べば、判断能力低下後も受託者が継続して管理可能。</p>"),
+            ("活用シーン2：事業承継", "<p>株式の議決権を後継者に集中させつつ、配当（受益権）を他の相続人に分配する設計が可能。後継者教育中の経営権安定化に有効。</p>"),
+            ("デメリット・注意点", "<ul><li>受託者の責任が重い（善管注意義務）</li><li>身上監護はできない（成年後見が必要）</li><li>節税効果は限定的（贈与税・相続税は通常通り）</li><li>専門家設計費用：30万〜100万円程度</li></ul>"),
+        ],
+        "faqs": [
+            ("受託者は1人でないとダメですか？", "複数選任可能で、過半数決議や役割分担の設計もできます。ただし管理が煩雑になるため、メイン受託者と後継受託者の指定が一般的。"),
+            ("信託財産に不動産を入れる際の注意は？", "登記名義が委託者から受託者に移ります（信託登記）。これに伴う登録免許税（固定資産税評価額×0.4%）が必要。"),
+            ("信託契約は公正証書で作る必要がありますか？", "法律上は必須ではありませんが、後の紛争防止と金融機関の信託口座開設のため<strong>公正証書化が強く推奨</strong>されます。"),
+        ],
+    },
+    {
+        "slug": "spouse-residence",
+        "title": "配偶者居住権とは｜2020年新設の制度をわかりやすく解説",
+        "h1": "配偶者居住権の仕組みと評価",
+        "desc": "2020年4月施行の配偶者居住権（民法1028条）の仕組み、評価方法、二次相続の節税効果を解説。配偶者の住居と相続の最適バランスを実現。",
+        "keywords": "配偶者居住権,民法1028条,2020年改正,二次相続節税,配偶者短期居住権",
+        "lead": "<strong>配偶者居住権</strong>は2020年4月施行の新制度（民法1028条以下）。配偶者の住居を守りつつ、相続税対策にも活用できます。",
+        "sections": [
+            ("制度の目的", "<p>従来は配偶者が自宅を相続すると預貯金の取り分が減り、生活資金不足になる問題がありました。配偶者居住権は<strong>居住権と所有権を分離</strong>することで、配偶者が自宅に住み続けながら預貯金も確保できる仕組みです。</p>"),
+            ("評価方法（簡易計算）", "<p>配偶者居住権の評価額は、建物の所有権評価額から「<strong>負担付き所有権</strong>」評価額を控除した残額。配偶者の余命に応じて変動します（高齢ほど低評価＝節税効果大）。</p>"),
+            ("二次相続での節税効果", "<p>配偶者居住権は配偶者の死亡で<strong>自動消滅</strong>し、所有権は完全所有権に復帰します。この時、配偶者居住権の経済的価値は<strong>相続税の対象外</strong>。一次相続で居住権を配偶者・所有権を子に分けると、二次相続で大幅節税。</p>"),
+            ("配偶者短期居住権", "<p>遺産分割協議終了まで（最低6ヶ月）の暫定的な居住権（民法1037条）。配偶者居住権設定がなくても、当面の住居は確保されます。</p>"),
+            ("注意点", "<ul><li>登記が必要（しないと第三者に対抗できない）</li><li>譲渡不可・賃貸には所有者の承諾必要</li><li>修繕・改築は配偶者負担</li><li>固定資産税は配偶者負担</li></ul>"),
+        ],
+        "faqs": [
+            ("配偶者居住権を放棄するメリットは？", "高齢者ホーム入居等で自宅居住が不要になった場合、放棄して所有権者に売却益等を渡す柔軟設計が可能。"),
+            ("内縁の妻に配偶者居住権は認められますか？", "法律上の配偶者でないため<strong>認められません</strong>。生前贈与や遺言での対応が必要。"),
+            ("配偶者居住権はいつ設定しますか？", "遺産分割協議・遺言・家庭裁判所の審判のいずれかで設定。遺言で指定するのが最も確実です。"),
+        ],
+    },
+    {
+        "slug": "international-inheritance",
+        "title": "国際相続の注意点｜外国籍配偶者・海外資産の相続",
+        "h1": "国際相続の基礎と注意点",
+        "desc": "外国籍の家族、海外不動産・銀行口座がある場合の相続準拠法、相続税の納税義務者区分、二重課税防止を解説。",
+        "keywords": "国際相続,外国籍配偶者,海外資産,準拠法,通則法36条,相続税法1条の3",
+        "lead": "外国籍の家族・海外資産がある場合、相続は格段に複雑になります。<strong>準拠法の決定</strong>と<strong>相続税の納税義務範囲</strong>を必ず確認しましょう。",
+        "sections": [
+            ("準拠法の決定（通則法36条）", "<p>日本の国際私法では、相続は<strong>被相続人の本国法</strong>によると定められています（法の適用に関する通則法36条）。例えば被相続人がアメリカ人なら、アメリカ法（州法）が適用される可能性があります。</p>"),
+            ("相続税の納税義務者区分", "<p>相続税法1条の3により、納税義務の範囲は被相続人・相続人の住所と国籍で決まります：</p><ul><li>居住無制限納税義務者：全世界の財産が課税対象</li><li>非居住無制限納税義務者：日本国籍を持つ場合等、全世界対象</li><li>制限納税義務者：日本国内財産のみ対象</li></ul>"),
+            ("二重課税の問題", "<p>海外資産が現地でも相続税課税されると二重課税に。日本では<strong>外国税額控除</strong>（相続税法20条の2）で調整しますが、相手国によっては完全には解消されません。</p>"),
+            ("実務上の対応ポイント", "<ul><li>早期に国際相続に詳しい専門家へ相談</li><li>各国での遺言書を別途用意（共通遺言は無効リスク）</li><li>海外資産は現地でのプロベイト（裁判所手続き）が必要な場合あり</li><li>為替変動リスクも考慮</li></ul>"),
+        ],
+        "faqs": [
+            ("国際結婚した場合の遺言はどう作るべきですか？", "原則として<strong>各国で別々の遺言書を作成</strong>するのが安全です。日本の自筆証書遺言は他国では効力を持たない場合があります。"),
+            ("海外口座は日本の税務署にバレますか？", "CRS（共通報告基準）により、加盟国間で口座情報が自動交換されています。海外資産の隠匿はほぼ不可能と考えるべきです。"),
+            ("外国籍配偶者は日本で相続できますか？", "国籍に関わらず、被相続人の本国法が日本法なら日本人と同様に相続権があります。"),
+        ],
+    },
+    {
+        "slug": "estate-division",
+        "title": "遺産分割協議書の作り方｜雛形と必要事項",
+        "h1": "遺産分割協議書の作成方法",
+        "desc": "遺産分割協議書の必須記載事項・雛形・印鑑証明書の添付ルール・調印方法を解説。不動産登記・預貯金解約に必須の書類です。",
+        "keywords": "遺産分割協議書,雛形,書き方,印鑑証明,相続登記,預貯金解約",
+        "lead": "<strong>遺産分割協議書</strong>は、相続人全員で遺産の分け方を確定する重要書類です。不動産の名義変更や預貯金の解約にほぼ必須となります。",
+        "sections": [
+            ("必須記載事項", "<ul><li>被相続人の氏名・死亡日・最後の本籍・住所</li><li>相続人全員の氏名・住所</li><li>分割する財産の特定（不動産は登記事項のとおり、預貯金は金融機関・支店・口座番号まで）</li><li>各相続人の取得分</li><li>作成日</li><li>相続人全員の署名と実印押印</li></ul>"),
+            ("雛形例", """<pre style="background:#f4f4f4;padding:1rem;border-radius:6px;font-size:.85rem;overflow-x:auto;">
+遺産分割協議書
+
+被相続人 ○○○○（令和○年○月○日死亡、本籍：東京都○○区○○）の遺産につき、
+相続人全員で協議の結果、下記のとおり分割することに合意した。
+
+第1条　相続人 △△△△ は次の財産を取得する。
+  (1) 不動産：東京都○○区○○1-2-3 宅地150㎡
+  (2) 預貯金：○○銀行○○支店 普通預金 No.1234567 全額
+
+第2条　相続人 ×××× は次の財産を取得する。
+  (1) 預貯金：△△銀行△△支店 普通預金 No.7654321 全額
+
+第3条　本協議書記載の財産以外に新たな遺産が発見された場合は、改めて協議する。
+
+令和○年○月○日
+
+  住所：東京都○○区○○1-2-3
+  氏名：△△△△               ㊞（実印）
+
+  住所：東京都○○区○○4-5-6
+  氏名：××××               ㊞（実印）
+</pre>"""),
+            ("印鑑証明書の添付", "<p>各相続人の<strong>印鑑証明書</strong>（発行3ヶ月以内が一般的）を添付します。遠隔地の相続人とは郵送で持ち回り調印（順番に署名押印して郵送）が可能。</p>"),
+            ("協議書がないとできないこと", "<ul><li>相続登記（不動産名義変更）</li><li>預貯金の解約・名義変更</li><li>有価証券の名義変更</li><li>自動車の名義変更</li><li>相続税申告（基礎控除超過時）</li></ul>"),
+        ],
+        "faqs": [
+            ("相続人の1人が行方不明の場合は？", "家庭裁判所で<strong>不在者財産管理人</strong>の選任を申し立てる必要があります。長期不在なら失踪宣告も検討。"),
+            ("協議成立後にやり直しできますか？", "原則として再協議は不可ですが、相続人全員の合意があれば再分割は可能。ただし税務上は<strong>贈与とみなされる</strong>リスクがあるため要注意。"),
+            ("未成年の相続人がいる場合は？", "親権者と未成年が共に相続人だと利益相反になるため、<strong>特別代理人</strong>を家庭裁判所で選任する必要があります（民法826条）。"),
+        ],
+    },
+    {
+        "slug": "real-estate-valuation",
+        "title": "相続不動産の評価方法｜路線価方式と倍率方式の使い分け",
+        "h1": "相続税における不動産の評価方法",
+        "desc": "土地は路線価方式または倍率方式、建物は固定資産税評価額で評価。借地権・貸家建付地等の評価減も含めて解説。",
+        "keywords": "相続税評価,路線価,倍率方式,固定資産税評価額,借地権,貸家建付地",
+        "lead": "相続税における不動産評価は、<strong>路線価</strong>と<strong>倍率方式</strong>を使い分けます。市場価格より低めに設定されているのが一般的です。",
+        "sections": [
+            ("土地評価：路線価方式", "<p>市街地など路線価が定められている地域では、<strong>路線価 × 地積 × 各種補正率</strong>で評価。路線価は国税庁のホームページで毎年7月に公表され、公示地価の約80%水準。</p>"),
+            ("土地評価：倍率方式", "<p>路線価が設定されていない地域（郊外・農村など）では、<strong>固定資産税評価額 × 国税局長が定める倍率</strong>で評価。</p>"),
+            ("建物の評価", "<p>建物は<strong>固定資産税評価額をそのまま</strong>使用。一般に建築費の40〜70%程度の水準。新築直後は高く、年数経過で減価。</p>"),
+            ("特殊な評価", """
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
+  <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">種類</th><th style="padding:.6rem;border:1px solid #ddd;">評価方法</th></tr></thead>
+  <tbody>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">借地権</td><td style="padding:.6rem;border:1px solid #ddd;">自用地評価 × 借地権割合（30〜90%）</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">貸宅地（底地）</td><td style="padding:.6rem;border:1px solid #ddd;">自用地評価 × (1 − 借地権割合)</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">貸家建付地</td><td style="padding:.6rem;border:1px solid #ddd;">自用地評価 × (1 − 借地権割合 × 借家権割合 × 賃貸割合)</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">貸家</td><td style="padding:.6rem;border:1px solid #ddd;">固定資産税評価額 × (1 − 借家権割合 × 賃貸割合)</td></tr>
+  </tbody>
+</table>
+"""),
+            ("評価減の活用", "<p>賃貸物件は評価額が下がるため、現金より相続税対策になります。ただし空室率が高いと評価減が縮小し、節税効果は減少。</p>"),
+        ],
+        "faqs": [
+            ("広大地評価は今も使えますか？", "2017年12月で廃止され、現在は<strong>「地積規模の大きな宅地の評価」</strong>に置き換わっています。要件と補正率は別ルール。"),
+            ("不整形地・がけ地はどう評価しますか？", "国税庁の財産評価基本通達に基づき<strong>不整形地補正・がけ地補正</strong>で減額できます。専門知識が必要なため税理士相談を推奨。"),
+            ("マンションの評価は今後どうなりますか？", "2024年から<strong>新評価方式</strong>（市場価格と評価額の乖離を是正）が導入されました。タワマン節税への影響大。"),
+        ],
+    },
+    {
+        "slug": "bank-account-freeze",
+        "title": "預貯金の凍結と仮払い制度｜葬儀費用を引き出す方法",
+        "h1": "預貯金凍結と仮払い制度の活用",
+        "desc": "被相続人の口座は死亡を金融機関が知った時点で凍結。2019年新設の仮払い制度で最大150万円を引き出す手続きを解説。",
+        "keywords": "預貯金凍結,仮払い制度,民法909条の2,葬儀費用,相続預金",
+        "lead": "金融機関は預金者の死亡を知ると<strong>口座を凍結</strong>します。これは相続トラブル防止のためですが、葬儀費用・当座の生活費に困ることも。2019年の改正で仮払い制度が新設されました。",
+        "sections": [
+            ("いつ凍結されるか", "<p>金融機関が<strong>死亡を知った時点</strong>で凍結。役所への死亡届で自動凍結はしません。新聞のお悔やみ欄や相続人からの連絡で凍結されることが多い。</p>"),
+            ("仮払い制度（民法909条の2）", "<p>2019年7月施行。相続人は<strong>遺産分割前でも預金の一部を払い戻し可能</strong>に。上限は：</p><ul><li>口座ごと：預金残高 × 1/3 × 法定相続分</li><li>金融機関ごと：150万円</li></ul><p>例：800万円の預金、法定相続分1/2の場合 → 800万円×1/3×1/2 = 133万円まで仮払い可（150万円以下なので満額OK）</p>"),
+            ("仮払いに必要な書類", "<ul><li>被相続人の戸籍（出生から死亡まで）</li><li>相続人全員の戸籍</li><li>請求者の印鑑証明書</li><li>金融機関所定の請求書</li></ul>"),
+            ("全額引き出しの手続き", "<p>仮払いを超える金額は、<strong>遺産分割協議書</strong>または遺言書が必要。協議書方式の場合、相続人全員の実印・印鑑証明書を添付します。</p>"),
+        ],
+        "faqs": [
+            ("仮払いした金額は後から精算しますか？", "仮払い受領者の相続分から控除されます。<strong>遺産分割で取得したものとみなす</strong>規定（民法909条の2後段）。"),
+            ("ネット銀行も凍結されますか？", "もちろん凍結されます。むしろメガバンクより手続きが煩雑な場合もあるため、生前にIDとパスワード（または相続情報）を共有しておくと安心。"),
+            ("口座が凍結される前に引き出すのは問題ですか？", "法律上の罰則はありませんが、後の遺産分割で他の相続人から返還請求される可能性があります。記録を残し、葬儀等の正当な用途に限るべき。"),
+        ],
+    },
+    {
+        "slug": "contribution-share",
+        "title": "寄与分と特別受益｜公平な遺産分割のための調整制度",
+        "h1": "寄与分と特別受益の制度",
+        "desc": "親の介護や事業貢献に応える寄与分（民法904条の2）、生前贈与を相続時に考慮する特別受益（民法903条）の計算と請求方法を解説。",
+        "keywords": "寄与分,特別受益,民法904条の2,民法903条,介護,生前贈与持戻し",
+        "lead": "相続人間で<strong>不公平感が生じる典型例</strong>は、介護に貢献した相続人と、過去に高額な贈与を受けた相続人の存在です。寄与分・特別受益はこれを調整する制度です。",
+        "sections": [
+            ("寄与分とは（民法904条の2）", "<p>被相続人の財産維持・増加に<strong>特別な貢献</strong>をした相続人の取り分を増やす制度。認められる類型：</p><ul><li>家事従事型（家業を無償で手伝った）</li><li>金銭出資型（医療費・事業資金を負担）</li><li>療養看護型（長期介護を無償で実施）</li><li>扶養型（生活費を継続的に負担）</li></ul>"),
+            ("特別受益とは（民法903条）", "<p>相続人が生前に受けた<strong>特別な贈与</strong>を相続財産に持戻して計算する制度。対象例：</p><ul><li>結婚資金・新築祝い</li><li>大学院・留学費用（通常の教育費を超える）</li><li>事業承継のための資産移転</li><li>生命保険金（特別受益とされる場合あり、判例による）</li></ul>"),
+            ("計算例：特別受益の持戻し", "<p>遺産6,000万円、相続人が子A・B、子Aが生前に2,000万円贈与を受けていた場合：</p><ul><li>みなし相続財産：6,000 + 2,000 = 8,000万円</li><li>各人の相続分：8,000万円 × 1/2 = 4,000万円</li><li>子Aの取得分：4,000 − 2,000（特別受益）= <strong>2,000万円</strong></li><li>子Bの取得分：<strong>4,000万円</strong></li></ul>"),
+            ("特別寄与料（民法1050条）", "<p>2019年新設。相続人以外の親族（息子の妻など）が無償で介護等した場合、<strong>相続人に対して金銭請求</strong>できる制度。請求期限は知った時から6ヶ月。</p>"),
+            ("実務上の注意", "<ul><li>寄与分・特別受益の主張は<strong>遺産分割協議や調停</strong>で行う</li><li>客観的な証拠（領収書・介護記録・銀行記録）が重要</li><li>2023年4月から、相続開始後10年経過すると主張不可（民法904条の3）</li></ul>"),
+        ],
+        "faqs": [
+            ("介護したら自動的に寄与分がもらえますか？", "いいえ。<strong>「特別な」貢献</strong>が必要で、扶養義務の範囲を超える長期・無償の貢献が要件です。相続人全員の合意か家裁の認定が必要。"),
+            ("生前贈与は何年前まで持戻しされますか？", "従来は無期限でしたが、2019年改正で<strong>遺留分算定では10年以内</strong>に限定（民法1044条）。ただし遺産分割上の持戻しは別ルール。"),
+            ("生命保険金は特別受益になりますか？", "原則として<strong>特別受益にあたらない</strong>（判例）ですが、保険金額が相続財産に比して著しく高額な場合は例外的に対象となる場合あり（最判平16.10.29）。"),
+        ],
+    },
+    {
+        "slug": "inheritance-procedure",
+        "title": "相続手続きの全体像｜何から始めればいい？フローチャート付き",
+        "h1": "相続手続きの全体フロー",
+        "desc": "家族が亡くなった後の相続手続きを全体像から解説。何から始めるべきか、いつまでに何をすべきか、必要な専門家は誰か。",
+        "keywords": "相続手続き,流れ,何から始める,相続フロー,専門家相談,初めての相続",
+        "lead": "「家族が亡くなったけど何から手をつければ…」という方へ、相続手続きの<strong>全体フロー</strong>と必要な専門家の選び方を解説します。",
+        "sections": [
+            ("ステップ1：遺言書の有無を確認", "<ul><li>自宅の金庫・書斎・仏壇付近を捜索</li><li>公証役場で遺言検索（無料・全国共通）</li><li>法務局の遺言書保管所での検索（2020年〜）</li><li>自筆証書遺言が見つかったら家庭裁判所で<strong>検認</strong>申立（保管制度利用なら検認不要）</li></ul>"),
+            ("ステップ2：相続人の確定", "<p>被相続人の<strong>出生から死亡まで</strong>の戸籍を全て取得し、法定相続人を確定します。本籍が転々としている場合は順次取り寄せるため数週間〜数ヶ月かかることも。</p>"),
+            ("ステップ3：財産・負債の調査", "<ul><li>預貯金：通帳・キャッシュカードから金融機関を特定し残高証明を取得</li><li>不動産：固定資産税納税通知書、名寄帳（市町村）</li><li>有価証券：証券会社の残高証明、特定口座年間取引報告書</li><li>負債：借入残高証明、信用情報機関（CIC・JICC・KSC）への開示請求</li></ul>"),
+            ("ステップ4：相続放棄か承認か", "<p>3ヶ月の熟慮期間内に判断。マイナスが大きい場合は<strong>相続放棄</strong>、不明な場合は<strong>限定承認</strong>を検討。</p>"),
+            ("ステップ5：遺産分割協議", "<p>相続人全員で分割方法を協議し、<strong>遺産分割協議書</strong>を作成。実印・印鑑証明を準備。</p>"),
+            ("ステップ6：名義変更・申告", "<ul><li>不動産：相続登記（2024年4月から義務化、3年以内）</li><li>預貯金：金融機関で解約・名義変更</li><li>相続税：基礎控除超過なら10ヶ月以内に申告・納付</li></ul>"),
+            ("どの専門家に相談すべきか", """
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
+  <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">相談内容</th><th style="padding:.6rem;border:1px solid #ddd;">適切な専門家</th></tr></thead>
+  <tbody>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">相続税の申告・節税</td><td style="padding:.6rem;border:1px solid #ddd;">税理士</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">相続人間の紛争・訴訟</td><td style="padding:.6rem;border:1px solid #ddd;">弁護士</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">不動産の相続登記</td><td style="padding:.6rem;border:1px solid #ddd;">司法書士</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">遺産分割協議書作成</td><td style="padding:.6rem;border:1px solid #ddd;">行政書士・司法書士・弁護士</td></tr>
+    <tr><td style="padding:.6rem;border:1px solid #ddd;">事業承継</td><td style="padding:.6rem;border:1px solid #ddd;">税理士＋経営コンサル</td></tr>
+  </tbody>
+</table>
+"""),
+        ],
+        "faqs": [
+            ("相続が発生してから最初にやることは？", "①死亡届の提出（7日以内）②葬儀③健康保険・年金の手続き（14日以内）と並行して、遺言書の捜索と相続人の確認に着手します。"),
+            ("家系図Naviはこの手続きのどこで役立ちますか？", "ステップ2（相続人確定）とステップ5（分割方法の検討）で、法定相続分・相続税・遺留分を即座に計算でき、専門家相談前の事前検討に最適です。"),
+            ("専門家への報酬の相場は？", "税理士：遺産総額の0.5〜1%程度、司法書士：相続登記6〜10万円、弁護士：着手金30万円〜＋成功報酬。複数事務所で見積もり比較を推奨。"),
+        ],
+    },
+]
+
+
 def render(article, related_links):
     title = article["title"]
     desc = article["desc"]
@@ -374,6 +631,12 @@ def render(article, related_links):
     .cta-box {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }}
     .cta-box h3 {{ font-size: 1.2rem; margin-bottom: .8rem; }}
     .cta-box a {{ display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }}
+    .share {{ margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }}
+    .share-btn {{ display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }}
+    .share-btn.x {{ background: #000; }}
+    .share-btn.fb {{ background: #1877F2; }}
+    .share-btn.line {{ background: #06C755; }}
+    .share-btn.hb {{ background: #00A4DE; }}
     .disclaimer {{ background: #fff8e1; border-left: 4px solid #f39c12; padding: 1rem 1.2rem; border-radius: 4px; font-size: .9rem; margin: 2rem 0; }}
     footer {{ text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; }}
     footer a {{ color: var(--green); text-decoration: none; }}
@@ -403,6 +666,14 @@ def render(article, related_links):
     <a href="{APP_URL}" rel="noopener">家系図Naviを開く →</a>
   </div>
 
+  <div class="share">
+    <p style="margin-bottom:.6rem;font-weight:600;color:#555;">この記事をシェア</p>
+    <a class="share-btn x" href="https://twitter.com/intent/tweet?url={url}&text={title}" target="_blank" rel="noopener">𝕏 Xでポスト</a>
+    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u={url}" target="_blank" rel="noopener">f Facebook</a>
+    <a class="share-btn line" href="https://social-plugins.line.me/lineit/share?url={url}" target="_blank" rel="noopener">LINE</a>
+    <a class="share-btn hb" href="https://b.hatena.ne.jp/entry/{url}" target="_blank" rel="noopener">B!はてブ</a>
+  </div>
+
   <div class="related">
     <h2>関連記事</h2>
     <ul>{related_html}</ul>
@@ -423,6 +694,87 @@ def render(article, related_links):
 """
 
 
+def render_guides_index():
+    cards = "\n".join(
+        f'<a class="guide-card" href="../{a["slug"]}/">'
+        f'<h3>{a["h1"]}</h3><p>{a["desc"]}</p></a>'
+        for a in ARTICLES
+    )
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相続・事業承継ガイド記事一覧｜家系図Navi</title>
+  <meta name="description" content="家系図Naviが提供する相続・事業承継の解説記事一覧。法定相続分・相続税・遺留分・事業承継・遺言書・生前贈与など{len(ARTICLES)}本の専門記事を公開中。">
+  <meta name="keywords" content="相続,事業承継,記事一覧,ガイド,家系図Navi">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{SITE_URL}/guides/">
+  <meta property="og:title" content="相続・事業承継ガイド記事一覧｜家系図Navi">
+  <meta property="og:description" content="法定相続分・相続税・遺留分・事業承継・遺言書・生前贈与など{len(ARTICLES)}本の専門記事。">
+  <meta property="og:url" content="{SITE_URL}/guides/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{ICON}">
+  <link rel="icon" href="../icon_192.png">
+  <style>
+    :root {{ --green: #27AE60; --light-bg: #f8fdf9; --text: #2c3e50; }}
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{ font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.7; }}
+    header {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2.5rem 1.5rem; text-align: center; }}
+    header h1 {{ font-size: 1.9rem; margin: .5rem 0; }}
+    header .nav {{ font-size: .9rem; opacity: .9; }}
+    header .nav a {{ color: white; text-decoration: none; }}
+    main {{ max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }}
+    .guides {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }}
+    .guide-card {{ background: white; border-radius: 12px; padding: 1.4rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-top: 3px solid var(--green); text-decoration: none; color: inherit; transition: transform .2s; }}
+    .guide-card:hover {{ transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,.1); }}
+    .guide-card h3 {{ font-size: 1.05rem; margin-bottom: .5rem; color: var(--green); }}
+    .guide-card p {{ font-size: .88rem; color: #555; }}
+    footer {{ text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; }}
+    footer a {{ color: var(--green); text-decoration: none; }}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ ガイド記事一覧</div>
+  <h1>相続・事業承継ガイド</h1>
+  <p style="opacity:.95;margin-top:.6rem;">専門家監修水準の解説記事を{len(ARTICLES)}本公開中</p>
+</header>
+<main>
+  <div class="guides">
+  {cards}
+  </div>
+</main>
+<footer>
+  <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+</footer>
+</body>
+</html>
+"""
+
+
+def render_404():
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ページが見つかりません｜家系図Navi</title>
+  <meta name="robots" content="noindex">
+  <style>
+    body {{ font-family: sans-serif; background: #f8fdf9; color: #2c3e50; text-align: center; padding: 4rem 1rem; line-height: 1.7; }}
+    h1 {{ color: #27AE60; font-size: 2rem; }}
+    a {{ color: #27AE60; }}
+  </style>
+</head>
+<body>
+  <h1>404 - ページが見つかりません</h1>
+  <p>お探しのページは移動または削除された可能性があります。</p>
+  <p style="margin-top:2rem;"><a href="/kakeizu-navi-lp/">🌳 家系図Navi トップへ</a> ｜ <a href="/kakeizu-navi-lp/guides/">ガイド記事一覧へ</a></p>
+</body>
+</html>
+"""
+
+
 def main():
     # 全記事タイトル一覧（関連記事リンク用）
     all_pairs = [(a["slug"], a["h1"]) for a in ARTICLES]
@@ -433,18 +785,29 @@ def main():
         out_dir.mkdir(exist_ok=True)
         html = render(art, related)
         (out_dir / "index.html").write_text(html, encoding="utf-8")
-        print(f"  ✓ /{art['slug']}/")
+        print(f"  OK /{art['slug']}/")
+
+    # /guides/ 一覧ページ
+    guides_dir = ROOT / "guides"
+    guides_dir.mkdir(exist_ok=True)
+    (guides_dir / "index.html").write_text(render_guides_index(), encoding="utf-8")
+    print(f"  OK /guides/")
+
+    # 404.html
+    (ROOT / "404.html").write_text(render_404(), encoding="utf-8")
+    print(f"  OK 404.html")
 
     # sitemap.xml を再生成
     today = "2026-05-30"
-    urls = [SITE_URL + "/"] + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
+    urls = [SITE_URL + "/", SITE_URL + "/guides/"] + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
-        sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>{'1.0' if u == urls[0] else '0.8'}</priority></url>")
+        priority = '1.0' if u == urls[0] else ('0.9' if u == urls[1] else '0.8')
+        sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>{priority}</priority></url>")
     sm.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8")
-    print(f"  ✓ sitemap.xml ({len(urls)} URLs)")
+    print(f"  OK sitemap.xml ({len(urls)} URLs)")
 
 
 if __name__ == "__main__":
