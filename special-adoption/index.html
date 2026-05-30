@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "特別養子縁組と相続関係", "description": "特別養子と普通養子の違い、相続権の有無、民法817条の9による実親との親族関係終了の効果をわかりやすく解説します。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/special-adoption/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "特別養子は実親の遺産を相続できますか？", "acceptedAnswer": {"@type": "Answer", "text": "原則として相続できません。民法817条の9により、特別養子縁組成立で実親との親族関係（親権・扶養・相続権など）はすべて終了します。"}}, {"@type": "Question", "name": "特別養子が成立した後で実親が亡くなったら？", "acceptedAnswer": {"@type": "Answer", "text": "特別養子は実親の相続人にはなりません。実親に他の子や配偶者がいなければ、相続人不存在となり相続財産は最終的に国庫に帰属します。"}}, {"@type": "Question", "name": "養子縁組で節税効果はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "あります。法定相続人数が増えるため基礎控除（600万円/人）・生命保険非課税枠（500万円/人）・退職金非課税枠が拡大します。ただし上記の人数制限あり。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "特別養子縁組と相続関係", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/special-adoption/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 特別養子縁組と相続関係</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 特別養子縁組と相続関係</div>
   <h1>特別養子縁組と相続関係</h1>
   <p class="lead">特別養子と普通養子の違い、相続権の有無、民法817条の9による実親との親族関係終了の効果をわかりやすく解説します。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約1分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,9 +91,17 @@
 
   <p>養子縁組には「<strong>普通養子</strong>」と「<strong>特別養子</strong>」の2種類があり、相続関係の扱いが大きく異なります。本記事ではその違いと実務上の注意点を解説します。</p>
 
-  <h2>1. 特別養子縁組の特徴</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">特別養子縁組の特徴</a></li>
+<li><a href="#sec-2">相続関係の違い</a></li>
+<li><a href="#sec-3">基礎控除での養子算入制限</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 特別養子縁組の特徴</h2>
 <p>子の福祉のために設けられた制度で、<strong>実親との親族関係が完全に終了</strong>します（民法817条の9）。要件：</p><ul><li>原則15歳未満の子</li><li>養親は配偶者ある25歳以上</li><li>家庭裁判所の審判による成立</li><li>原則6ヶ月以上の試験養育期間</li></ul>
-<h2>2. 相続関係の違い</h2>
+<h2 id="sec-2">2. 相続関係の違い</h2>
 
 <table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
   <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">区分</th><th style="padding:.6rem;border:1px solid #ddd;">実親からの相続</th><th style="padding:.6rem;border:1px solid #ddd;">養親からの相続</th></tr></thead>
@@ -89,10 +111,10 @@
   </tbody>
 </table>
 
-<h2>3. 基礎控除での養子算入制限</h2>
+<h2 id="sec-3">3. 基礎控除での養子算入制限</h2>
 <p>相続税の基礎控除や生命保険非課税枠の計算では、養子の人数に制限があります（相続税法15条2項）：</p><ul><li>実子がいる場合：養子1人まで</li><li>実子がいない場合：養子2人まで</li></ul><p>ただし特別養子は<strong>実子と同じ扱い</strong>でこの制限を受けません。</p>
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>特別養子は実親の遺産を相続できますか？</summary><p>原則として相続できません。民法817条の9により、特別養子縁組成立で実親との親族関係（親権・扶養・相続権など）はすべて終了します。</p></details>
 <details><summary>特別養子が成立した後で実親が亡くなったら？</summary><p>特別養子は実親の相続人にはなりません。実親に他の子や配偶者がいなければ、相続人不存在となり相続財産は最終的に国庫に帰属します。</p></details>
 <details><summary>養子縁組で節税効果はありますか？</summary><p>あります。法定相続人数が増えるため基礎控除（600万円/人）・生命保険非課税枠（500万円/人）・退職金非課税枠が拡大します。ただし上記の人数制限あり。</p></details>

@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "寄与分と特別受益の制度", "description": "親の介護や事業貢献に応える寄与分（民法904条の2）、生前贈与を相続時に考慮する特別受益（民法903条）の計算と請求方法を解説。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/contribution-share/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "介護したら自動的に寄与分がもらえますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。「特別な」貢献が必要で、扶養義務の範囲を超える長期・無償の貢献が要件です。相続人全員の合意か家裁の認定が必要。"}}, {"@type": "Question", "name": "生前贈与は何年前まで持戻しされますか？", "acceptedAnswer": {"@type": "Answer", "text": "従来は無期限でしたが、2019年改正で遺留分算定では10年以内に限定（民法1044条）。ただし遺産分割上の持戻しは別ルール。"}}, {"@type": "Question", "name": "生命保険金は特別受益になりますか？", "acceptedAnswer": {"@type": "Answer", "text": "原則として特別受益にあたらない（判例）ですが、保険金額が相続財産に比して著しく高額な場合は例外的に対象となる場合あり（最判平16.10.29）。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "寄与分と特別受益の制度", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/contribution-share/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 寄与分と特別受益の制度</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 寄与分と特別受益の制度</div>
   <h1>寄与分と特別受益の制度</h1>
   <p class="lead">親の介護や事業貢献に応える寄与分（民法904条の2）、生前贈与を相続時に考慮する特別受益（民法903条）の計算と請求方法を解説。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約2分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,18 +91,28 @@
 
   <p>相続人間で<strong>不公平感が生じる典型例</strong>は、介護に貢献した相続人と、過去に高額な贈与を受けた相続人の存在です。寄与分・特別受益はこれを調整する制度です。</p>
 
-  <h2>1. 寄与分とは（民法904条の2）</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">寄与分とは（民法904条の2）</a></li>
+<li><a href="#sec-2">特別受益とは（民法903条）</a></li>
+<li><a href="#sec-3">計算例：特別受益の持戻し</a></li>
+<li><a href="#sec-4">特別寄与料（民法1050条）</a></li>
+<li><a href="#sec-5">実務上の注意</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 寄与分とは（民法904条の2）</h2>
 <p>被相続人の財産維持・増加に<strong>特別な貢献</strong>をした相続人の取り分を増やす制度。認められる類型：</p><ul><li>家事従事型（家業を無償で手伝った）</li><li>金銭出資型（医療費・事業資金を負担）</li><li>療養看護型（長期介護を無償で実施）</li><li>扶養型（生活費を継続的に負担）</li></ul>
-<h2>2. 特別受益とは（民法903条）</h2>
+<h2 id="sec-2">2. 特別受益とは（民法903条）</h2>
 <p>相続人が生前に受けた<strong>特別な贈与</strong>を相続財産に持戻して計算する制度。対象例：</p><ul><li>結婚資金・新築祝い</li><li>大学院・留学費用（通常の教育費を超える）</li><li>事業承継のための資産移転</li><li>生命保険金（特別受益とされる場合あり、判例による）</li></ul>
-<h2>3. 計算例：特別受益の持戻し</h2>
+<h2 id="sec-3">3. 計算例：特別受益の持戻し</h2>
 <p>遺産6,000万円、相続人が子A・B、子Aが生前に2,000万円贈与を受けていた場合：</p><ul><li>みなし相続財産：6,000 + 2,000 = 8,000万円</li><li>各人の相続分：8,000万円 × 1/2 = 4,000万円</li><li>子Aの取得分：4,000 − 2,000（特別受益）= <strong>2,000万円</strong></li><li>子Bの取得分：<strong>4,000万円</strong></li></ul>
-<h2>4. 特別寄与料（民法1050条）</h2>
+<h2 id="sec-4">4. 特別寄与料（民法1050条）</h2>
 <p>2019年新設。相続人以外の親族（息子の妻など）が無償で介護等した場合、<strong>相続人に対して金銭請求</strong>できる制度。請求期限は知った時から6ヶ月。</p>
-<h2>5. 実務上の注意</h2>
+<h2 id="sec-5">5. 実務上の注意</h2>
 <ul><li>寄与分・特別受益の主張は<strong>遺産分割協議や調停</strong>で行う</li><li>客観的な証拠（領収書・介護記録・銀行記録）が重要</li><li>2023年4月から、相続開始後10年経過すると主張不可（民法904条の3）</li></ul>
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>介護したら自動的に寄与分がもらえますか？</summary><p>いいえ。<strong>「特別な」貢献</strong>が必要で、扶養義務の範囲を超える長期・無償の貢献が要件です。相続人全員の合意か家裁の認定が必要。</p></details>
 <details><summary>生前贈与は何年前まで持戻しされますか？</summary><p>従来は無期限でしたが、2019年改正で<strong>遺留分算定では10年以内</strong>に限定（民法1044条）。ただし遺産分割上の持戻しは別ルール。</p></details>
 <details><summary>生命保険金は特別受益になりますか？</summary><p>原則として<strong>特別受益にあたらない</strong>（判例）ですが、保険金額が相続財産に比して著しく高額な場合は例外的に対象となる場合あり（最判平16.10.29）。</p></details>

@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "遺留分の計算方法と請求の流れ", "description": "民法1042条で保証された遺留分（最低保証分）の計算方法、配偶者・子・直系尊属の割合、侵害額請求の手続きと時効を解説します。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-reserve/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "遺留分は放棄できますか？", "acceptedAnswer": {"@type": "Answer", "text": "相続開始後は自由に放棄可能。相続開始前の放棄は家庭裁判所の許可が必要です（民法1049条）。事業承継対策で後継者以外の遺留分を事前放棄する例があります。"}}, {"@type": "Question", "name": "生前贈与は遺留分の計算に含まれますか？", "acceptedAnswer": {"@type": "Answer", "text": "原則として相続開始前10年以内の特別受益（民法903条の生前贈与）は遺留分算定基礎に算入されます（民法1044条）。ただし当事者双方が遺留分侵害を知っていた贈与は期間制限なし。"}}, {"@type": "Question", "name": "遺留分を侵害する遺言は無効ですか？", "acceptedAnswer": {"@type": "Answer", "text": "無効ではありません。あくまで請求されたら侵害額を支払う義務が生じる、という構造です。請求されなければ遺言通り執行されます。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "遺留分の計算方法と請求の流れ", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-reserve/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 遺留分の計算方法と請求の流れ</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 遺留分の計算方法と請求の流れ</div>
   <h1>遺留分の計算方法と請求の流れ</h1>
   <p class="lead">民法1042条で保証された遺留分（最低保証分）の計算方法、配偶者・子・直系尊属の割合、侵害額請求の手続きと時効を解説します。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約1分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,16 +91,25 @@
 
   <p><strong>遺留分</strong>とは、一定の相続人に法律上保証された最低限の取り分です（民法1042条）。遺言で「全財産を長男に」とあっても、配偶者や他の子は遺留分を請求できます。</p>
 
-  <h2>1. 遺留分の総体的割合</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">遺留分の総体的割合</a></li>
+<li><a href="#sec-2">計算例：配偶者+子2人で遺産1億円</a></li>
+<li><a href="#sec-3">遺留分侵害額請求の手続き</a></li>
+<li><a href="#sec-4">時効に注意（1年・10年）</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 遺留分の総体的割合</h2>
 <ul><li>直系尊属のみが相続人 → 遺産の<strong>1/3</strong></li><li>それ以外（配偶者・子がいる場合） → 遺産の<strong>1/2</strong></li><li>兄弟姉妹 → <strong>遺留分なし</strong></li></ul><p>これに各人の法定相続分を掛けたものが「個別的遺留分」です。</p>
-<h2>2. 計算例：配偶者+子2人で遺産1億円</h2>
+<h2 id="sec-2">2. 計算例：配偶者+子2人で遺産1億円</h2>
 <p>① 総体的遺留分：1億円 × 1/2 = 5,000万円<br>② 配偶者の個別遺留分：5,000万円 × 1/2 = <strong>2,500万円</strong><br>③ 子1人あたりの個別遺留分：5,000万円 × 1/4 = <strong>1,250万円</strong></p>
-<h2>3. 遺留分侵害額請求の手続き</h2>
+<h2 id="sec-3">3. 遺留分侵害額請求の手続き</h2>
 <p>2019年改正により、現物返還ではなく<strong>金銭請求権</strong>になりました（民法1046条）。流れは：</p><ol><li>請求の意思表示（内容証明郵便が一般的）</li><li>当事者間での協議</li><li>不調なら家庭裁判所での調停</li><li>調停不成立なら訴訟</li></ol>
-<h2>4. 時効に注意（1年・10年）</h2>
+<h2 id="sec-4">4. 時効に注意（1年・10年）</h2>
 <p>遺留分侵害を知った時から<strong>1年</strong>、または相続開始から<strong>10年</strong>で時効消滅します（民法1048条）。早期に内容証明郵便で意思表示することが重要です。</p>
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>遺留分は放棄できますか？</summary><p>相続開始後は自由に放棄可能。相続開始前の放棄は家庭裁判所の許可が必要です（民法1049条）。事業承継対策で後継者以外の遺留分を事前放棄する例があります。</p></details>
 <details><summary>生前贈与は遺留分の計算に含まれますか？</summary><p>原則として<strong>相続開始前10年以内</strong>の特別受益（民法903条の生前贈与）は遺留分算定基礎に算入されます（民法1044条）。ただし当事者双方が遺留分侵害を知っていた贈与は期間制限なし。</p></details>
 <details><summary>遺留分を侵害する遺言は無効ですか？</summary><p>無効ではありません。あくまで請求されたら侵害額を支払う義務が生じる、という構造です。請求されなければ遺言通り執行されます。</p></details>

@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "家族信託（民事信託）の活用法", "description": "認知症による財産凍結を回避し、事業承継・障害者支援にも使える家族信託の仕組みと、遺言・成年後見との違いを解説。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/family-trust/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "受託者は1人でないとダメですか？", "acceptedAnswer": {"@type": "Answer", "text": "複数選任可能で、過半数決議や役割分担の設計もできます。ただし管理が煩雑になるため、メイン受託者と後継受託者の指定が一般的。"}}, {"@type": "Question", "name": "信託財産に不動産を入れる際の注意は？", "acceptedAnswer": {"@type": "Answer", "text": "登記名義が委託者から受託者に移ります（信託登記）。これに伴う登録免許税（固定資産税評価額×0.4%）が必要。"}}, {"@type": "Question", "name": "信託契約は公正証書で作る必要がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "法律上は必須ではありませんが、後の紛争防止と金融機関の信託口座開設のため公正証書化が強く推奨されます。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "家族信託（民事信託）の活用法", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/family-trust/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 家族信託（民事信託）の活用法</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 家族信託（民事信託）の活用法</div>
   <h1>家族信託（民事信託）の活用法</h1>
   <p class="lead">認知症による財産凍結を回避し、事業承継・障害者支援にも使える家族信託の仕組みと、遺言・成年後見との違いを解説。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約1分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,9 +91,19 @@
 
   <p><strong>家族信託（民事信託）</strong>は、信頼できる家族に財産管理を任せる仕組みです。認知症対策・事業承継・障害者支援など幅広い場面で活用されています。</p>
 
-  <h2>1. 基本構造：委託者・受託者・受益者</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">基本構造：委託者・受託者・受益者</a></li>
+<li><a href="#sec-2">遺言・成年後見との違い</a></li>
+<li><a href="#sec-3">活用シーン1：認知症対策</a></li>
+<li><a href="#sec-4">活用シーン2：事業承継</a></li>
+<li><a href="#sec-5">デメリット・注意点</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 基本構造：委託者・受託者・受益者</h2>
 <ul><li><strong>委託者</strong>：財産を預ける人（例：親）</li><li><strong>受託者</strong>：財産を管理・運用する人（例：子）</li><li><strong>受益者</strong>：利益を受け取る人（多くの場合は委託者本人＝自益信託）</li></ul>
-<h2>2. 遺言・成年後見との違い</h2>
+<h2 id="sec-2">2. 遺言・成年後見との違い</h2>
 
 <table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
   <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">手段</th><th style="padding:.6rem;border:1px solid #ddd;">特徴</th><th style="padding:.6rem;border:1px solid #ddd;">柔軟性</th></tr></thead>
@@ -90,14 +114,14 @@
   </tbody>
 </table>
 
-<h2>3. 活用シーン1：認知症対策</h2>
+<h2 id="sec-3">3. 活用シーン1：認知症対策</h2>
 <p>親が認知症になると預貯金引出・不動産売却ができなくなり「資産凍結」状態に。元気なうちに信託契約を結べば、判断能力低下後も受託者が継続して管理可能。</p>
-<h2>4. 活用シーン2：事業承継</h2>
+<h2 id="sec-4">4. 活用シーン2：事業承継</h2>
 <p>株式の議決権を後継者に集中させつつ、配当（受益権）を他の相続人に分配する設計が可能。後継者教育中の経営権安定化に有効。</p>
-<h2>5. デメリット・注意点</h2>
+<h2 id="sec-5">5. デメリット・注意点</h2>
 <ul><li>受託者の責任が重い（善管注意義務）</li><li>身上監護はできない（成年後見が必要）</li><li>節税効果は限定的（贈与税・相続税は通常通り）</li><li>専門家設計費用：30万〜100万円程度</li></ul>
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>受託者は1人でないとダメですか？</summary><p>複数選任可能で、過半数決議や役割分担の設計もできます。ただし管理が煩雑になるため、メイン受託者と後継受託者の指定が一般的。</p></details>
 <details><summary>信託財産に不動産を入れる際の注意は？</summary><p>登記名義が委託者から受託者に移ります（信託登記）。これに伴う登録免許税（固定資産税評価額×0.4%）が必要。</p></details>
 <details><summary>信託契約は公正証書で作る必要がありますか？</summary><p>法律上は必須ではありませんが、後の紛争防止と金融機関の信託口座開設のため<strong>公正証書化が強く推奨</strong>されます。</p></details>

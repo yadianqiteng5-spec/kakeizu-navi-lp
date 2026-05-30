@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "暗号資産（仮想通貨）の相続", "description": "ビットコイン等の暗号資産を相続する際の評価方法、取引所の名義変更手続き、所得税・相続税の二重課税問題を解説。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/crypto-inheritance/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "シードフレーズを家族が知らない場合は？", "acceptedAnswer": {"@type": "Answer", "text": "取り出し不可能になります。エンディングノート・遺言書での明示、または信頼できる家族への分割共有等の対策が必須。"}}, {"@type": "Question", "name": "DeFi・NFTも相続対象ですか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、財産的価値があれば相続対象。ただし評価方法が確立しておらず、ケースバイケースで判断。"}}, {"@type": "Question", "name": "海外取引所の暗号資産は？", "acceptedAnswer": {"@type": "Answer", "text": "国外財産として相続税対象。CRSにより日本の税務署も把握しやすくなっています。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "暗号資産（仮想通貨）の相続", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/crypto-inheritance/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 暗号資産（仮想通貨）の相続</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 暗号資産（仮想通貨）の相続</div>
   <h1>暗号資産（仮想通貨）の相続</h1>
   <p class="lead">ビットコイン等の暗号資産を相続する際の評価方法、取引所の名義変更手続き、所得税・相続税の二重課税問題を解説。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約1分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,18 +91,28 @@
 
   <p><strong>暗号資産（仮想通貨）</strong>は新しい相続財産で、現行制度の課題が多い分野です。早期の対策が重要。</p>
 
-  <h2>1. 評価方法</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">評価方法</a></li>
+<li><a href="#sec-2">取引所での手続き</a></li>
+<li><a href="#sec-3">プライベートウォレットのリスク</a></li>
+<li><a href="#sec-4">税負担の問題</a></li>
+<li><a href="#sec-5">生前にやるべき対策</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 評価方法</h2>
 <p>相続開始日の<strong>取引所の終値</strong>で評価（国税庁QA）。複数取引所で価格差がある場合は被相続人の利用取引所の価格を使用。</p>
-<h2>2. 取引所での手続き</h2>
+<h2 id="sec-2">2. 取引所での手続き</h2>
 <ul><li>取引所への死亡連絡 → 口座凍結</li><li>戸籍謄本・遺産分割協議書を提出</li><li>相続人の口座に移管または現金化</li><li>取引所ごとに手続きが異なるため要確認</li></ul>
-<h2>3. プライベートウォレットのリスク</h2>
+<h2 id="sec-3">3. プライベートウォレットのリスク</h2>
 <p>取引所ではなく<strong>ハードウェアウォレットや自己管理のウォレット</strong>に保管している場合、秘密鍵・シードフレーズが分からないと<strong>永久に取り出せない</strong>リスクが致命的。</p>
-<h2>4. 税負担の問題</h2>
+<h2 id="sec-4">4. 税負担の問題</h2>
 <p>暗号資産の譲渡益は<strong>雑所得（総合課税）</strong>で最大55%。相続後に売却するとさらに譲渡益課税が発生し、<strong>事実上の二重課税</strong>が発生する場合あり。</p>
-<h2>5. 生前にやるべき対策</h2>
+<h2 id="sec-5">5. 生前にやるべき対策</h2>
 <ul><li>保有資産のリスト化（取引所・銘柄・数量）</li><li>秘密鍵・シードフレーズの安全な引継ぎ準備</li><li>取引所のログイン情報の管理</li><li>必要に応じて売却し現金化</li></ul>
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>シードフレーズを家族が知らない場合は？</summary><p><strong>取り出し不可能</strong>になります。エンディングノート・遺言書での明示、または信頼できる家族への分割共有等の対策が必須。</p></details>
 <details><summary>DeFi・NFTも相続対象ですか？</summary><p>はい、財産的価値があれば相続対象。ただし評価方法が確立しておらず、ケースバイケースで判断。</p></details>
 <details><summary>海外取引所の暗号資産は？</summary><p>国外財産として相続税対象。CRSにより日本の税務署も把握しやすくなっています。</p></details>

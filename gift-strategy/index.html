@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "生前贈与の節税戦略", "description": "暦年贈与（年110万円非課税）と相続時精算課税（2,500万円非課税）の比較、2024年改正の7年持戻しを踏まえた最適な使い分けを解説。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/gift-strategy/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "暦年贈与で「定期贈与」と認定されるリスクは？", "acceptedAnswer": {"@type": "Answer", "text": "毎年同額・同日に贈与契約書なしで贈与すると、最初から総額を分割贈与する約束だったと認定され、総額に贈与税がかかるリスクがあります。毎年贈与契約書を作成しましょう。"}}, {"@type": "Question", "name": "孫への贈与で持戻しは適用されますか？", "acceptedAnswer": {"@type": "Answer", "text": "孫が相続人や遺贈受取人でなければ、原則持戻しの対象外です。ただし代襲相続人になっている場合は持戻し対象。"}}, {"@type": "Question", "name": "教育資金・結婚資金の一括贈与特例は？", "acceptedAnswer": {"@type": "Answer", "text": "別途、教育資金1,500万円・結婚子育て資金1,000万円の一括贈与非課税制度があります。期限・要件があるため最新情報の確認を。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "生前贈与の節税戦略", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/gift-strategy/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 生前贈与の節税戦略</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 生前贈与の節税戦略</div>
   <h1>生前贈与の節税戦略</h1>
   <p class="lead">暦年贈与（年110万円非課税）と相続時精算課税（2,500万円非課税）の比較、2024年改正の7年持戻しを踏まえた最適な使い分けを解説。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約1分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,13 +91,22 @@
 
   <p><strong>生前贈与</strong>は計画的に行えば大きな節税効果があります。本記事では2024年改正後の暦年贈与と相続時精算課税の使い分けを解説します。</p>
 
-  <h2>1. 暦年贈与の基本</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">暦年贈与の基本</a></li>
+<li><a href="#sec-2">2024年改正：7年持戻しの影響</a></li>
+<li><a href="#sec-3">相続時精算課税制度</a></li>
+<li><a href="#sec-4">どちらを選ぶべきか</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 暦年贈与の基本</h2>
 <p>受贈者1人あたり<strong>年110万円</strong>まで贈与税非課税（相続税法21条の5）。子3人・孫3人に毎年110万円ずつ10年贈与すれば6,600万円を非課税で移転できます。</p>
-<h2>2. 2024年改正：7年持戻しの影響</h2>
+<h2 id="sec-2">2. 2024年改正：7年持戻しの影響</h2>
 <p>改正前は相続開始前<strong>3年</strong>以内の贈与が相続財産に持ち戻されていましたが、改正後は<strong>7年</strong>に延長されました（経過措置あり、完全施行は2031年）。</p><ul><li>持戻し期間が長いほど節税効果は減る</li><li>高齢者は早期着手が有利</li><li>4〜7年目の超過分は100万円控除あり</li></ul>
-<h2>3. 相続時精算課税制度</h2>
+<h2 id="sec-3">3. 相続時精算課税制度</h2>
 <p>原則18歳以上の子・孫への贈与で、累計<strong>2,500万円</strong>まで贈与税ゼロ。超過分は一律20%。ただし相続時に全額を持戻して相続税で精算（相続税法21条の9以下）。</p><p>2024年改正で<strong>年110万円の基礎控除</strong>が新設され使い勝手が向上しました。</p>
-<h2>4. どちらを選ぶべきか</h2>
+<h2 id="sec-4">4. どちらを選ぶべきか</h2>
 
 <table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
   <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">条件</th><th style="padding:.6rem;border:1px solid #ddd;">おすすめ</th></tr></thead>
@@ -96,7 +119,7 @@
 </table>
 
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>暦年贈与で「定期贈与」と認定されるリスクは？</summary><p>毎年同額・同日に贈与契約書なしで贈与すると、最初から総額を分割贈与する約束だったと認定され、総額に贈与税がかかるリスクがあります。毎年贈与契約書を作成しましょう。</p></details>
 <details><summary>孫への贈与で持戻しは適用されますか？</summary><p>孫が相続人や遺贈受取人でなければ、原則持戻しの対象外です。ただし代襲相続人になっている場合は持戻し対象。</p></details>
 <details><summary>教育資金・結婚資金の一括贈与特例は？</summary><p>別途、教育資金1,500万円・結婚子育て資金1,000万円の一括贈与非課税制度があります。期限・要件があるため最新情報の確認を。</p></details>

@@ -730,10 +730,20 @@ def render(article, related_links):
     slug = article["slug"]
     url = f"{SITE_URL}/{slug}/"
 
+    # セクションHTML（各H2にidを付与してTOCとアンカー連動）
+    def _slug_id(i):
+        return f"sec-{i+1}"
+
     sections_html = "\n".join(
-        f'<h2>{i+1}. {h2}</h2>\n{body}'
+        f'<h2 id="{_slug_id(i)}">{i+1}. {h2}</h2>\n{body}'
         for i, (h2, body) in enumerate(article["sections"])
     )
+    # 目次（TOC）
+    toc_html = "\n".join(
+        f'<li><a href="#{_slug_id(i)}">{h2}</a></li>'
+        for i, (h2, _) in enumerate(article["sections"])
+    ) + '\n<li><a href="#faq">よくある質問</a></li>'
+
     faq_html = "\n".join(
         f'<details><summary>{q}</summary><p>{a}</p></details>'
         for q, a in article["faqs"]
@@ -742,6 +752,35 @@ def render(article, related_links):
         f'<li><a href="../{s}/">{t}</a></li>'
         for s, t in related_links
     )
+
+    # 読了時間（日本語400字/分の概算）
+    import re as _re
+    plain = _re.sub(r'<[^>]+>', '', article["lead"] + "".join(b for _, b in article["sections"]) + "".join(q + a for q, a in article["faqs"]))
+    read_min = max(1, len(plain) // 400)
+
+    # HowTo風記事の判定（procedural keywordsで自動判定）
+    howto_slugs = {"will-template", "estate-division", "estate-tax-return", "inheritance-renounce",
+                   "inheritance-procedure", "post-death-timeline", "bank-account-freeze"}
+    howto_jsonld_str = ""
+    if slug in howto_slugs:
+        howto = {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": h1,
+            "description": desc,
+            "totalTime": f"PT{read_min}M",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "position": i + 1,
+                    "name": h2,
+                    "text": _re.sub(r'<[^>]+>', '', body)[:300],
+                    "url": f"{url}#{_slug_id(i)}",
+                }
+                for i, (h2, body) in enumerate(article["sections"])
+            ],
+        }
+        howto_jsonld_str = f'<script type="application/ld+json">{json.dumps(howto, ensure_ascii=False)}</script>'
 
     article_jsonld = {
         "@context": "https://schema.org",
@@ -809,6 +848,7 @@ def render(article, related_links):
   <script type="application/ld+json">{json.dumps(article_jsonld, ensure_ascii=False)}</script>
   <script type="application/ld+json">{json.dumps(faq_jsonld, ensure_ascii=False)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_jsonld, ensure_ascii=False)}</script>
+  {howto_jsonld_str}
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -836,6 +876,14 @@ def render(article, related_links):
     .cta-box {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }}
     .cta-box h3 {{ font-size: 1.2rem; margin-bottom: .8rem; }}
     .cta-box a {{ display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }}
+    .meta-info {{ display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }}
+    .meta-info span {{ background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }}
+    .toc {{ background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }}
+    .toc-title {{ font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }}
+    .toc ol {{ margin: 0; padding-left: 1.4rem; }}
+    .toc ol li {{ margin: .35rem 0; }}
+    .toc a {{ color: var(--text); text-decoration: none; }}
+    .toc a:hover {{ color: var(--green); text-decoration: underline; }}
     .share {{ margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }}
     .share-btn {{ display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }}
     .share-btn.x {{ background: #000; }}
@@ -850,9 +898,14 @@ def render(article, related_links):
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ {h1}</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ {h1}</div>
   <h1>{h1}</h1>
   <p class="lead">{desc}</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約{read_min}分</span>
+  </div>
   <a class="cta" href="{APP_URL}" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -860,9 +913,14 @@ def render(article, related_links):
 
   <p>{article["lead"]}</p>
 
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol>{toc_html}</ol>
+  </nav>
+
   {sections_html}
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   {faq_html}
 
   <div class="cta-box">
@@ -1183,6 +1241,240 @@ def render_glossary():
 """
 
 
+QUICK_TABLES = [
+    {
+        "slug": "table-inheritance-tax",
+        "title": "相続税早見表｜遺産額×法定相続人数の概算税額一覧",
+        "h1": "相続税早見表（配偶者と子のケース）",
+        "desc": "遺産5,000万円〜10億円までの相続税概算を、配偶者+子1〜4人のパターン別に一覧表示。配偶者控除適用前後の両方を掲載。",
+        "keywords": "相続税,早見表,概算,遺産額,法定相続人,配偶者控除",
+        "intro": "配偶者と子で相続する場合の<strong>相続税概算</strong>を遺産額別にまとめました（配偶者の税額軽減フル適用前提）。国税庁速算表準拠の計算で、実際の試算は<a href=\"" + APP_URL + "\">家系図Navi</a>でも可能です。",
+        "table_header": ["遺産額", "子1人", "子2人", "子3人", "子4人"],
+        "table_rows": [
+            ["5,000万円", "40万円", "10万円", "0円", "0円"],
+            ["7,000万円", "160万円", "113万円", "80万円", "50万円"],
+            ["1億円", "385万円", "315万円", "263万円", "225万円"],
+            ["1.5億円", "920万円", "748万円", "665万円", "588万円"],
+            ["2億円", "1,670万円", "1,350万円", "1,218万円", "1,125万円"],
+            ["3億円", "3,460万円", "2,860万円", "2,540万円", "2,350万円"],
+            ["5億円", "7,605万円", "6,555万円", "5,963万円", "5,500万円"],
+            ["10億円", "1億9,750万円", "1億7,810万円", "1億6,635万円", "1億5,650万円"],
+        ],
+        "notes": [
+            "上記は配偶者と子で相続し、配偶者の税額軽減（最大1.6億円または法定相続分まで非課税）をフル活用した場合の合計税額。",
+            "実際の税額は遺産分割割合・適用特例・養子の有無等で変動します。",
+            "基礎控除 = 3,000万円 + 600万円 × 法定相続人数（相続税法15条）。",
+        ],
+    },
+    {
+        "slug": "table-legal-share",
+        "title": "法定相続分早見表｜配偶者・子・直系尊属・兄弟姉妹",
+        "h1": "法定相続分早見表",
+        "desc": "民法900条の法定相続分を、配偶者・子・直系尊属・兄弟姉妹の組み合わせ別に一覧表示。代襲相続・半血兄弟・養子のケースも。",
+        "keywords": "法定相続分,早見表,民法900条,配偶者,子,直系尊属,兄弟姉妹",
+        "intro": "民法900条の<strong>法定相続分</strong>を組み合わせ別に整理しました。",
+        "table_header": ["相続人の組み合わせ", "配偶者", "他の相続人"],
+        "table_rows": [
+            ["配偶者のみ", "1/1（全部）", "—"],
+            ["配偶者 + 子1人", "1/2", "1/2"],
+            ["配偶者 + 子2人", "1/2", "各1/4"],
+            ["配偶者 + 子3人", "1/2", "各1/6"],
+            ["配偶者 + 父母（両方存命）", "2/3", "各1/6"],
+            ["配偶者 + 父母（片方のみ）", "2/3", "1/3"],
+            ["配偶者 + 兄弟姉妹2人", "3/4", "各1/8"],
+            ["配偶者 + 兄弟姉妹3人", "3/4", "各1/12"],
+            ["子のみ（複数）", "—", "人数で均等按分"],
+            ["父母のみ", "—", "1/1または均等按分"],
+            ["兄弟姉妹のみ", "—", "人数で均等按分"],
+        ],
+        "notes": [
+            "半血兄弟（親の片方のみ同じ）は全血兄弟の1/2（民法900条4号但書）。",
+            "代襲相続人は被代襲者の相続分を引き継ぎます。",
+            "養子は実子と同じ相続分（人数の算入制限は基礎控除等の計算でのみ適用）。",
+        ],
+    },
+    {
+        "slug": "table-gift-tax",
+        "title": "贈与税早見表｜特例税率・一般税率の対比",
+        "h1": "贈与税早見表",
+        "desc": "暦年贈与の贈与税額を、特例税率（直系尊属→18歳以上の子・孫）と一般税率で対比して一覧表示。基礎控除110万円差し引き後の課税価格別。",
+        "keywords": "贈与税,早見表,特例税率,一般税率,直系尊属,暦年贈与",
+        "intro": "<strong>暦年贈与</strong>の贈与税額（基礎控除110万円差引後の課税価格別）を、特例税率と一般税率で比較表示します。",
+        "table_header": ["贈与額", "課税価格", "特例税率", "一般税率"],
+        "table_rows": [
+            ["200万円", "90万円", "9万円", "9万円"],
+            ["300万円", "190万円", "19万円", "19万円"],
+            ["500万円", "390万円", "48.5万円", "53万円"],
+            ["1,000万円", "890万円", "177万円", "231万円"],
+            ["1,500万円", "1,390万円", "366万円", "450.5万円"],
+            ["2,000万円", "1,890万円", "585.5万円", "695万円"],
+            ["3,000万円", "2,890万円", "1,035.5万円", "1,195万円"],
+            ["5,000万円", "4,890万円", "2,049.5万円", "2,289.5万円"],
+            ["1億円", "9,890万円", "4,799.5万円", "5,039.5万円"],
+        ],
+        "notes": [
+            "特例税率は<strong>直系尊属（父母・祖父母）から18歳以上の子・孫</strong>への贈与に適用。",
+            "それ以外は一般税率。基礎控除110万円/年は受贈者ごと。",
+            "2024年改正で<strong>暦年贈与の持戻し期間は3年→7年</strong>に延長（経過措置あり）。",
+        ],
+    },
+    {
+        "slug": "table-basic-deduction",
+        "title": "基礎控除額早見表｜法定相続人数別の非課税枠",
+        "h1": "相続税基礎控除額早見表",
+        "desc": "法定相続人数1〜10人別の相続税基礎控除額、生命保険非課税枠、死亡退職金非課税枠を一覧表示。",
+        "keywords": "基礎控除,早見表,相続税,生命保険,非課税枠,死亡退職金",
+        "intro": "相続税の<strong>基礎控除</strong>と各種非課税枠を法定相続人数別に整理しました（相続税法15条・12条）。",
+        "table_header": ["相続人数", "基礎控除", "生命保険非課税", "死亡退職金非課税"],
+        "table_rows": [
+            ["1人", "3,600万円", "500万円", "500万円"],
+            ["2人", "4,200万円", "1,000万円", "1,000万円"],
+            ["3人", "4,800万円", "1,500万円", "1,500万円"],
+            ["4人", "5,400万円", "2,000万円", "2,000万円"],
+            ["5人", "6,000万円", "2,500万円", "2,500万円"],
+            ["6人", "6,600万円", "3,000万円", "3,000万円"],
+            ["7人", "7,200万円", "3,500万円", "3,500万円"],
+            ["8人", "7,800万円", "4,000万円", "4,000万円"],
+            ["10人", "9,000万円", "5,000万円", "5,000万円"],
+        ],
+        "notes": [
+            "基礎控除 = 3,000万円 + 600万円 × 法定相続人数。",
+            "生命保険・死亡退職金の非課税枠 = それぞれ500万円 × 法定相続人数。",
+            "養子は基礎控除の人数計算で<strong>実子あり1人/実子なし2人</strong>まで（相続税法15条2項）。",
+            "相続放棄者も基礎控除の人数に含めて計算します。",
+        ],
+    },
+    {
+        "slug": "table-deadlines",
+        "title": "相続手続き期限カレンダー｜7日〜10ヶ月の全期限一覧",
+        "h1": "相続手続きの期限早見表",
+        "desc": "相続発生後の各種手続きの期限を一覧化。死亡届7日・準確定申告4ヶ月・相続税申告10ヶ月・相続登記3年など、漏れなくチェック。",
+        "keywords": "相続,期限,カレンダー,死亡届,相続放棄,相続税申告,相続登記",
+        "intro": "相続発生後の<strong>各種手続き期限</strong>を早見表にまとめました。期限超過は不利益・罰則の対象となるため要注意です。",
+        "table_header": ["期限", "手続き", "根拠"],
+        "table_rows": [
+            ["7日以内", "死亡届の提出", "戸籍法86条"],
+            ["10日以内", "厚生年金死亡届", "厚生年金保険法98条"],
+            ["14日以内", "国民健康保険・国民年金死亡届、世帯主変更届", "各法令"],
+            ["3ヶ月以内", "相続放棄・限定承認の申述", "民法915条"],
+            ["4ヶ月以内", "被相続人の所得税準確定申告・納付", "所得税法125条"],
+            ["10ヶ月以内", "相続税の申告・納付", "相続税法27条"],
+            ["1年以内", "遺留分侵害額請求（侵害を知った時から）", "民法1048条"],
+            ["3年以内", "相続登記の申請（2024年義務化）", "不動産登記法76条の2"],
+            ["5年10ヶ月以内", "更正の請求（税額減額の修正）", "国税通則法23条"],
+        ],
+        "notes": [
+            "期限を過ぎても手続き可能な場合がありますが、加算税・延滞税・過料の対象となることがあります。",
+            "相続放棄の3ヶ月は<strong>「相続開始を知った日」</strong>から起算。",
+            "相続税申告は<strong>被相続人の最後の住所地</strong>を管轄する税務署に提出。",
+        ],
+    },
+]
+
+
+def render_quick_table(qt):
+    url = f"{SITE_URL}/{qt['slug']}/"
+    header_html = "".join(f'<th>{h}</th>' for h in qt['table_header'])
+    rows_html = "\n".join(
+        "<tr>" + "".join(f'<td>{c}</td>' for c in row) + "</tr>"
+        for row in qt['table_rows']
+    )
+    notes_html = "\n".join(f'<li>{n}</li>' for n in qt['notes'])
+
+    # JSON-LD: Table relevant + Article
+    article_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": qt["h1"],
+        "description": qt["desc"],
+        "image": ICON,
+        "datePublished": "2026-05-30",
+        "dateModified": "2026-05-30",
+        "author": {"@type": "Person", "name": "DrumNavi"},
+        "publisher": {"@type": "Organization", "name": "家系図Navi",
+                      "logo": {"@type": "ImageObject", "url": ICON}},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": url},
+        "inLanguage": "ja",
+    }
+    breadcrumb_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "早見表", "item": SITE_URL + "/guides/"},
+            {"@type": "ListItem", "position": 3, "name": qt["h1"], "item": url},
+        ],
+    }
+
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{qt['title']}｜家系図Navi</title>
+  <meta name="description" content="{qt['desc']}">
+  <meta name="keywords" content="{qt['keywords']}">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="DrumNavi">
+  <link rel="canonical" href="{url}">
+  <meta property="og:title" content="{qt['title']}｜家系図Navi">
+  <meta property="og:description" content="{qt['desc']}">
+  <meta property="og:url" content="{url}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="{ICON}">
+  <script type="application/ld+json">{json.dumps(article_jsonld, ensure_ascii=False)}</script>
+  <script type="application/ld+json">{json.dumps(breadcrumb_jsonld, ensure_ascii=False)}</script>
+  <link rel="icon" href="../icon_192.png">
+  <style>
+    :root {{ --green: #27AE60; --light-bg: #f8fdf9; --text: #2c3e50; }}
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{ font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.7; }}
+    header {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2.5rem 1.5rem; text-align: center; }}
+    header h1 {{ font-size: 1.8rem; margin: .5rem 0; }}
+    header .nav {{ font-size: .85rem; opacity: .9; }}
+    header .nav a {{ color: white; text-decoration: none; }}
+    main {{ max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }}
+    table {{ width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-radius: 8px; overflow: hidden; margin: 1.5rem 0; }}
+    th {{ background: var(--green); color: white; padding: .7rem .5rem; text-align: center; font-size: .9rem; }}
+    td {{ padding: .65rem .5rem; border-bottom: 1px solid #eee; text-align: center; font-size: .9rem; }}
+    tr:hover td {{ background: #f8fdf9; }}
+    .notes {{ background: #fff8e1; border-left: 4px solid #f39c12; padding: 1rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: .9rem; }}
+    .notes ul {{ padding-left: 1.4rem; }}
+    .cta-box {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 1.6rem; border-radius: 12px; text-align: center; margin: 2rem 0; }}
+    .cta-box a {{ display: inline-block; padding: .7rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: .5rem; }}
+    footer {{ text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; margin-top: 2rem; }}
+    footer a {{ color: var(--green); text-decoration: none; }}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ {qt['h1']}</div>
+  <h1>{qt['h1']}</h1>
+</header>
+<main>
+  <p>{qt['intro']}</p>
+  <table>
+    <thead><tr>{header_html}</tr></thead>
+    <tbody>{rows_html}</tbody>
+  </table>
+  <div class="notes">
+    <strong>📌 注釈・前提条件</strong>
+    <ul>{notes_html}</ul>
+  </div>
+  <div class="cta-box">
+    <h3 style="margin-bottom:.5rem;">あなたのケースの正確な金額を試算</h3>
+    <p style="font-size:.95rem;opacity:.95;">家族構成と資産額を入力するだけで、配偶者控除・各種特例を反映した正確な相続税概算を取得できます。</p>
+    <a href="{APP_URL}" rel="noopener">家系図Naviを試す（無料）→</a>
+  </div>
+</main>
+<footer>
+  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../glossary/">用語集</a></p>
+</footer>
+</body>
+</html>
+"""
+
+
 def render_about():
     org_jsonld = {
         "@context": "https://schema.org",
@@ -1344,13 +1636,24 @@ def main():
     (about_dir / "index.html").write_text(render_about(), encoding="utf-8")
     print(f"  OK /about/")
 
+    # 早見表ページ
+    for qt in QUICK_TABLES:
+        qt_dir = ROOT / qt["slug"]
+        qt_dir.mkdir(exist_ok=True)
+        (qt_dir / "index.html").write_text(render_quick_table(qt), encoding="utf-8")
+        print(f"  OK /{qt['slug']}/")
+
     # 404.html
     (ROOT / "404.html").write_text(render_404(), encoding="utf-8")
     print(f"  OK 404.html")
 
     # sitemap.xml を再生成
     today = "2026-05-30"
-    urls = [SITE_URL + "/", SITE_URL + "/guides/", SITE_URL + "/glossary/", SITE_URL + "/about/"] + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
+    urls = (
+        [SITE_URL + "/", SITE_URL + "/guides/", SITE_URL + "/glossary/", SITE_URL + "/about/"]
+        + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
+        + [f"{SITE_URL}/{qt['slug']}/" for qt in QUICK_TABLES]
+    )
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:

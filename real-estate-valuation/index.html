@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "相続税における不動産の評価方法", "description": "土地は路線価方式または倍率方式、建物は固定資産税評価額で評価。借地権・貸家建付地等の評価減も含めて解説。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/real-estate-valuation/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "広大地評価は今も使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "2017年12月で廃止され、現在は「地積規模の大きな宅地の評価」に置き換わっています。要件と補正率は別ルール。"}}, {"@type": "Question", "name": "不整形地・がけ地はどう評価しますか？", "acceptedAnswer": {"@type": "Answer", "text": "国税庁の財産評価基本通達に基づき不整形地補正・がけ地補正で減額できます。専門知識が必要なため税理士相談を推奨。"}}, {"@type": "Question", "name": "マンションの評価は今後どうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "2024年から新評価方式（市場価格と評価額の乖離を是正）が導入されました。タワマン節税への影響大。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "相続税における不動産の評価方法", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/real-estate-valuation/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 相続税における不動産の評価方法</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 相続税における不動産の評価方法</div>
   <h1>相続税における不動産の評価方法</h1>
   <p class="lead">土地は路線価方式または倍率方式、建物は固定資産税評価額で評価。借地権・貸家建付地等の評価減も含めて解説。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約1分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,13 +91,23 @@
 
   <p>相続税における不動産評価は、<strong>路線価</strong>と<strong>倍率方式</strong>を使い分けます。市場価格より低めに設定されているのが一般的です。</p>
 
-  <h2>1. 土地評価：路線価方式</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">土地評価：路線価方式</a></li>
+<li><a href="#sec-2">土地評価：倍率方式</a></li>
+<li><a href="#sec-3">建物の評価</a></li>
+<li><a href="#sec-4">特殊な評価</a></li>
+<li><a href="#sec-5">評価減の活用</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 土地評価：路線価方式</h2>
 <p>市街地など路線価が定められている地域では、<strong>路線価 × 地積 × 各種補正率</strong>で評価。路線価は国税庁のホームページで毎年7月に公表され、公示地価の約80%水準。</p>
-<h2>2. 土地評価：倍率方式</h2>
+<h2 id="sec-2">2. 土地評価：倍率方式</h2>
 <p>路線価が設定されていない地域（郊外・農村など）では、<strong>固定資産税評価額 × 国税局長が定める倍率</strong>で評価。</p>
-<h2>3. 建物の評価</h2>
+<h2 id="sec-3">3. 建物の評価</h2>
 <p>建物は<strong>固定資産税評価額をそのまま</strong>使用。一般に建築費の40〜70%程度の水準。新築直後は高く、年数経過で減価。</p>
-<h2>4. 特殊な評価</h2>
+<h2 id="sec-4">4. 特殊な評価</h2>
 
 <table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
   <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">種類</th><th style="padding:.6rem;border:1px solid #ddd;">評価方法</th></tr></thead>
@@ -95,10 +119,10 @@
   </tbody>
 </table>
 
-<h2>5. 評価減の活用</h2>
+<h2 id="sec-5">5. 評価減の活用</h2>
 <p>賃貸物件は評価額が下がるため、現金より相続税対策になります。ただし空室率が高いと評価減が縮小し、節税効果は減少。</p>
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>広大地評価は今も使えますか？</summary><p>2017年12月で廃止され、現在は<strong>「地積規模の大きな宅地の評価」</strong>に置き換わっています。要件と補正率は別ルール。</p></details>
 <details><summary>不整形地・がけ地はどう評価しますか？</summary><p>国税庁の財産評価基本通達に基づき<strong>不整形地補正・がけ地補正</strong>で減額できます。専門知識が必要なため税理士相談を推奨。</p></details>
 <details><summary>マンションの評価は今後どうなりますか？</summary><p>2024年から<strong>新評価方式</strong>（市場価格と評価額の乖離を是正）が導入されました。タワマン節税への影響大。</p></details>

@@ -26,6 +26,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "小規模宅地等の特例の使い方", "description": "自宅の土地評価額を80%減額できる小規模宅地等の特例（租税特別措置法69条の4）の要件・面積上限・併用ルールを解説します。", "image": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "datePublished": "2026-05-30", "dateModified": "2026-05-30", "author": {"@type": "Person", "name": "DrumNavi"}, "publisher": {"@type": "Organization", "name": "家系図Navi", "logo": {"@type": "ImageObject", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/small-residential/"}, "inLanguage": "ja"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "二世帯住宅でも特例は使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "区分所有登記がされていなければ、構造上独立していても同居とみなされ特例適用可能です（2014年改正）。区分所有登記の場合は被相続人居住部分のみ対象。"}}, {"@type": "Question", "name": "複数の区分を併用できますか？", "acceptedAnswer": {"@type": "Answer", "text": "居住用と事業用の併用は限度面積を合算できますが、貸付事業用との併用は調整計算（按分）が必要です。"}}, {"@type": "Question", "name": "申告不要の場合でも特例適用には申告が必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、特例適用には相続税申告が必須です。特例適用の結果ゼロ円になる場合でも申告書を提出する必要があります。"}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"}, {"@type": "ListItem", "position": 2, "name": "小規模宅地等の特例の使い方", "item": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/small-residential/"}]}</script>
+  
 
   <link rel="icon" href="../icon_192.png">
   <style>
@@ -53,6 +54,14 @@
     .cta-box { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }
     .cta-box h3 { font-size: 1.2rem; margin-bottom: .8rem; }
     .cta-box a { display: inline-block; padding: .8rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; }
+    .meta-info { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; font-size: .85rem; opacity: .9; }
+    .meta-info span { background: rgba(255,255,255,.18); padding: .25rem .8rem; border-radius: 50px; }
+    .toc { background: white; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }
+    .toc-title { font-weight: 700; color: var(--green); margin-bottom: .6rem; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc ol li { margin: .35rem 0; }
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--green); text-decoration: underline; }
     .share { margin: 2rem 0; padding: 1.2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .share-btn { display: inline-block; padding: .5rem 1rem; margin: .25rem .3rem .25rem 0; border-radius: 50px; font-size: .85rem; font-weight: 600; text-decoration: none; color: white; }
     .share-btn.x { background: #000; }
@@ -67,9 +76,14 @@
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 小規模宅地等の特例の使い方</div>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ 小規模宅地等の特例の使い方</div>
   <h1>小規模宅地等の特例の使い方</h1>
   <p class="lead">自宅の土地評価額を80%減額できる小規模宅地等の特例（租税特別措置法69条の4）の要件・面積上限・併用ルールを解説します。</p>
+  <div class="meta-info">
+    <span>✍ 著者: DrumNavi</span>
+    <span>📅 更新: 2026年5月30日</span>
+    <span>⏱ 読了 約1分</span>
+  </div>
   <a class="cta" href="https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/" rel="noopener">無料シミュレーターを試す →</a>
 </header>
 
@@ -77,7 +91,16 @@
 
   <p><strong>小規模宅地等の特例</strong>は、自宅や事業用の土地評価額を最大80%減額できる強力な節税制度です（租税特別措置法69条の4）。</p>
 
-  <h2>1. 3つの区分と限度面積</h2>
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">📑 目次</div>
+    <ol><li><a href="#sec-1">3つの区分と限度面積</a></li>
+<li><a href="#sec-2">適用要件（居住用）</a></li>
+<li><a href="#sec-3">計算例：土地評価8,000万円・自宅</a></li>
+<li><a href="#sec-4">注意点：申告期限までの保有・居住</a></li>
+<li><a href="#faq">よくある質問</a></li></ol>
+  </nav>
+
+  <h2 id="sec-1">1. 3つの区分と限度面積</h2>
 
 <table style="width:100%;border-collapse:collapse;margin:1rem 0;background:white;">
   <thead><tr style="background:#27AE60;color:white;"><th style="padding:.6rem;border:1px solid #ddd;">区分</th><th style="padding:.6rem;border:1px solid #ddd;">減額率</th><th style="padding:.6rem;border:1px solid #ddd;">限度面積</th></tr></thead>
@@ -88,14 +111,14 @@
   </tbody>
 </table>
 
-<h2>2. 適用要件（居住用）</h2>
+<h2 id="sec-2">2. 適用要件（居住用）</h2>
 <p>配偶者が取得する場合は無条件。それ以外の親族が取得する場合の主な要件：</p><ul><li>同居親族：被相続人と同居しており、相続後も継続して居住・所有</li><li>家なき子特例：被相続人に配偶者・同居親族がおらず、自身も3年以上自己所有家屋に住んでいない</li></ul>
-<h2>3. 計算例：土地評価8,000万円・自宅</h2>
+<h2 id="sec-3">3. 計算例：土地評価8,000万円・自宅</h2>
 <p>① 通常評価：8,000万円<br>② 特例適用後：8,000万円 × (1 − 0.80) = <strong>1,600万円</strong><br>③ <strong>6,400万円の評価減</strong> → 相続税軽減効果は<strong>数千万円</strong>規模になることも。</p>
-<h2>4. 注意点：申告期限までの保有・居住</h2>
+<h2 id="sec-4">4. 注意点：申告期限までの保有・居住</h2>
 <p>多くの区分で、申告期限（相続開始から10ヶ月）まで保有・居住・事業継続が要件です。途中で売却すると特例適用不可となるため、遺産分割協議は慎重に。</p>
 
-  <h2>よくある質問</h2>
+  <h2 id="faq">よくある質問</h2>
   <details><summary>二世帯住宅でも特例は使えますか？</summary><p>区分所有登記がされていなければ、構造上独立していても同居とみなされ特例適用可能です（2014年改正）。区分所有登記の場合は被相続人居住部分のみ対象。</p></details>
 <details><summary>複数の区分を併用できますか？</summary><p>居住用と事業用の併用は限度面積を合算できますが、貸付事業用との併用は調整計算（按分）が必要です。</p></details>
 <details><summary>申告不要の場合でも特例適用には申告が必要ですか？</summary><p>はい、特例適用には<strong>相続税申告が必須</strong>です。特例適用の結果ゼロ円になる場合でも申告書を提出する必要があります。</p></details>
