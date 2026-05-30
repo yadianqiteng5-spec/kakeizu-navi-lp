@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/"/>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-share/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-tax/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/business-succession/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/will-template/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-reserve/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/special-adoption/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/secondary-inheritance/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/small-residential/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/gift-strategy/</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
