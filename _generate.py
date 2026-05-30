@@ -963,6 +963,11 @@ def render_guides_index():
         f'<h3>{a["h1"]}</h3><p>{a["desc"]}</p></a>'
         for a in ARTICLES
     )
+    table_cards = "\n".join(
+        f'<a class="guide-card" href="../{qt["slug"]}/" style="border-top-color:#E67E22;">'
+        f'<h3 style="color:#E67E22;">{qt["h1"]}</h3><p>{qt["desc"]}</p></a>'
+        for qt in QUICK_TABLES
+    )
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -1004,8 +1009,20 @@ def render_guides_index():
   <p style="opacity:.95;margin-top:.6rem;">専門家監修水準の解説記事を{len(ARTICLES)}本公開中</p>
 </header>
 <main>
+  <h2 style="color:var(--green);margin-bottom:1rem;border-left:4px solid var(--green);padding-left:.8rem;">📝 解説記事（{len(ARTICLES)}本）</h2>
   <div class="guides">
   {cards}
+  </div>
+
+  <h2 style="color:#E67E22;margin:2.5rem 0 1rem;border-left:4px solid #E67E22;padding-left:.8rem;">📊 早見表（{len(QUICK_TABLES)}本）</h2>
+  <div class="guides">
+  {table_cards}
+  </div>
+
+  <h2 style="color:var(--green);margin:2.5rem 0 1rem;border-left:4px solid var(--green);padding-left:.8rem;">📖 リファレンス</h2>
+  <div class="guides">
+    <a class="guide-card" href="../glossary/"><h3>用語集（40語）</h3><p>相続・事業承継の専門用語を解説。</p></a>
+    <a class="guide-card" href="../about/"><h3>家系図Naviについて</h3><p>運営方針・編集ポリシー・計算精度。</p></a>
   </div>
 </main>
 <footer>
