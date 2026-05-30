@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家系図Naviについて｜運営方針と編集ポリシー</title>
+  <meta name="description" content="家系図Naviの運営者情報・編集ポリシー・計算精度の検証方法・プライバシー設計を公開。民法・相続税法準拠を国税庁公表値で厳密検証。">
+  <meta name="keywords" content="家系図Navi,運営者,編集ポリシー,DrumNavi,相続,計算精度">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/">
+  <meta property="og:title" content="家系図Naviについて｜運営方針と編集ポリシー">
+  <meta property="og:description" content="運営者情報・編集ポリシー・計算精度の検証方法・プライバシー設計。">
+  <meta property="og:url" content="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "家系図Navi", "alternateName": "DrumNavi", "url": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/", "logo": "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/icon_512.png", "description": "民法・相続税法に準拠した相続シミュレーターと、専門家監修水準の解説記事を提供する独立系サービス。", "founder": {"@type": "Person", "name": "DrumNavi"}, "foundingDate": "2026-04", "areaServed": "JP", "knowsAbout": ["相続", "事業承継", "相続税", "遺言書", "家族信託", "事業承継税制"]}</script>
+  <link rel="icon" href="../icon_192.png">
+  <style>
+    :root { --green: #27AE60; --light-bg: #f8fdf9; --text: #2c3e50; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.8; }
+    header { background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2.5rem 1.5rem; text-align: center; }
+    header h1 { font-size: 1.8rem; margin: .5rem 0; }
+    header .nav { font-size: .9rem; opacity: .9; }
+    header .nav a { color: white; text-decoration: none; }
+    main { max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    h2 { font-size: 1.3rem; color: var(--green); margin: 2rem 0 1rem; border-left: 4px solid var(--green); padding-left: .8rem; }
+    .card { background: white; padding: 1.5rem; border-radius: 12px; margin: 1.2rem 0; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .card h3 { color: var(--green); margin-bottom: .6rem; }
+    footer { text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; margin-top: 3rem; }
+    footer a { color: var(--green); text-decoration: none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ About</div>
+  <h1>家系図Naviについて</h1>
+  <p style="opacity:.95;margin-top:.6rem;">運営方針・編集ポリシー・計算精度・プライバシー設計</p>
+</header>
+<main>
+
+  <h2>サービスの目的</h2>
+  <p>家系図Naviは、相続・事業承継の<strong>事前検討フェーズ</strong>を支援するシミュレーターです。専門家への相談前に「概算を把握する」「論点を整理する」ことを助け、専門家のお仕事を補完・促進するツールを目指しています。</p>
+
+  <h2>計算精度の検証</h2>
+  <div class="card">
+    <h3>✅ 民法・相続税法準拠</h3>
+    <p>法定相続分・遺留分は民法900〜1042条に、相続税概算は相続税法15〜19条に準拠。代襲・半血兄弟・特別養子・養子算入制限・配偶者控除など実務上の論点を網羅。</p>
+  </div>
+  <div class="card">
+    <h3>✅ 国税庁公表値と厳密一致</h3>
+    <p>相続税の計算は<strong>国税庁の速算表8段階</strong>を用い、複数の標準ケース（1億円→630万円、2億円→2,700万円、5億円→1億1,924万円）で国税庁シミュレーターと一致を確認済み。</p>
+  </div>
+  <div class="card">
+    <h3>✅ 自動テスト 39ケース全通過</h3>
+    <p>代襲相続・半血兄弟・同時死亡・特別養子・養子算入制限など39の法律ケースを単体テストで検証。GitHub Actions で push 毎・月次 cron で自動再検証。</p>
+  </div>
+
+  <h2>編集ポリシー</h2>
+  <ul>
+    <li>記事は<strong>民法・相続税法の条文</strong>と<strong>国税庁の公式情報</strong>を一次ソースとする</li>
+    <li>判例引用は最高裁判例または確立した実務運用に限る</li>
+    <li>「〜と考えられます」「〜の可能性があります」など推定表現を使い、断定を避ける</li>
+    <li>個別事案の法的助言は行わず、必ず専門家相談を促す</li>
+    <li>弁護士法72条（非弁活動の禁止）に抵触しない設計</li>
+    <li>法改正があれば速やかに反映（2024年改正対応済み：相続登記義務化・7年持戻し）</li>
+  </ul>
+
+  <h2>プライバシー（ゼロ・リテンション設計）</h2>
+  <ul>
+    <li>入力された個人情報（家族構成・資産・音声）は<strong>サーバーに一切保存されません</strong></li>
+    <li>データはブラウザのセッション内のみで処理</li>
+    <li>AI 解析結果はモデル学習に利用されない設定で運用</li>
+    <li>アップロード画像・音声はオンメモリ処理</li>
+  </ul>
+
+  <h2>運営者</h2>
+  <div class="card">
+    <h3>DrumNavi</h3>
+    <p>○○Navi シリーズの運営者。専門家のお仕事を補完する独立系シミュレーターを開発。</p>
+    <p style="margin-top:.6rem;font-size:.9rem;color:#666;">本サービスは弁護士・税理士事務所ではなく、特定事案の法律事務・税務代理は行いません。個別事案は必ず専門家にご相談ください。</p>
+  </div>
+
+  <h2>免責事項</h2>
+  <p>本サービスの計算結果・記事内容は一般的な情報提供であり、法的・税務的助言ではありません。具体的な判断・手続きは弁護士・税理士・司法書士等の専門家にご相談ください。</p>
+
+</main>
+<footer>
+  <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+</footer>
+</body>
+</html>

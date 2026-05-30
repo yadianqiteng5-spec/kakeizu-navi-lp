@@ -958,6 +958,108 @@ def render_guides_index():
 """
 
 
+ARTICLES += [
+    {
+        "slug": "retirement-money",
+        "title": "退職金の相続税｜500万円×法定相続人数の非課税枠",
+        "h1": "退職金の相続税扱い",
+        "desc": "在職中の死亡で支給される死亡退職金の相続税評価、500万円×法定相続人数の非課税枠、弔慰金の取り扱いを解説。",
+        "keywords": "退職金,相続税,非課税枠,弔慰金,死亡退職金",
+        "lead": "在職中に死亡した場合に遺族へ支給される<strong>死亡退職金</strong>は「みなし相続財産」として相続税の課税対象。非課税枠と弔慰金の扱いを整理します。",
+        "sections": [
+            ("非課税枠（500万円×法定相続人数）", "<p>死亡退職金は<strong>500万円 × 法定相続人数</strong>まで非課税（相続税法12条1項6号）。生命保険金と同じ計算式で、両方とも適用可能。</p>"),
+            ("対象となる死亡退職金", "<ul><li>死亡後3年以内に支給が確定したもの</li><li>退職給与規程に基づくもの</li><li>役員退職慰労金（株主総会決議が必要）</li></ul>"),
+            ("弔慰金の非課税枠", "<p>弔慰金は死亡退職金とは別枠で：</p><ul><li><strong>業務上死亡</strong>：賃金月額×36ヶ月分まで非課税</li><li><strong>業務外死亡</strong>：賃金月額×6ヶ月分まで非課税</li></ul><p>超過分は退職金として課税対象。</p>"),
+            ("受取人による違い", "<p>受取人が指定されていれば<strong>受取人の固有財産</strong>として遺産分割対象外。指定がなければ相続財産として分割対象。</p>"),
+        ],
+        "faqs": [
+            ("死亡退職金は所得税もかかりますか？", "いいえ、相続税の課税対象になるため<strong>所得税は非課税</strong>です（所得税法9条1項16号）。"),
+            ("3年経過後に支給された退職金は？", "相続税ではなく<strong>受取人の一時所得</strong>として所得税課税。"),
+            ("社葬の香典・供花は誰のものですか？", "原則として<strong>喪主固有の財産</strong>で相続税の課税対象外。社会通念上相当な範囲なら所得税も非課税。"),
+        ],
+    },
+    {
+        "slug": "insurance-strategy",
+        "title": "生命保険を使った相続対策｜非課税枠と代償分割原資",
+        "h1": "生命保険の相続活用法",
+        "desc": "500万円×法定相続人数の非課税枠を活用した節税、代償分割の原資確保、納税資金準備など、生命保険を使った相続対策を解説。",
+        "keywords": "生命保険,相続対策,非課税枠,代償分割,納税資金,終身保険",
+        "lead": "<strong>生命保険</strong>は相続対策の万能ツールです。非課税枠・受取人指定・現金化容易など他の財産にない特性を活用しましょう。",
+        "sections": [
+            ("非課税枠の活用", "<p>500万円 × 法定相続人数まで非課税（相続税法12条）。預貯金で残すより評価額が下がるため、<strong>現金を保険に変えるだけで節税</strong>に。</p>"),
+            ("受取人固有財産", "<p>受取人指定の死亡保険金は<strong>遺産分割の対象外</strong>（最判昭40.2.2）。遺留分の算定基礎にも原則含まれません（特別受益にあたる場合を除く）。特定の相続人に確実に渡せる強み。</p>"),
+            ("代償分割の原資", "<p>不動産を長男が取得する代わりに次男に金銭支払（代償分割）する場合、その<strong>原資を保険金で確保</strong>できます。納税資金の準備にも有効。</p>"),
+            ("一時払終身保険の活用", "<p>高齢者でも加入可能な一時払終身保険は、預金を保険に変えるだけで非課税枠を作れる節税策。健康診断不要の商品も多い。</p>"),
+            ("注意点", "<ul><li>保険金額が著しく高額だと特別受益認定リスク</li><li>受取人が先に死亡した場合の処理</li><li>契約者・被保険者・受取人の関係で課税が変わる（相続税 / 所得税 / 贈与税）</li></ul>"),
+        ],
+        "faqs": [
+            ("受取人を相続人以外にした場合は？", "相続税の課税対象になりますが、<strong>非課税枠は使えません</strong>。非課税枠は法定相続人のみ。"),
+            ("生命保険金は遺留分の対象ですか？", "原則として対象外ですが、保険金額が相続財産に比して著しく高額な場合は特別受益として持戻しの対象になり得ます（最判平16.10.29）。"),
+            ("契約者と受取人が同じ場合は？", "<strong>所得税（一時所得）</strong>の課税対象に。相続税より高負担になることが多いため要注意。"),
+        ],
+    },
+    {
+        "slug": "corporate-shares",
+        "title": "非上場株式の相続税評価｜類似業種比準・純資産・配当還元",
+        "h1": "非上場株式の相続税評価",
+        "desc": "中小企業の自社株評価方法（類似業種比準方式・純資産方式・配当還元方式）、評価減のテクニック、事業承継への影響を解説。",
+        "keywords": "非上場株式,自社株,相続税評価,類似業種比準,純資産価額,配当還元",
+        "lead": "中小企業オーナーの相続では<strong>非上場株式</strong>の評価額が遺産の大部分を占めるケースが多い。評価方式を理解し、適切な対策が必須です。",
+        "sections": [
+            ("3つの評価方式", "<ul><li><strong>類似業種比準方式</strong>：同業上場会社の平均値と比較。配当・利益・純資産で評価</li><li><strong>純資産価額方式</strong>：会社の純資産を相続税評価額で計算</li><li><strong>配当還元方式</strong>：少数株主（同族外）が取得する場合の簡易計算</li></ul>"),
+            ("会社規模による使い分け", "<p>会社規模を大会社・中会社・小会社に区分し、各規模に応じて方式を併用：</p><ul><li>大会社：類似業種比準方式が原則</li><li>中会社：類似業種比準と純資産価額の併用</li><li>小会社：純資産価額方式が原則（類似との選択可）</li></ul>"),
+            ("評価減のテクニック", "<ul><li>役員退職金の支給で純資産を圧縮</li><li>類似業種の比準要素を意図的に下げる（配当抑制等）</li><li>不動産購入による含み損益の活用</li><li>持株会社化（株式保有特定会社判定に注意）</li></ul>"),
+            ("事業承継税制との組合せ", "<p>評価額を圧縮した上で<strong>事業承継税制</strong>（円滑化法）を適用すれば、相続税・贈与税の納税猶予で実質ゼロ円承継も可能。要件確認は必須。</p>"),
+        ],
+        "faqs": [
+            ("配当還元方式は誰でも使えますか？", "いいえ、<strong>同族株主以外</strong>または<strong>同族株主の中でも一定要件を満たす者</strong>が取得する株式に限定されます。"),
+            ("会社の決算が悪い年に贈与すべき？", "原則そうですが、利益操作と認定されると否認リスク。3年平均で計算する要素もあり単年だけでは効果限定的。"),
+            ("自社株を信託に入れる場合の評価は？", "信託受益権としての評価になりますが、実質的には原資産と同じ評価。設計次第で議決権と経済価値を分離可能。"),
+        ],
+    },
+    {
+        "slug": "consulting-cost",
+        "title": "相続専門家の費用相場｜税理士・弁護士・司法書士",
+        "h1": "相続専門家の費用相場",
+        "desc": "税理士の相続税申告報酬、弁護士の遺産分割調停費用、司法書士の相続登記費用など、相続専門家への報酬相場を網羅解説。",
+        "keywords": "相続,専門家,費用,報酬,税理士,弁護士,司法書士,相場",
+        "lead": "相続では複数の専門家への相談が必要になることが多い。<strong>報酬相場</strong>を知り、無駄なく依頼しましょう。",
+        "sections": [
+            ("税理士：相続税申告", "<p>遺産総額の<strong>0.5〜1.0%</strong>が相場。例：</p><ul><li>遺産5,000万円：30〜50万円</li><li>遺産1億円：50〜100万円</li><li>遺産3億円：150〜300万円</li></ul><p>不動産多数・非上場株式・国際相続は加算あり。書面添付制度対応や事前シミュレーション込みかで変動。</p>"),
+            ("弁護士：遺産分割・紛争", "<ul><li>初回相談：30分5,000円〜（無料事務所も多い）</li><li>調停代理：着手金30〜50万円 + 成功報酬（経済的利益の10〜16%）</li><li>訴訟代理：調停より割増</li></ul>"),
+            ("司法書士：相続登記", "<ul><li>相続登記：6〜10万円/件（不動産1物件）</li><li>遺産分割協議書作成：3〜10万円</li><li>戸籍収集代行：1〜3万円</li></ul>"),
+            ("行政書士：書類作成", "<p>協議書作成・遺言書作成のみなら<strong>3〜10万円</strong>。登記・申告・代理交渉はできないため、シンプル案件向け。</p>"),
+            ("費用を抑えるポイント", "<ul><li>複数事務所で見積もり比較</li><li>戸籍収集など自力でできることは自分で</li><li>専門家のワンストップ事務所を選ぶ</li><li>初回無料相談を活用</li></ul>"),
+        ],
+        "faqs": [
+            ("税理士費用は相続税申告で経費にできますか？", "相続税の申告報酬は<strong>準確定申告（所得税）では経費にできません</strong>。相続税の計算上の控除もなし。"),
+            ("弁護士費用を相手に請求できますか？", "原則として各自負担。訴訟で勝訴しても弁護士費用全額を相手に請求するのは困難（一部認められる場合あり）。"),
+            ("無料相談だけで解決することはありますか？", "シンプルなケースなら可能ですが、登記・申告等の実務は依頼が必要。初回無料相談で見積もりを取り判断するのが現実的。"),
+        ],
+    },
+    {
+        "slug": "endlife-checklist",
+        "title": "終活チェックリスト｜元気なうちにやるべき30項目",
+        "h1": "終活で元気なうちにやるべきこと",
+        "desc": "遺言書・エンディングノート・財産目録・延命治療の意思表示など、家族のために生前にやるべき30項目をチェックリスト形式で整理。",
+        "keywords": "終活,チェックリスト,エンディングノート,遺言書,生前整理",
+        "lead": "<strong>終活</strong>は残される家族への最大の贈り物です。判断能力があるうちに準備すべき項目をチェックリストで整理しました。",
+        "sections": [
+            ("法的な準備", "<ul><li>□ 遺言書の作成（公正証書推奨）</li><li>□ 家族信託または任意後見契約の検討</li><li>□ 法定相続人の確認（戸籍取得）</li><li>□ 遺留分への配慮確認</li><li>□ 遺言執行者の指定</li></ul>"),
+            ("財産の整理", "<ul><li>□ 財産目録の作成（不動産・預貯金・有価証券・暗号資産）</li><li>□ 銀行口座の整理・一本化</li><li>□ 不要な保険・サブスクの解約</li><li>□ 借入金・連帯保証の確認</li><li>□ デジタル資産（SNS・写真）の整理</li><li>□ 暗号資産の秘密鍵引き継ぎ準備</li></ul>"),
+            ("税金対策", "<ul><li>□ 相続税の試算（家系図Navi等で概算）</li><li>□ 暦年贈与または相続時精算課税の活用</li><li>□ 小規模宅地等の特例適用要件の確認</li><li>□ 配偶者居住権の検討</li><li>□ 生命保険の非課税枠活用</li></ul>"),
+            ("医療・介護の意思表示", "<ul><li>□ 延命治療への意思（リビングウィル）</li><li>□ 臓器提供の意思</li><li>□ かかりつけ医の連絡先共有</li><li>□ お薬手帳・既往歴の整理</li><li>□ 介護方針の家族との共有</li></ul>"),
+            ("葬儀・お墓", "<ul><li>□ 葬儀のスタイル（家族葬・直葬等）の意思表示</li><li>□ 葬儀社の事前相談</li><li>□ お墓・納骨先の決定</li><li>□ 遺影写真の準備</li><li>□ 葬儀費用の準備</li></ul>"),
+            ("家族へのメッセージ", "<ul><li>□ エンディングノートの作成</li><li>□ 家族写真・思い出の整理</li><li>□ 友人・恩人への連絡先リスト</li><li>□ 大切な人へのメッセージ動画</li></ul>"),
+        ],
+        "faqs": [
+            ("エンディングノートに法的効力はありますか？", "ありません。財産分配の意思を残すには別途<strong>遺言書</strong>が必要。エンディングノートは家族への情報共有として活用。"),
+            ("何歳から終活を始めるべきですか？", "明確な目安はありませんが、60代から徐々に着手するのが一般的。判断能力がしっかりしている時期にこそ重要な決定をしておくべき。"),
+            ("家族と話すのが気が引けるのですが", "家系図Naviのようなツールで「数字」を一緒に見ながら話すのが切り出しやすい。「子供にいくら税金を払わせるか」の現実が話題提供になります。"),
+        ],
+    },
+]
+
 GLOSSARY = [
     ("法定相続人", "民法で定められた相続人。配偶者は常に相続人、子（第1順位）→直系尊属（第2順位）→兄弟姉妹（第3順位）の順で組み合わせが決まる。"),
     ("法定相続分", "民法900条が定める相続割合。遺言がない場合のデフォルト基準。"),
@@ -1081,6 +1183,115 @@ def render_glossary():
 """
 
 
+def render_about():
+    org_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "家系図Navi",
+        "alternateName": "DrumNavi",
+        "url": SITE_URL + "/",
+        "logo": ICON,
+        "description": "民法・相続税法に準拠した相続シミュレーターと、専門家監修水準の解説記事を提供する独立系サービス。",
+        "founder": {"@type": "Person", "name": "DrumNavi"},
+        "foundingDate": "2026-04",
+        "areaServed": "JP",
+        "knowsAbout": ["相続", "事業承継", "相続税", "遺言書", "家族信託", "事業承継税制"],
+    }
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家系図Naviについて｜運営方針と編集ポリシー</title>
+  <meta name="description" content="家系図Naviの運営者情報・編集ポリシー・計算精度の検証方法・プライバシー設計を公開。民法・相続税法準拠を国税庁公表値で厳密検証。">
+  <meta name="keywords" content="家系図Navi,運営者,編集ポリシー,DrumNavi,相続,計算精度">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{SITE_URL}/about/">
+  <meta property="og:title" content="家系図Naviについて｜運営方針と編集ポリシー">
+  <meta property="og:description" content="運営者情報・編集ポリシー・計算精度の検証方法・プライバシー設計。">
+  <meta property="og:url" content="{SITE_URL}/about/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{ICON}">
+  <script type="application/ld+json">{json.dumps(org_jsonld, ensure_ascii=False)}</script>
+  <link rel="icon" href="../icon_192.png">
+  <style>
+    :root {{ --green: #27AE60; --light-bg: #f8fdf9; --text: #2c3e50; }}
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{ font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.8; }}
+    header {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2.5rem 1.5rem; text-align: center; }}
+    header h1 {{ font-size: 1.8rem; margin: .5rem 0; }}
+    header .nav {{ font-size: .9rem; opacity: .9; }}
+    header .nav a {{ color: white; text-decoration: none; }}
+    main {{ max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem; }}
+    h2 {{ font-size: 1.3rem; color: var(--green); margin: 2rem 0 1rem; border-left: 4px solid var(--green); padding-left: .8rem; }}
+    .card {{ background: white; padding: 1.5rem; border-radius: 12px; margin: 1.2rem 0; box-shadow: 0 2px 8px rgba(0,0,0,.06); }}
+    .card h3 {{ color: var(--green); margin-bottom: .6rem; }}
+    footer {{ text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; margin-top: 3rem; }}
+    footer a {{ color: var(--green); text-decoration: none; }}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ About</div>
+  <h1>家系図Naviについて</h1>
+  <p style="opacity:.95;margin-top:.6rem;">運営方針・編集ポリシー・計算精度・プライバシー設計</p>
+</header>
+<main>
+
+  <h2>サービスの目的</h2>
+  <p>家系図Naviは、相続・事業承継の<strong>事前検討フェーズ</strong>を支援するシミュレーターです。専門家への相談前に「概算を把握する」「論点を整理する」ことを助け、専門家のお仕事を補完・促進するツールを目指しています。</p>
+
+  <h2>計算精度の検証</h2>
+  <div class="card">
+    <h3>✅ 民法・相続税法準拠</h3>
+    <p>法定相続分・遺留分は民法900〜1042条に、相続税概算は相続税法15〜19条に準拠。代襲・半血兄弟・特別養子・養子算入制限・配偶者控除など実務上の論点を網羅。</p>
+  </div>
+  <div class="card">
+    <h3>✅ 国税庁公表値と厳密一致</h3>
+    <p>相続税の計算は<strong>国税庁の速算表8段階</strong>を用い、複数の標準ケース（1億円→630万円、2億円→2,700万円、5億円→1億1,924万円）で国税庁シミュレーターと一致を確認済み。</p>
+  </div>
+  <div class="card">
+    <h3>✅ 自動テスト 39ケース全通過</h3>
+    <p>代襲相続・半血兄弟・同時死亡・特別養子・養子算入制限など39の法律ケースを単体テストで検証。GitHub Actions で push 毎・月次 cron で自動再検証。</p>
+  </div>
+
+  <h2>編集ポリシー</h2>
+  <ul>
+    <li>記事は<strong>民法・相続税法の条文</strong>と<strong>国税庁の公式情報</strong>を一次ソースとする</li>
+    <li>判例引用は最高裁判例または確立した実務運用に限る</li>
+    <li>「〜と考えられます」「〜の可能性があります」など推定表現を使い、断定を避ける</li>
+    <li>個別事案の法的助言は行わず、必ず専門家相談を促す</li>
+    <li>弁護士法72条（非弁活動の禁止）に抵触しない設計</li>
+    <li>法改正があれば速やかに反映（2024年改正対応済み：相続登記義務化・7年持戻し）</li>
+  </ul>
+
+  <h2>プライバシー（ゼロ・リテンション設計）</h2>
+  <ul>
+    <li>入力された個人情報（家族構成・資産・音声）は<strong>サーバーに一切保存されません</strong></li>
+    <li>データはブラウザのセッション内のみで処理</li>
+    <li>AI 解析結果はモデル学習に利用されない設定で運用</li>
+    <li>アップロード画像・音声はオンメモリ処理</li>
+  </ul>
+
+  <h2>運営者</h2>
+  <div class="card">
+    <h3>DrumNavi</h3>
+    <p>○○Navi シリーズの運営者。専門家のお仕事を補完する独立系シミュレーターを開発。</p>
+    <p style="margin-top:.6rem;font-size:.9rem;color:#666;">本サービスは弁護士・税理士事務所ではなく、特定事案の法律事務・税務代理は行いません。個別事案は必ず専門家にご相談ください。</p>
+  </div>
+
+  <h2>免責事項</h2>
+  <p>本サービスの計算結果・記事内容は一般的な情報提供であり、法的・税務的助言ではありません。具体的な判断・手続きは弁護士・税理士・司法書士等の専門家にご相談ください。</p>
+
+</main>
+<footer>
+  <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+</footer>
+</body>
+</html>
+"""
+
+
 def render_404():
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -1127,19 +1338,25 @@ def main():
     (glossary_dir / "index.html").write_text(render_glossary(), encoding="utf-8")
     print(f"  OK /glossary/ ({len(GLOSSARY)} terms)")
 
+    # /about/ 運営者情報
+    about_dir = ROOT / "about"
+    about_dir.mkdir(exist_ok=True)
+    (about_dir / "index.html").write_text(render_about(), encoding="utf-8")
+    print(f"  OK /about/")
+
     # 404.html
     (ROOT / "404.html").write_text(render_404(), encoding="utf-8")
     print(f"  OK 404.html")
 
     # sitemap.xml を再生成
     today = "2026-05-30"
-    urls = [SITE_URL + "/", SITE_URL + "/guides/", SITE_URL + "/glossary/"] + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
+    urls = [SITE_URL + "/", SITE_URL + "/guides/", SITE_URL + "/glossary/", SITE_URL + "/about/"] + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
         if u == urls[0]:
             priority = '1.0'
-        elif u in (urls[1], urls[2]):
+        elif u in (urls[1], urls[2], urls[3]):
             priority = '0.9'
         else:
             priority = '0.8'
