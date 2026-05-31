@@ -1,0 +1,65 @@
+name: Auto Post to Hatena Blog
+
+# LP の44記事を「要約＋送客」記事に変換し、はてなブログへ自動ドリップ投稿する。
+# 2日に1本ペース。約3ヶ月で全記事を配信。
+# 公開リポジトリのため GitHub Actions は無料・無制限。
+
+on:
+  schedule:
+    - cron: "0 1 */2 * *"   # 2日ごと 01:00 UTC（=日本時間10:00）
+  workflow_dispatch:          # 手動実行も可能（初回テストに使う）
+    inputs:
+      dry_run:
+        description: "プレビューのみ（投稿しない）"
+        type: boolean
+        default: false
+      draft:
+        description: "下書きとして投稿"
+        type: boolean
+        default: false
+
+concurrency:
+  group: hatena-post
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # posted.json の更新コミット用
+
+jobs:
+  post:
+    name: はてなへ投稿
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 投稿（またはドライラン）
+        env:
+          HATENA_ID: ${{ secrets.HATENA_ID }}
+          HATENA_BLOG_ID: ${{ secrets.HATENA_BLOG_ID }}
+          HATENA_API_KEY: ${{ secrets.HATENA_API_KEY }}
+          POST_LIMIT: "1"
+          DRAFT: ${{ inputs.draft && 'yes' || 'no' }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python hatena/post_to_hatena.py --dry-run
+          else
+            python hatena/post_to_hatena.py
+          fi
+
+      - name: 投稿記録をコミット
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          if [ -n "$(git status --porcelain hatena/posted.json)" ]; then
+            git config user.name "DrumNavi Bot"
+            git config user.email "noreply@anthropic.com"
+            git add hatena/posted.json
+            git commit -m "chore: はてな投稿記録を更新 [skip ci]"
+            git push
+          else
+            echo "posted.json に変更なし"
+          fi
