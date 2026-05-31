@@ -1019,6 +1019,12 @@ def render_guides_index():
   {table_cards}
   </div>
 
+  <h2 style="color:#E67E22;margin:2.5rem 0 1rem;border-left:4px solid #E67E22;padding-left:.8rem;">🛠 便利ツール</h2>
+  <div class="guides">
+    <a class="guide-card" href="../calculator/" style="border-top-color:#E67E22;"><h3 style="color:#E67E22;">相続税かんたん計算ツール</h3><p>遺産額と家族構成を入力して即計算。</p></a>
+    <a class="guide-card" href="../cases/" style="border-top-color:#E67E22;"><h3 style="color:#E67E22;">ケーススタディ集（20例）</h3><p>典型的な相続パターンを具体的に解説。</p></a>
+  </div>
+
   <h2 style="color:var(--green);margin:2.5rem 0 1rem;border-left:4px solid var(--green);padding-left:.8rem;">📖 リファレンス</h2>
   <div class="guides">
     <a class="guide-card" href="../glossary/"><h3>用語集（40語）</h3><p>相続・事業承継の専門用語を解説。</p></a>
@@ -1704,6 +1710,449 @@ def render_quick_table(qt):
 """
 
 
+CASE_STUDIES = [
+    {"id": 1, "title": "配偶者と子2人・遺産8,000万円", "family": "夫（被相続人）／妻／長男／長女",
+     "estate": "8,000万円（自宅4,000万・預貯金4,000万）",
+     "shares": [("妻", "1/2", "4,000万円"), ("長男", "1/4", "2,000万円"), ("長女", "1/4", "2,000万円")],
+     "tax": "基礎控除4,800万円。課税遺産3,200万円。相続税の総額は約175万円（配偶者控除前）。妻が法定相続分を取得すれば配偶者控除で妻分は非課税、実質負担は子2人分のみ。",
+     "point": "最も標準的なケース。小規模宅地等の特例を使えば自宅評価が80%減となり、課税遺産が大きく下がる可能性。"},
+    {"id": 2, "title": "配偶者のみ・遺産1億円", "family": "夫（被相続人）／妻（子なし・親なし・兄弟なし）",
+     "estate": "1億円",
+     "shares": [("妻", "1/1", "1億円")],
+     "tax": "配偶者控除（1.6億円まで非課税）により相続税はゼロ。",
+     "point": "配偶者がすべて取得。ただし妻の二次相続では相続人が変わるため、その時の相続人（兄弟姉妹や甥姪）を見据えた対策が必要。"},
+    {"id": 3, "title": "子のみ3人・遺産1.5億円", "family": "母（被相続人・父は既に死亡）／長男／次男／長女",
+     "estate": "1.5億円",
+     "shares": [("長男", "1/3", "5,000万円"), ("次男", "1/3", "5,000万円"), ("長女", "1/3", "5,000万円")],
+     "tax": "基礎控除4,800万円。課税遺産1億200万円。相続税の総額は約1,440万円。配偶者控除が使えないため負担が大きい。",
+     "point": "二次相続の典型。一次相続（父）の段階で配分を工夫していれば、トータルの税負担を抑えられた可能性が高い。"},
+    {"id": 4, "title": "配偶者と親・子なし夫婦・遺産6,000万円", "family": "夫（被相続人）／妻／夫の母（存命）",
+     "estate": "6,000万円",
+     "shares": [("妻", "2/3", "4,000万円"), ("夫の母", "1/3", "2,000万円")],
+     "tax": "基礎控除4,200万円。課税遺産1,800万円。配偶者控除で妻分は非課税、母の分のみ課税。",
+     "point": "子がいない場合、第2順位の直系尊属が相続人に。妻と義母の関係が良好でないと分割協議が難航しがち。遺言書推奨。"},
+    {"id": 5, "title": "配偶者と兄弟・子なし夫婦・遺産5,000万円", "family": "夫（被相続人）／妻／夫の弟（親は既に死亡）",
+     "estate": "5,000万円",
+     "shares": [("妻", "3/4", "3,750万円"), ("夫の弟", "1/4", "1,250万円")],
+     "tax": "基礎控除4,200万円。課税遺産800万円。配偶者控除で妻分非課税。",
+     "point": "兄弟姉妹には遺留分がないため、遺言書で「妻に全部」とすれば弟は何も請求できない。子なし夫婦は遺言書が必須。"},
+    {"id": 6, "title": "代襲相続・孫が相続・遺産9,000万円", "family": "祖父（被相続人）／長男（既に死亡）／長男の子＝孫2人／次男",
+     "estate": "9,000万円",
+     "shares": [("次男", "1/2", "4,500万円"), ("孫A（長男代襲）", "1/4", "2,250万円"), ("孫B（長男代襲）", "1/4", "2,250万円")],
+     "tax": "基礎控除4,800万円（法定相続人3人）。課税遺産4,200万円。孫は代襲相続人のため2割加算の対象外。",
+     "point": "長男が先に死亡しているため孫が代襲。代襲相続人の孫は2割加算されない（養子の孫とは異なる）。"},
+    {"id": 7, "title": "相続放棄で順位変動・遺産3,000万円＋借金", "family": "父（被相続人）／長男（放棄）／父の弟",
+     "estate": "プラス3,000万円・借金5,000万円",
+     "shares": [("（長男が放棄）", "—", "次順位へ"), ("父の弟", "—", "放棄しなければ承継")],
+     "tax": "債務超過のため長男は相続放棄。放棄により次順位（父の弟）に相続権が移るため、弟も連鎖的に放棄が必要。",
+     "point": "債務超過時は相続人全員が順次放棄する必要。放棄者の子は代襲しないため、孫に迷惑がかからない点も子の死亡と異なる。"},
+    {"id": 8, "title": "半血兄弟が混在・遺産6,000万円", "family": "本人（被相続人・配偶者/子/親なし）／全血兄2人／異母弟1人",
+     "estate": "6,000万円",
+     "shares": [("全血兄A", "2/5", "2,400万円"), ("全血兄B", "2/5", "2,400万円"), ("異母弟", "1/5", "1,200万円")],
+     "tax": "基礎控除4,800万円。課税遺産1,200万円。兄弟相続のため全員2割加算。",
+     "point": "半血兄弟（異母弟）は全血兄弟の1/2の相続分（民法900条4号但書）。比率は 2:2:1 で按分。"},
+    {"id": 9, "title": "普通養子がいる・遺産1.2億円", "family": "父（被相続人）／妻／実子1人／養子1人（婿養子）",
+     "estate": "1.2億円",
+     "shares": [("妻", "1/2", "6,000万円"), ("実子", "1/4", "3,000万円"), ("養子", "1/4", "3,000万円")],
+     "tax": "基礎控除は実子ありのため養子1人まで算入＝法定相続人3人で4,800万円。養子も実子と同じ相続分。",
+     "point": "普通養子は実親・養親の双方から相続可能。基礎控除の人数算入は実子ありで1人まで（相続税法15条2項）。"},
+    {"id": 10, "title": "特別養子がいる・遺産8,000万円", "family": "養親（被相続人）／配偶者／特別養子1人（実親との関係終了）",
+     "estate": "8,000万円",
+     "shares": [("配偶者", "1/2", "4,000万円"), ("特別養子", "1/2", "4,000万円")],
+     "tax": "特別養子は実子と同じ扱いで人数制限なし。基礎控除4,200万円（法定相続人2人）。",
+     "point": "特別養子は実親との親族関係が終了（民法817条の9）。養親からのみ相続し、実親からは相続しない。"},
+    {"id": 11, "title": "事業承継・自社株が遺産の大半・遺産3億円", "family": "社長（被相続人）／妻／後継者の長男／非後継の次男",
+     "estate": "3億円（自社株2億円・自宅5,000万・預貯金5,000万）",
+     "shares": [("妻", "1/2", "1.5億円"), ("長男", "1/4", "7,500万円"), ("次男", "1/4", "7,500万円")],
+     "tax": "基礎控除4,800万円。課税遺産2.52億円。相続税の総額は約3,460万円。自社株の納税資金確保が課題。",
+     "point": "自社株を後継者の長男に集中させたいが、法定相続分通りだと次男にも分散。遺言＋事業承継税制（納税猶予）＋次男への代償金（生命保険）で設計。"},
+    {"id": 12, "title": "二次相続まで考慮・遺産2億円", "family": "夫（一次被相続人）／妻（固有資産5,000万）／子2人",
+     "estate": "一次2億円・妻固有5,000万円",
+     "shares": [("一次：妻", "調整", "取得割合を最適化"), ("一次：子2人", "調整", "残り")],
+     "tax": "配偶者100%取得：一次0＋二次約6,930万円。配偶者50%取得：合計約3,190万円。配偶者0%：合計約3,170万円。",
+     "point": "配偶者控除をフル活用（100%取得）すると二次相続で大増税。配偶者取得を30〜50%に抑えるのが税額最小化の目安。"},
+    {"id": 13, "title": "小規模宅地等の特例・自宅中心・遺産1億円", "family": "父（被相続人）／同居の長男（家なき子でなく同居親族）",
+     "estate": "1億円（自宅土地8,000万円330㎡・預貯金2,000万円）",
+     "shares": [("長男", "1/1", "1億円（特例適用後は評価減）")],
+     "tax": "小規模宅地等の特例で自宅土地が80%減＝8,000万→1,600万円。課税遺産は1億→3,600万円相当に圧縮。基礎控除3,600万円とほぼ相殺し相続税ほぼゼロ。",
+     "point": "同居親族が自宅を相続し申告期限まで居住継続すれば特例適用。評価減効果は数千万円規模。"},
+    {"id": 14, "title": "生前贈与の活用・遺産1.5億円", "family": "父（被相続人）／子2人・孫4人（生前に暦年贈与を実施）",
+     "estate": "贈与前1.5億円→10年で6,600万円贈与済み",
+     "shares": [("子・孫", "—", "生前に分散済み")],
+     "tax": "子2人・孫4人に毎年110万円×10年＝6,600万円を非課税移転。相続財産が8,400万円に圧縮され、相続税が大幅減。",
+     "point": "暦年贈与は2024年改正で7年持戻し。孫（相続人でない）への贈与は持戻し対象外で特に有効。早期着手が鍵。"},
+    {"id": 15, "title": "国際相続・海外資産あり・遺産2億円", "family": "父（被相続人・日本居住）／海外在住の長男／国内の次男",
+     "estate": "国内1.5億円・海外不動産5,000万円",
+     "shares": [("長男（海外）", "1/2", "1億円")," ", ("次男（国内）", "1/2", "1億円")],
+     "tax": "全世界財産が課税対象（10年ルール）。海外不動産も日本の相続税対象。海外で課税されれば外国税額控除で調整。",
+     "point": "海外在住の長男は印鑑証明が取れずサイン証明が必要。海外不動産は現地のプロベイト手続きも。専門家連携が必須。"},
+    {"id": 16, "title": "再婚家庭・先妻の子と後妻・遺産1億円", "family": "父（被相続人）／後妻／先妻との子1人／後妻との子1人",
+     "estate": "1億円",
+     "shares": [("後妻", "1/2", "5,000万円"), ("先妻の子", "1/4", "2,500万円"), ("後妻の子", "1/4", "2,500万円")],
+     "tax": "基礎控除4,800万円。課税遺産5,200万円。先妻の子も後妻の子も同じ相続分。",
+     "point": "先妻の子と後妻は感情的に対立しやすい。遺言書で配分を明確にし、付言事項で意図を伝えることがトラブル予防に。"},
+    {"id": 17, "title": "未成年の相続人がいる・遺産7,000万円", "family": "母（被相続人）／父（親権者）／未成年の子",
+     "estate": "7,000万円",
+     "shares": [("父", "1/2", "3,500万円"), ("未成年の子", "1/2", "3,500万円")],
+     "tax": "基礎控除4,200万円。課税遺産2,800万円。配偶者控除で父の分は非課税。",
+     "point": "親権者の父と未成年の子が共に相続人だと利益相反。家庭裁判所で特別代理人の選任が必要（民法826条）。"},
+    {"id": 18, "title": "認知症の相続人がいる・遺産9,000万円", "family": "父（被相続人）／認知症の妻／子2人",
+     "estate": "9,000万円",
+     "shares": [("妻（認知症）", "1/2", "4,500万円"), ("子A", "1/4", "2,250万円"), ("子B", "1/4", "2,250万円")],
+     "tax": "基礎控除4,800万円。課税遺産4,200万円。配偶者控除で妻分非課税。",
+     "point": "認知症の妻は遺産分割協議ができないため、成年後見人の選任が必要。後見人は妻の法定相続分を確保する義務があり、二次相続対策の柔軟な配分が難しくなる。生前の対策が重要。"},
+    {"id": 19, "title": "おひとりさま・相続人不存在・遺産5,000万円", "family": "本人（被相続人・配偶者/子/親/兄弟すべてなし）",
+     "estate": "5,000万円",
+     "shares": [("法定相続人なし", "—", "特別縁故者・国庫へ")],
+     "tax": "相続人不存在。相続財産管理人を選任し、特別縁故者がいればその者へ、いなければ最終的に国庫帰属。",
+     "point": "おひとりさまは遺言書がないと財産が国庫に。お世話になった人・団体へ遺贈したいなら遺言書が絶対必要。"},
+    {"id": 20, "title": "遺留分侵害・全部を1人に・遺産1.2億円", "family": "父（被相続人）／長男（全部相続の遺言）／次男（遺留分請求）",
+     "estate": "1.2億円",
+     "shares": [("長男（遺言）", "全部", "1.2億円"), ("次男（遺留分）", "1/4", "3,000万円を請求可")],
+     "tax": "遺言で長男に全部相続させても、次男は遺留分（法定相続分1/2の半分＝1/4）として3,000万円を金銭請求できる。",
+     "point": "「長男に全部」の遺言でも次男の遺留分は侵害できない。遺留分侵害額請求（民法1046条）は金銭請求。時効1年に注意。"},
+]
+
+
+def render_case_index():
+    cards = "\n".join(
+        f'<a class="case-card" href="#case-{c["id"]}">'
+        f'<span class="case-num">CASE {c["id"]}</span>'
+        f'<h3>{c["title"]}</h3></a>'
+        for c in CASE_STUDIES
+    )
+    details = "\n".join(_render_case_block(c) for c in CASE_STUDIES)
+
+    # ItemList JSON-LD
+    itemlist = {
+        "@context": "https://schema.org", "@type": "ItemList",
+        "name": "相続ケーススタディ集",
+        "itemListElement": [
+            {"@type": "ListItem", "position": c["id"], "name": c["title"]}
+            for c in CASE_STUDIES
+        ],
+    }
+    breadcrumb = {
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "相続ケーススタディ集", "item": SITE_URL + "/cases/"},
+        ],
+    }
+    desc_text = f"配偶者と子・子のみ・事業承継・二次相続・国際相続・再婚家庭・おひとりさまなど、相続の典型ケース{len(CASE_STUDIES)}例を家族構成・相続分・相続税・対策ポイントで具体的に解説。"
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相続ケーススタディ集（{len(CASE_STUDIES)}例）｜家系図Navi</title>
+  <meta name="description" content="{desc_text}">
+  <meta name="keywords" content="相続,ケーススタディ,事例,家族構成,相続分,相続税,二次相続,事業承継">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{SITE_URL}/cases/">
+  <meta property="og:title" content="相続ケーススタディ集（{len(CASE_STUDIES)}例）｜家系図Navi">
+  <meta property="og:description" content="{desc_text}">
+  <meta property="og:url" content="{SITE_URL}/cases/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{ICON}">
+  <script type="application/ld+json">{json.dumps(itemlist, ensure_ascii=False)}</script>
+  <script type="application/ld+json">{json.dumps(breadcrumb, ensure_ascii=False)}</script>
+  <link rel="icon" href="../icon_192.png">
+  <style>
+    :root {{ --green: #27AE60; --light-bg: #f8fdf9; --text: #2c3e50; }}
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{ font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.8; }}
+    header {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2.5rem 1.5rem; text-align: center; }}
+    header h1 {{ font-size: 1.8rem; margin: .5rem 0; }}
+    header .nav {{ font-size: .85rem; opacity: .9; }}
+    header .nav a {{ color: white; text-decoration: none; }}
+    main {{ max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem; }}
+    .case-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: .8rem; margin-bottom: 2.5rem; }}
+    .case-card {{ background: white; border-radius: 10px; padding: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); text-decoration: none; color: inherit; border-left: 3px solid var(--green); }}
+    .case-card:hover {{ box-shadow: 0 4px 12px rgba(0,0,0,.1); }}
+    .case-num {{ font-size: .75rem; font-weight: 700; color: var(--green); }}
+    .case-card h3 {{ font-size: .92rem; margin-top: .3rem; }}
+    .case-block {{ background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); scroll-margin-top: 1rem; }}
+    .case-block h2 {{ color: var(--green); font-size: 1.2rem; margin-bottom: .8rem; }}
+    .case-block .meta {{ font-size: .9rem; color: #555; margin: .3rem 0; }}
+    .case-block .meta b {{ color: var(--text); }}
+    table {{ width: 100%; border-collapse: collapse; margin: .8rem 0; }}
+    th {{ background: var(--green); color: white; padding: .45rem; font-size: .85rem; }}
+    td {{ padding: .45rem; border-bottom: 1px solid #eee; font-size: .88rem; text-align: center; }}
+    .point {{ background: var(--light-bg); border-left: 4px solid var(--green); padding: .8rem 1rem; border-radius: 4px; margin-top: .8rem; font-size: .9rem; }}
+    .cta-box {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 1.6rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }}
+    .cta-box a {{ display: inline-block; padding: .7rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: .5rem; }}
+    .disclaimer {{ background: #fff8e1; border-left: 4px solid #f39c12; padding: 1rem 1.2rem; border-radius: 4px; font-size: .85rem; margin: 1.5rem 0; }}
+    footer {{ text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; }}
+    footer a {{ color: var(--green); text-decoration: none; }}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ ケーススタディ集</div>
+  <h1>相続ケーススタディ集</h1>
+  <p style="opacity:.95;margin-top:.5rem;font-size:.95rem;">{len(CASE_STUDIES)}の典型例で「うちはどのケース？」がわかる</p>
+</header>
+<main>
+  <p>配偶者と子の標準ケースから、事業承継・二次相続・国際相続・再婚家庭・おひとりさままで、相続の典型例を{len(CASE_STUDIES)}パターン集めました。気になるケースをタップしてください。</p>
+
+  <div class="case-grid">
+  {cards}
+  </div>
+
+  {details}
+
+  <div class="cta-box">
+    <h3 style="margin-bottom:.5rem;">あなたのケースを正確にシミュレーション</h3>
+    <p style="font-size:.95rem;opacity:.95;">家族構成を入力するだけで、あなたの家の相続分・相続税・遺留分を自動計算。</p>
+    <a href="{APP_URL}" rel="noopener">家系図Naviを試す（無料）→</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>⚠️ 免責事項：</strong>各ケースの税額は一般的な前提による概算であり、実際は適用特例・分割割合等で変動します。個別事案は専門家にご相談ください。
+  </div>
+</main>
+<footer>
+  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../calculator/">計算ツール</a></p>
+</footer>
+</body>
+</html>
+"""
+
+
+def _render_case_block(c):
+    rows = ""
+    for item in c["shares"]:
+        if isinstance(item, tuple) and len(item) == 3:
+            rows += f'<tr><td>{item[0]}</td><td>{item[1]}</td><td>{item[2]}</td></tr>'
+    table = ""
+    if rows:
+        table = f'<table><thead><tr><th>相続人</th><th>法定相続分</th><th>取得額の目安</th></tr></thead><tbody>{rows}</tbody></table>'
+    return f"""<div class="case-block" id="case-{c['id']}">
+    <h2>CASE {c['id']}：{c['title']}</h2>
+    <p class="meta"><b>👪 家族構成：</b>{c['family']}</p>
+    <p class="meta"><b>💰 遺産：</b>{c['estate']}</p>
+    {table}
+    <p class="meta"><b>🧮 相続税：</b>{c['tax']}</p>
+    <div class="point"><b>💡 ポイント：</b>{c['point']}</div>
+  </div>"""
+
+
+def render_calculator():
+    url = SITE_URL + "/calculator/"
+    webapp_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "相続税かんたん計算ツール",
+        "description": "遺産総額と家族構成を入力するだけで相続税の概算・基礎控除・法定相続分をその場で計算できる無料ツール。",
+        "url": url,
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"},
+        "inLanguage": "ja",
+    }
+    breadcrumb = {
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "相続税かんたん計算ツール", "item": url},
+        ],
+    }
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相続税かんたん計算ツール（無料）｜家系図Navi</title>
+  <meta name="description" content="遺産総額と家族構成を入力するだけで相続税の概算・基礎控除・法定相続分をその場で自動計算。国税庁速算表準拠。登録不要・完全無料・データ保存なし。">
+  <meta name="keywords" content="相続税,計算ツール,シミュレーター,基礎控除,法定相続分,無料,自動計算">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{url}">
+  <meta property="og:title" content="相続税かんたん計算ツール（無料）｜家系図Navi">
+  <meta property="og:description" content="遺産総額と家族構成を入力するだけで相続税の概算をその場で自動計算。国税庁速算表準拠。">
+  <meta property="og:url" content="{url}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{ICON}">
+  <script type="application/ld+json">{json.dumps(webapp_jsonld, ensure_ascii=False)}</script>
+  <script type="application/ld+json">{json.dumps(breadcrumb, ensure_ascii=False)}</script>
+  <link rel="icon" href="../icon_192.png">
+  <style>
+    :root {{ --green: #27AE60; --light-bg: #f8fdf9; --text: #2c3e50; }}
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{ font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.7; }}
+    header {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2.5rem 1.5rem; text-align: center; }}
+    header h1 {{ font-size: 1.8rem; margin: .5rem 0; }}
+    header .nav {{ font-size: .85rem; opacity: .9; }}
+    header .nav a {{ color: white; text-decoration: none; }}
+    main {{ max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }}
+    .calc {{ background: white; border-radius: 12px; padding: 1.8rem; box-shadow: 0 2px 12px rgba(0,0,0,.08); }}
+    .field {{ margin-bottom: 1.3rem; }}
+    .field label {{ display: block; font-weight: 600; margin-bottom: .4rem; font-size: .95rem; }}
+    .field input, .field select {{ width: 100%; padding: .7rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; }}
+    .field input:focus, .field select:focus {{ outline: none; border-color: var(--green); }}
+    .row {{ display: flex; gap: 1rem; }}
+    .row .field {{ flex: 1; }}
+    .result {{ margin-top: 1.5rem; padding: 1.5rem; background: var(--light-bg); border-radius: 10px; border: 2px solid var(--green); display: none; }}
+    .result.show {{ display: block; }}
+    .result h3 {{ color: var(--green); margin-bottom: .8rem; }}
+    .result-row {{ display: flex; justify-content: space-between; padding: .5rem 0; border-bottom: 1px dashed #ccc; }}
+    .result-row.total {{ font-size: 1.2rem; font-weight: 800; color: var(--green); border-bottom: none; margin-top: .5rem; }}
+    .calc-btn {{ width: 100%; padding: .9rem; background: var(--green); color: white; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer; }}
+    .calc-btn:hover {{ background: #16A085; }}
+    .note {{ font-size: .82rem; color: #888; margin-top: 1rem; }}
+    .cta-box {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 1.6rem; border-radius: 12px; text-align: center; margin: 2rem 0; }}
+    .cta-box a {{ display: inline-block; padding: .7rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: .5rem; }}
+    footer {{ text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; margin-top: 2rem; }}
+    footer a {{ color: var(--green); text-decoration: none; }}
+    .disclaimer {{ background: #fff8e1; border-left: 4px solid #f39c12; padding: 1rem 1.2rem; border-radius: 4px; font-size: .85rem; margin: 1.5rem 0; }}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ 相続税かんたん計算ツール</div>
+  <h1>相続税かんたん計算ツール</h1>
+  <p style="opacity:.95;margin-top:.5rem;font-size:.95rem;">遺産額と家族構成を入力するだけ・登録不要・完全無料</p>
+</header>
+<main>
+  <div class="calc">
+    <div class="field">
+      <label for="estate">遺産総額（万円）</label>
+      <input type="number" id="estate" placeholder="例: 10000" min="0" step="100">
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="spouse">配偶者</label>
+        <select id="spouse"><option value="1">いる</option><option value="0">いない</option></select>
+      </div>
+      <div class="field">
+        <label for="heir-type">他の相続人</label>
+        <select id="heir-type">
+          <option value="child">子</option>
+          <option value="parent">直系尊属（親）</option>
+          <option value="sibling">兄弟姉妹</option>
+          <option value="none">なし（配偶者のみ）</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="heir-count">人数</label>
+        <input type="number" id="heir-count" value="2" min="0" max="10">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calcInheritance()">計算する</button>
+
+    <div class="result" id="result">
+      <h3>📊 計算結果（概算）</h3>
+      <div class="result-row"><span>法定相続人の数</span><span id="r-heirs">-</span></div>
+      <div class="result-row"><span>基礎控除額</span><span id="r-deduction">-</span></div>
+      <div class="result-row"><span>課税遺産総額</span><span id="r-taxable">-</span></div>
+      <div class="result-row total"><span>相続税の総額（概算）</span><span id="r-tax">-</span></div>
+      <div id="r-spouse-note" style="margin-top:.8rem;font-size:.85rem;color:#27AE60;"></div>
+    </div>
+
+    <div class="disclaimer">
+      ⚠️ 本ツールは<strong>概算の目安</strong>です。配偶者の税額軽減（最大1.6億円非課税）・小規模宅地等の特例・各種控除は反映していません。正確な試算は<a href="{APP_URL}">家系図Navi本体</a>または税理士にご確認ください。
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h3 style="margin-bottom:.5rem;">より正確なシミュレーションは家系図Naviで</h3>
+    <p style="font-size:.95rem;opacity:.95;">配偶者控除・小規模宅地・二次相続まで含めた精密な試算が無料でできます。</p>
+    <a href="{APP_URL}" rel="noopener">家系図Naviを開く →</a>
+  </div>
+
+  <p style="font-size:.9rem;color:#666;">
+    関連：<a href="../table-inheritance-tax/" style="color:var(--green);">相続税早見表</a> ｜
+    <a href="../table-basic-deduction/" style="color:var(--green);">基礎控除早見表</a> ｜
+    <a href="../inheritance-tax/" style="color:var(--green);">相続税の基礎控除と計算</a>
+  </p>
+</main>
+<footer>
+  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
+</footer>
+
+<script>
+// 国税庁・相続税速算表（取得金額上限, 税率, 控除額） 単位:円
+const BRACKETS = [
+  [10000000, 0.10, 0],
+  [30000000, 0.15, 500000],
+  [50000000, 0.20, 2000000],
+  [100000000, 0.30, 7000000],
+  [200000000, 0.40, 17000000],
+  [300000000, 0.45, 27000000],
+  [600000000, 0.50, 42000000],
+  [Infinity, 0.55, 72000000],
+];
+
+function taxPerPerson(amount) {{
+  if (amount <= 0) return 0;
+  for (const [cap, rate, deduction] of BRACKETS) {{
+    if (amount <= cap) return amount * rate - deduction;
+  }}
+  return 0;
+}}
+
+function yen(n) {{
+  return Math.round(n).toLocaleString('ja-JP') + '円';
+}}
+
+function calcInheritance() {{
+  const estate = (parseFloat(document.getElementById('estate').value) || 0) * 10000;
+  const hasSpouse = document.getElementById('spouse').value === '1';
+  const heirType = document.getElementById('heir-type').value;
+  let heirCount = parseInt(document.getElementById('heir-count').value) || 0;
+
+  if (heirType === 'none') heirCount = 0;
+
+  // 法定相続人数
+  const numHeirs = (hasSpouse ? 1 : 0) + heirCount;
+  if (numHeirs === 0) {{ alert('相続人がいません。配偶者または他の相続人を入力してください。'); return; }}
+
+  // 基礎控除
+  const deduction = 30000000 + 6000000 * numHeirs;
+  const taxable = Math.max(0, estate - deduction);
+
+  // 法定相続分の比率を決定
+  let spouseShare = 0, otherTotalShare = 0;
+  if (hasSpouse && heirCount > 0) {{
+    if (heirType === 'child')   {{ spouseShare = 1/2; otherTotalShare = 1/2; }}
+    if (heirType === 'parent')  {{ spouseShare = 2/3; otherTotalShare = 1/3; }}
+    if (heirType === 'sibling') {{ spouseShare = 3/4; otherTotalShare = 1/4; }}
+  }} else if (hasSpouse) {{
+    spouseShare = 1; otherTotalShare = 0;
+  }} else {{
+    spouseShare = 0; otherTotalShare = 1;
+  }}
+
+  // 各人の法定相続分で課税遺産を按分 → 速算表 → 合算（相続税法16条）
+  let totalTax = 0;
+  if (hasSpouse) totalTax += taxPerPerson(taxable * spouseShare);
+  if (heirCount > 0) {{
+    const each = taxable * otherTotalShare / heirCount;
+    totalTax += taxPerPerson(each) * heirCount;
+  }}
+
+  document.getElementById('r-heirs').textContent = numHeirs + '人';
+  document.getElementById('r-deduction').textContent = yen(deduction);
+  document.getElementById('r-taxable').textContent = yen(taxable);
+  document.getElementById('r-tax').textContent = yen(totalTax);
+
+  const note = document.getElementById('r-spouse-note');
+  if (hasSpouse && totalTax > 0) {{
+    note.innerHTML = '💡 配偶者の税額軽減（最大1.6億円非課税）を適用すると、実際の納税額はさらに下がる可能性があります。';
+  }} else if (taxable === 0) {{
+    note.innerHTML = '✅ 基礎控除内のため、相続税はかかりません。';
+  }} else {{
+    note.innerHTML = '';
+  }}
+
+  document.getElementById('result').classList.add('show');
+}}
+</script>
+</body>
+</html>
+"""
+
+
 def render_about():
     org_jsonld = {
         "@context": "https://schema.org",
@@ -1872,6 +2321,18 @@ def main():
         (qt_dir / "index.html").write_text(render_quick_table(qt), encoding="utf-8")
         print(f"  OK /{qt['slug']}/")
 
+    # /calculator/ インタラクティブ計算ツール
+    calc_dir = ROOT / "calculator"
+    calc_dir.mkdir(exist_ok=True)
+    (calc_dir / "index.html").write_text(render_calculator(), encoding="utf-8")
+    print(f"  OK /calculator/")
+
+    # /cases/ ケーススタディ集
+    cases_dir = ROOT / "cases"
+    cases_dir.mkdir(exist_ok=True)
+    (cases_dir / "index.html").write_text(render_case_index(), encoding="utf-8")
+    print(f"  OK /cases/ ({len(CASE_STUDIES)} cases)")
+
     # 404.html
     (ROOT / "404.html").write_text(render_404(), encoding="utf-8")
     print(f"  OK 404.html")
@@ -1879,7 +2340,8 @@ def main():
     # sitemap.xml を再生成
     today = "2026-05-30"
     urls = (
-        [SITE_URL + "/", SITE_URL + "/guides/", SITE_URL + "/glossary/", SITE_URL + "/about/"]
+        [SITE_URL + "/", SITE_URL + "/guides/", SITE_URL + "/glossary/", SITE_URL + "/about/",
+         SITE_URL + "/calculator/", SITE_URL + "/cases/"]
         + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
         + [f"{SITE_URL}/{qt['slug']}/" for qt in QUICK_TABLES]
     )
@@ -1888,7 +2350,7 @@ def main():
     for u in urls:
         if u == urls[0]:
             priority = '1.0'
-        elif u in (urls[1], urls[2], urls[3]):
+        elif u in (urls[1], urls[2], urls[3], urls[4], urls[5]):
             priority = '0.9'
         else:
             priority = '0.8'
