@@ -8,6 +8,25 @@ APP_URL = "https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/"
 SITE_URL = "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp"
 ICON = f"{SITE_URL}/icon_512.png"
 
+# ── A8.net アフィリエイト広告（各ページ1枠） ─────────────────────────────
+# 広告は ad_block() で中央寄せ＋「広告」ラベル付きで挿入する（景表法/ステマ規制配慮）
+_A8_BANNER = (
+    '<a href="https://px.a8.net/svt/ejp?a8mat=4B43JE+8V4T8A+5TEW+5YZ75" rel="nofollow sponsored" target="_blank">'
+    '<img border="0" width="300" height="250" alt="相続・終活に関する広告" '
+    'src="https://www21.a8.net/svt/bgt?aid=260531690536&wid=022&eno=01&mid=s00000027140001003000&mc=1"></a>'
+    '<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4B43JE+8V4T8A+5TEW+5YZ75" alt="">'
+)
+
+
+def ad_block():
+    """中央寄せ・広告ラベル付きの広告ブロックHTMLを返す。"""
+    return (
+        '<div style="text-align:center;margin:2rem 0;">'
+        '<div style="font-size:11px;color:#999;margin-bottom:4px;letter-spacing:1px;">広告</div>'
+        f'{_A8_BANNER}'
+        '</div>'
+    )
+
 ARTICLES = [
     {
         "slug": "legal-share",
@@ -929,6 +948,8 @@ def render(article, related_links):
     <a href="{APP_URL}" rel="noopener">家系図Naviを開く →</a>
   </div>
 
+  {ad_block()}
+
   <div class="share">
     <p style="margin-bottom:.6rem;font-weight:600;color:#555;">この記事をシェア</p>
     <a class="share-btn x" href="https://twitter.com/intent/tweet?url={url}&text={title}" target="_blank" rel="noopener">𝕏 Xでポスト</a>
@@ -1030,6 +1051,7 @@ def render_guides_index():
     <a class="guide-card" href="../glossary/"><h3>用語集（40語）</h3><p>相続・事業承継の専門用語を解説。</p></a>
     <a class="guide-card" href="../about/"><h3>家系図Naviについて</h3><p>運営方針・編集ポリシー・計算精度。</p></a>
   </div>
+  {ad_block()}
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
@@ -1467,6 +1489,7 @@ def render_glossary():
 <main>
   <div class="toc"><strong>索引：</strong>{nav}</div>
   <dl>{body}</dl>
+  {ad_block()}
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
@@ -1701,6 +1724,7 @@ def render_quick_table(qt):
     <p style="font-size:.95rem;opacity:.95;">家族構成と資産額を入力するだけで、配偶者控除・各種特例を反映した正確な相続税概算を取得できます。</p>
     <a href="{APP_URL}" rel="noopener">家系図Naviを試す（無料）→</a>
   </div>
+  {ad_block()}
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../glossary/">用語集</a></p>
@@ -1908,6 +1932,8 @@ def render_case_index():
     <a href="{APP_URL}" rel="noopener">家系図Naviを試す（無料）→</a>
   </div>
 
+  {ad_block()}
+
   <div class="disclaimer">
     <strong>⚠️ 免責事項：</strong>各ケースの税額は一般的な前提による概算であり、実際は適用特例・分割割合等で変動します。個別事案は専門家にご相談ください。
   </div>
@@ -2059,6 +2085,8 @@ def render_calculator():
     <p style="font-size:.95rem;opacity:.95;">配偶者控除・小規模宅地・二次相続まで含めた精密な試算が無料でできます。</p>
     <a href="{APP_URL}" rel="noopener">家系図Naviを開く →</a>
   </div>
+
+  {ad_block()}
 
   <p style="font-size:.9rem;color:#666;">
     関連：<a href="../table-inheritance-tax/" style="color:var(--green);">相続税早見表</a> ｜
