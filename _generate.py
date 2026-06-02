@@ -971,6 +971,7 @@ def render(article, related_links):
 
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;"><a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">🔗 姉妹サイト「テソNavi」もぜひご覧ください</a></p>
 </footer>
 
 </body>
@@ -1055,6 +1056,7 @@ def render_guides_index():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;"><a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">🔗 姉妹サイト「テソNavi」もぜひご覧ください</a></p>
 </footer>
 </body>
 </html>
@@ -1493,6 +1495,7 @@ def render_glossary():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;"><a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">🔗 姉妹サイト「テソNavi」もぜひご覧ください</a></p>
 </footer>
 </body>
 </html>
@@ -1728,6 +1731,7 @@ def render_quick_table(qt):
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../glossary/">用語集</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;"><a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">🔗 姉妹サイト「テソNavi」もぜひご覧ください</a></p>
 </footer>
 </body>
 </html>
@@ -1940,6 +1944,7 @@ def render_case_index():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../calculator/">計算ツール</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;"><a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">🔗 姉妹サイト「テソNavi」もぜひご覧ください</a></p>
 </footer>
 </body>
 </html>
@@ -2096,6 +2101,7 @@ def render_calculator():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;"><a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">🔗 姉妹サイト「テソNavi」もぜひご覧ください</a></p>
 </footer>
 
 <script>
@@ -2284,6 +2290,7 @@ def render_about():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;"><a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">🔗 姉妹サイト「テソNavi」もぜひご覧ください</a></p>
 </footer>
 </body>
 </html>
