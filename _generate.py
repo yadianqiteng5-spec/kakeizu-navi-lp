@@ -19,11 +19,30 @@ _A8_BANNER = (
 
 
 def ad_block():
-    """中央寄せ・広告ラベル付きの広告ブロックHTMLを返す。"""
+    """中央寄せ・広告ラベル付きの広告ブロックHTMLを返す（300x250レクタングル）。"""
     return (
         '<div style="text-align:center;margin:2rem 0;">'
         '<div style="font-size:11px;color:#999;margin-bottom:4px;letter-spacing:1px;">広告</div>'
         f'{_A8_BANNER}'
+        '</div>'
+    )
+
+
+# 横長バナー（640x120・記事上部向け／モバイルは縮小）
+_A8_BANNER_WIDE = (
+    '<a href="https://px.a8.net/svt/ejp?a8mat=4B43JI+BGLV7E+5N2A+60OXD" rel="nofollow sponsored" target="_blank">'
+    '<img border="0" width="640" height="120" alt="相続・終活に関する広告" style="max-width:100%;height:auto;" '
+    'src="https://www28.a8.net/svt/bgt?aid=260531694693&wid=022&eno=01&mid=s00000026317001011000&mc=1"></a>'
+    '<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4B43JI+BGLV7E+5N2A+60OXD" alt="">'
+)
+
+
+def ad_block_wide():
+    """中央寄せ・広告ラベル付きの横長広告ブロックHTMLを返す（640x120）。"""
+    return (
+        '<div style="text-align:center;margin:1.5rem 0;">'
+        '<div style="font-size:11px;color:#999;margin-bottom:4px;letter-spacing:1px;">広告</div>'
+        f'{_A8_BANNER_WIDE}'
         '</div>'
     )
 
@@ -931,6 +950,8 @@ def render(article, related_links):
 <main>
 
   <p>{article["lead"]}</p>
+
+  {ad_block_wide()}
 
   <nav class="toc" aria-label="目次">
     <div class="toc-title">📑 目次</div>
