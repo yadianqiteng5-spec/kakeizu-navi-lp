@@ -1000,6 +1000,186 @@ def render(article, related_links):
 """
 
 
+# ════════════════════════════════════════════════
+# 柱ページ（トピッククラスター）— ヘッドキーワードを狙う総合ガイド
+# ════════════════════════════════════════════════
+def _meta_map():
+    """slug -> (見出し, 説明) のマップ（記事・早見表・ツールを横断）"""
+    m = {}
+    for a in ARTICLES:
+        m[a["slug"]] = (a["h1"], a["desc"])
+    for q in QUICK_TABLES:
+        m[q["slug"]] = (q["h1"], q["desc"])
+    m["calculator"] = ("相続税かんたん計算ツール", "遺産額と家族構成を入力するだけで相続税の概算を自動計算。")
+    m["cases"] = ("相続ケーススタディ集（20例）", "配偶者と子・事業承継・二次相続など典型20例で確認。")
+    m["glossary"] = ("相続・事業承継用語集", "相続の専門用語40語をやさしく解説。")
+    return m
+
+
+PILLARS = [
+    {
+        "slug": "guide-inheritance-tax",
+        "title": "相続税のすべて｜計算方法・節税・申告の完全ガイド",
+        "h1": "相続税まるわかり完全ガイド",
+        "desc": "相続税の基礎控除・計算方法・税率・申告期限から、小規模宅地等の特例・二次相続・生前贈与といった節税策、税務調査対策までを体系的に解説する総合ガイド。",
+        "keywords": "相続税,計算,節税,基礎控除,申告,税率,特例,完全ガイド",
+        "intro": "相続税は「いくらかかるのか」「どう減らせるのか」「いつ申告するのか」が分かりにくい税金です。本ガイドでは、<strong>基礎控除と税率の基本</strong>から、<strong>小規模宅地等の特例・二次相続・生前贈与などの節税策</strong>、そして<strong>申告と税務調査</strong>まで、相続税の全体像を順を追って解説します。各テーマの詳しい記事・早見表・計算ツールへリンクしています。",
+        "groups": [
+            ("まず基本を押さえる", ["inheritance-tax", "table-inheritance-tax", "table-basic-deduction", "calculator"]),
+            ("評価と特例で税額を下げる", ["small-residential", "real-estate-valuation", "corporate-shares", "nominee-deposit"]),
+            ("節税の王道：二次相続・生前贈与・保険", ["secondary-inheritance", "gift-strategy", "table-gift-tax", "insurance-strategy", "retirement-money"]),
+            ("申告・納税・調査への備え", ["estate-tax-return", "tax-investigation", "deferred-payment"]),
+        ],
+    },
+    {
+        "slug": "guide-procedure",
+        "title": "相続手続きの完全ガイド｜流れ・期限・必要書類",
+        "h1": "相続手続き完全ガイド",
+        "desc": "家族が亡くなった後の相続手続きを、全体の流れ・期限カレンダー・必要書類・専門家費用まで網羅。死亡届から相続登記・相続税申告までを順に解説する総合ガイド。",
+        "keywords": "相続手続き,流れ,期限,必要書類,相続登記,遺産分割,完全ガイド",
+        "intro": "相続手続きは「何から始めればいいか分からない」という方がほとんどです。本ガイドでは、<strong>手続きの全体像と期限</strong>、<strong>預貯金・不動産・遺産分割の進め方</strong>、<strong>借金・相続放棄の判断</strong>、そして<strong>専門家への依頼</strong>までを、時系列で整理して解説します。",
+        "groups": [
+            ("全体像と期限をつかむ", ["inheritance-procedure", "post-death-timeline", "table-deadlines"]),
+            ("財産の名義変更・解約", ["bank-account-freeze", "real-estate-valuation", "mortgage-inheritance", "estate-division"]),
+            ("放棄・借金・トラブル対応", ["inheritance-renounce", "debt-inheritance", "inheritance-trouble"]),
+            ("専門家に相談する", ["consulting-cost"]),
+        ],
+    },
+    {
+        "slug": "guide-succession",
+        "title": "事業承継の完全ガイド｜自社株・納税猶予・後継者対策",
+        "h1": "事業承継・自社株 完全ガイド",
+        "desc": "中小企業オーナーの事業承継を、自社株の分散リスク・評価方法・事業承継税制（納税猶予）・家族信託の活用まで体系的に解説する総合ガイド。",
+        "keywords": "事業承継,自社株,納税猶予,後継者,事業承継税制,家族信託,完全ガイド",
+        "intro": "中小企業オーナーの相続では、<strong>自社株の扱い</strong>を誤ると会社の経営権が分散し、事業の継続が危ぶまれます。本ガイドでは、<strong>事業承継の主要リスクと対策</strong>、<strong>非上場株式の評価</strong>、<strong>家族信託や生前贈与の活用</strong>までを解説します。",
+        "groups": [
+            ("リスクと全体戦略", ["business-succession", "corporate-shares"]),
+            ("承継の手法", ["family-trust", "gift-strategy", "freelance-inheritance", "agricultural-succession"]),
+        ],
+    },
+    {
+        "slug": "guide-will",
+        "title": "遺言・終活の完全ガイド｜遺言書の書き方と生前対策",
+        "h1": "遺言・終活 完全ガイド",
+        "desc": "自筆証書遺言の書き方・書き換え、遺留分への配慮、認知症対策の家族信託、配偶者居住権、終活チェックリストまで、生前にやるべき対策を体系的に解説する総合ガイド。",
+        "keywords": "遺言,終活,遺言書,書き方,遺留分,家族信託,生前対策,完全ガイド",
+        "intro": "「元気なうちに準備しておけばよかった」は相続で最も多い後悔です。本ガイドでは、<strong>遺言書の作り方と書き換え</strong>、<strong>遺留分への配慮</strong>、<strong>認知症に備える家族信託</strong>、<strong>配偶者の住まいを守る配偶者居住権</strong>、そして<strong>終活の進め方</strong>までを解説します。",
+        "groups": [
+            ("遺言書を正しく残す", ["will-template", "will-rewrite", "legal-reserve"]),
+            ("生前の備え", ["endlife-checklist", "family-trust", "dementia-inheritance", "spouse-residence"]),
+        ],
+    },
+]
+
+
+def render_pillar(pillar, meta):
+    url = f"{SITE_URL}/{pillar['slug']}/"
+    groups_html = ""
+    item_names = []
+    for gtitle, slugs in pillar["groups"]:
+        cards = ""
+        for s in slugs:
+            h1, desc = meta.get(s, (s, ""))
+            item_names.append(h1)
+            cards += (f'<a class="pcard" href="../{s}/"><h3>{h1}</h3><p>{desc}</p></a>\n')
+        groups_html += f'<h2>{gtitle}</h2>\n<div class="pgrid">\n{cards}</div>\n'
+
+    article_jsonld = {
+        "@context": "https://schema.org", "@type": "Article",
+        "headline": pillar["h1"], "description": pillar["desc"], "image": ICON,
+        "datePublished": "2026-05-30", "dateModified": "2026-05-30",
+        "author": {"@type": "Person", "name": "DrumNavi"},
+        "publisher": {"@type": "Organization", "name": "家系図Navi",
+                      "logo": {"@type": "ImageObject", "url": ICON}},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "inLanguage": "ja",
+    }
+    breadcrumb = {
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": pillar["h1"], "item": url},
+        ],
+    }
+    itemlist = {
+        "@context": "https://schema.org", "@type": "ItemList",
+        "name": pillar["h1"],
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n}
+            for i, n in enumerate(item_names)
+        ],
+    }
+
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pillar['title']}｜家系図Navi</title>
+  <meta name="description" content="{pillar['desc']}">
+  <meta name="keywords" content="{pillar['keywords']}">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="DrumNavi">
+  <link rel="canonical" href="{url}">
+  <meta property="og:title" content="{pillar['title']}｜家系図Navi">
+  <meta property="og:description" content="{pillar['desc']}">
+  <meta property="og:url" content="{url}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="{ICON}">
+  <script type="application/ld+json">{json.dumps(article_jsonld, ensure_ascii=False)}</script>
+  <script type="application/ld+json">{json.dumps(breadcrumb, ensure_ascii=False)}</script>
+  <script type="application/ld+json">{json.dumps(itemlist, ensure_ascii=False)}</script>
+  <link rel="icon" href="../icon_192.png">
+  <style>
+    :root {{ --green: #27AE60; --light-bg: #f8fdf9; --text: #2c3e50; }}
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{ font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.8; }}
+    header {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 2.5rem 1.5rem; text-align: center; }}
+    header h1 {{ font-size: 1.9rem; margin: .5rem 0; }}
+    header .nav {{ font-size: .85rem; opacity: .9; }}
+    header .nav a {{ color: white; text-decoration: none; }}
+    main {{ max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }}
+    .lead {{ font-size: 1rem; background: white; padding: 1.3rem 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 4px solid var(--green); }}
+    h2 {{ font-size: 1.3rem; color: var(--green); margin: 2rem 0 1rem; border-left: 4px solid var(--green); padding-left: .8rem; }}
+    .pgrid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .9rem; }}
+    .pcard {{ background: white; border-radius: 10px; padding: 1.1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); text-decoration: none; color: inherit; border-top: 3px solid var(--green); }}
+    .pcard:hover {{ box-shadow: 0 5px 14px rgba(0,0,0,.1); }}
+    .pcard h3 {{ font-size: 1rem; color: var(--green); margin-bottom: .4rem; }}
+    .pcard p {{ font-size: .85rem; color: #555; }}
+    .cta-box {{ background: linear-gradient(135deg, var(--green), #16A085); color: white; padding: 1.6rem; border-radius: 12px; text-align: center; margin: 2.5rem 0; }}
+    .cta-box a {{ display: inline-block; padding: .7rem 2rem; background: white; color: var(--green); font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: .5rem; }}
+    footer {{ text-align: center; padding: 2rem; font-size: .85rem; color: #888; border-top: 1px solid #eee; }}
+    footer a {{ color: var(--green); text-decoration: none; }}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;">ガイド</a> ＞ {pillar['h1']}</div>
+  <h1>{pillar['h1']}</h1>
+</header>
+<main>
+  <p class="lead">{pillar['intro']}</p>
+
+  {ad_block_wide()}
+
+  {groups_html}
+
+  <div class="cta-box">
+    <h3 style="margin-bottom:.5rem;">まずは無料でシミュレーション</h3>
+    <p style="font-size:.95rem;opacity:.95;">家族構成を入力するだけで、相続分・相続税・遺留分を自動計算（無料・登録不要）。</p>
+    <a href="{APP_URL}" rel="noopener">家系図Naviを試す →</a>
+  </div>
+
+  {ad_block()}
+</main>
+<footer>
+  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+</footer>
+</body>
+</html>
+"""
+
+
 def render_guides_index():
     cards = "\n".join(
         f'<a class="guide-card" href="../{a["slug"]}/">'
@@ -1010,6 +1190,11 @@ def render_guides_index():
         f'<a class="guide-card" href="../{qt["slug"]}/" style="border-top-color:#E67E22;">'
         f'<h3 style="color:#E67E22;">{qt["h1"]}</h3><p>{qt["desc"]}</p></a>'
         for qt in QUICK_TABLES
+    )
+    pillar_cards = "\n".join(
+        f'<a class="guide-card" href="../{p["slug"]}/" style="border-top-color:#16A085;border-top-width:5px;">'
+        f'<h3 style="color:#16A085;">📚 {p["h1"]}</h3><p>{p["desc"]}</p></a>'
+        for p in PILLARS
     )
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -1052,7 +1237,12 @@ def render_guides_index():
   <p style="opacity:.95;margin-top:.6rem;">専門家監修水準の解説記事を{len(ARTICLES)}本公開中</p>
 </header>
 <main>
-  <h2 style="color:var(--green);margin-bottom:1rem;border-left:4px solid var(--green);padding-left:.8rem;">📝 解説記事（{len(ARTICLES)}本）</h2>
+  <h2 style="color:#16A085;margin-bottom:1rem;border-left:5px solid #16A085;padding-left:.8rem;">📚 まずはこちら：テーマ別 完全ガイド</h2>
+  <div class="guides">
+  {pillar_cards}
+  </div>
+
+  <h2 style="color:var(--green);margin:2.5rem 0 1rem;border-left:4px solid var(--green);padding-left:.8rem;">📝 解説記事（{len(ARTICLES)}本）</h2>
   <div class="guides">
   {cards}
   </div>
@@ -2377,6 +2567,14 @@ def main():
         (qt_dir / "index.html").write_text(render_quick_table(qt), encoding="utf-8")
         print(f"  OK /{qt['slug']}/")
 
+    # 柱ページ（トピッククラスター）
+    meta = _meta_map()
+    for pillar in PILLARS:
+        pdir = ROOT / pillar["slug"]
+        pdir.mkdir(exist_ok=True)
+        (pdir / "index.html").write_text(render_pillar(pillar, meta), encoding="utf-8")
+        print(f"  OK /{pillar['slug']}/ (柱ページ)")
+
     # /calculator/ インタラクティブ計算ツール
     calc_dir = ROOT / "calculator"
     calc_dir.mkdir(exist_ok=True)
@@ -2398,15 +2596,18 @@ def main():
     urls = (
         [SITE_URL + "/", SITE_URL + "/guides/", SITE_URL + "/glossary/", SITE_URL + "/about/",
          SITE_URL + "/calculator/", SITE_URL + "/cases/"]
+        + [f"{SITE_URL}/{p['slug']}/" for p in PILLARS]
         + [f"{SITE_URL}/{a['slug']}/" for a in ARTICLES]
         + [f"{SITE_URL}/{qt['slug']}/" for qt in QUICK_TABLES]
     )
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    pillar_urls = {f"{SITE_URL}/{p['slug']}/" for p in PILLARS}
+    hub_urls = set(urls[1:6]) | pillar_urls
     for u in urls:
         if u == urls[0]:
             priority = '1.0'
-        elif u in (urls[1], urls[2], urls[3], urls[4], urls[5]):
+        elif u in hub_urls:
             priority = '0.9'
         else:
             priority = '0.8'
