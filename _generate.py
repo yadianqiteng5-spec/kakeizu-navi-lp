@@ -868,13 +868,36 @@ def render(article, related_links):
             for q, a in article["faqs"]
         ],
     }
+    # 所属する柱ページ（トピッククラスター）を取得
+    pillar_info = get_article_pillar(slug)  # (pillar_slug, pillar_h1) or None
+    if pillar_info:
+        p_slug, p_h1 = pillar_info
+        breadcrumb_items = [
+            {"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": p_h1, "item": f"{SITE_URL}/{p_slug}/"},
+            {"@type": "ListItem", "position": 3, "name": h1, "item": url},
+        ]
+        nav_html = (f'<a href="../">🌳 家系図Navi</a> ＞ '
+                    f'<a href="../{p_slug}/" style="color:white;text-decoration:none;opacity:.85;">{p_h1}</a> ＞ {h1}')
+        pillar_box = (
+            f'<div style="background:#eafaf1;border:1px solid #b8e6cc;border-radius:10px;'
+            f'padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.92rem;">'
+            f'📚 このテーマを体系的に学ぶ：<a href="../{p_slug}/" style="color:#16A085;font-weight:700;">{p_h1}</a></div>'
+        )
+    else:
+        breadcrumb_items = [
+            {"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "ガイド", "item": f"{SITE_URL}/guides/"},
+            {"@type": "ListItem", "position": 3, "name": h1, "item": url},
+        ]
+        nav_html = ('<a href="../">🌳 家系図Navi</a> ＞ '
+                    '<a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ ' + h1)
+        pillar_box = ""
+
     breadcrumb_jsonld = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "家系図Navi", "item": SITE_URL + "/"},
-            {"@type": "ListItem", "position": 2, "name": h1, "item": url},
-        ],
+        "itemListElement": breadcrumb_items,
     }
 
     return f"""<!DOCTYPE html>
@@ -889,6 +912,7 @@ def render(article, related_links):
   <meta name="author" content="DrumNavi">
   <link rel="canonical" href="{url}">
   <link rel="alternate" hreflang="ja" href="{url}">
+  <link rel="alternate" type="application/rss+xml" title="家系図Navi 記事フィード" href="{SITE_URL}/feed.xml">
 
   <meta property="og:title" content="{title}｜家系図Navi">
   <meta property="og:description" content="{desc}">
@@ -955,7 +979,7 @@ def render(article, related_links):
 <body>
 
 <header>
-  <div class="nav"><a href="../">🌳 家系図Navi</a> ＞ <a href="../guides/" style="color:white;text-decoration:none;opacity:.85;">ガイド</a> ＞ {h1}</div>
+  <div class="nav">{nav_html}</div>
   <h1>{h1}</h1>
   <p class="lead">{desc}</p>
   <div class="meta-info">
@@ -969,6 +993,8 @@ def render(article, related_links):
 <main>
 
   <p>{article["lead"]}</p>
+
+  {pillar_box}
 
   {ad_block_wide()}
 
@@ -1091,6 +1117,21 @@ PILLARS = [
         ],
     },
 ]
+
+
+_ARTICLE_PILLAR = None
+
+
+def get_article_pillar(slug):
+    """記事slug -> (柱ページslug, 柱ページh1) を返す（双方向リンク用）。無ければNone。"""
+    global _ARTICLE_PILLAR
+    if _ARTICLE_PILLAR is None:
+        _ARTICLE_PILLAR = {}
+        for p in PILLARS:
+            for _, slugs in p["groups"]:
+                for s in slugs:
+                    _ARTICLE_PILLAR.setdefault(s, (p["slug"], p["h1"]))
+    return _ARTICLE_PILLAR.get(slug)
 
 
 def render_pillar(pillar, meta):
@@ -2531,6 +2572,33 @@ def render_about():
 """
 
 
+def render_rss():
+    """記事一覧のRSS 2.0フィードを生成（インデックス促進・購読対応）。"""
+    import html as _html
+    items = ""
+    for a in ARTICLES:
+        link = f"{SITE_URL}/{a['slug']}/"
+        items += (
+            "  <item>\n"
+            f"    <title>{_html.escape(a['title'])}</title>\n"
+            f"    <link>{link}</link>\n"
+            f"    <guid>{link}</guid>\n"
+            f"    <description>{_html.escape(a['desc'])}</description>\n"
+            "    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>\n"
+            "  </item>\n"
+        )
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0"><channel>\n'
+        "  <title>家系図Navi｜相続・事業承継ガイド</title>\n"
+        f"  <link>{SITE_URL}/</link>\n"
+        "  <description>相続税・法定相続分・遺留分・事業承継・遺言の解説記事</description>\n"
+        "  <language>ja</language>\n"
+        f"{items}"
+        "</channel></rss>\n"
+    )
+
+
 def render_404():
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -2613,6 +2681,10 @@ def main():
     # 404.html
     (ROOT / "404.html").write_text(render_404(), encoding="utf-8")
     print(f"  OK 404.html")
+
+    # RSS フィード
+    (ROOT / "feed.xml").write_text(render_rss(), encoding="utf-8")
+    print(f"  OK feed.xml ({len(ARTICLES)} items)")
 
     # sitemap.xml を再生成
     today = "2026-05-30"

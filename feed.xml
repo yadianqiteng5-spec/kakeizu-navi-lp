@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>家系図Navi｜相続・事業承継ガイド</title>
+  <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/</link>
+  <description>相続税・法定相続分・遺留分・事業承継・遺言の解説記事</description>
+  <language>ja</language>
+  <item>
+    <title>法定相続分とは？早見表と計算方法をわかりやすく解説</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-share/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-share/</guid>
+    <description>民法900条で定められた法定相続分を、配偶者・子・直系尊属・兄弟姉妹のケース別に早見表で解説。代襲相続・半血兄弟・養子の扱いも図解で詳しく説明します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続税の基礎控除と計算方法｜2026年最新の早見表</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-tax/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-tax/</guid>
+    <description>相続税の基礎控除「3,000万円+600万円×法定相続人数」の仕組みと、国税庁速算表を使った概算計算方法を、具体例とともに解説します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>事業承継のリスクと対策｜自社株分散を防ぐ方法</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/business-succession/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/business-succession/</guid>
+    <description>中小企業オーナーの相続で頻発する自社株の分散・経営権喪失リスクを解説。納税猶予制度・属人株・信託など実務で使われる対策を網羅します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>自筆証書遺言の書き方｜雛形・必須要件・法務局保管制度</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/will-template/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/will-template/</guid>
+    <description>民法968条に準拠した自筆証書遺言の書き方を、雛形付きで解説。法務局保管制度・財産目録のパソコン作成可能化など2019年改正対応。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>遺留分とは？計算方法と侵害額請求の流れ</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-reserve/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/legal-reserve/</guid>
+    <description>民法1042条で保証された遺留分（最低保証分）の計算方法、配偶者・子・直系尊属の割合、侵害額請求の手続きと時効を解説します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>特別養子縁組と相続｜実親との関係はどうなる？</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/special-adoption/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/special-adoption/</guid>
+    <description>特別養子と普通養子の違い、相続権の有無、民法817条の9による実親との親族関係終了の効果をわかりやすく解説します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>二次相続シミュレーション｜配偶者控除の落とし穴</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/secondary-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/secondary-inheritance/</guid>
+    <description>配偶者控除（1.6億円）を最大限活用すると二次相続で大増税になる落とし穴を、配偶者取得0%/50%/100%の比較で解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>小規模宅地等の特例｜居住用80%減で相続税を圧縮</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/small-residential/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/small-residential/</guid>
+    <description>自宅の土地評価額を80%減額できる小規模宅地等の特例（租税特別措置法69条の4）の要件・面積上限・併用ルールを解説します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>生前贈与の節税戦略｜暦年贈与vs相続時精算課税</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/gift-strategy/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/gift-strategy/</guid>
+    <description>暦年贈与（年110万円非課税）と相続時精算課税（2,500万円非課税）の比較、2024年改正の7年持戻しを踏まえた最適な使い分けを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続放棄の方法と期限｜3ヶ月以内の家庭裁判所手続き</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-renounce/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-renounce/</guid>
+    <description>相続放棄は相続開始を知った日から3ヶ月以内に家庭裁判所への申述が必要。手続きの流れ、必要書類、代襲不発生・撤回不可など重要ルールを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>死後手続きタイムライン｜7日以内〜10ヶ月以内の全手続き</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/post-death-timeline/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/post-death-timeline/</guid>
+    <description>死亡届の7日以内提出から相続税申告の10ヶ月以内まで、期限ごとに必要な手続きを時系列でまとめた完全ガイド。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>家族信託の活用法｜認知症対策と事業承継の柔軟設計</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/family-trust/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/family-trust/</guid>
+    <description>認知症による財産凍結を回避し、事業承継・障害者支援にも使える家族信託の仕組みと、遺言・成年後見との違いを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>配偶者居住権とは｜2020年新設の制度をわかりやすく解説</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/spouse-residence/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/spouse-residence/</guid>
+    <description>2020年4月施行の配偶者居住権（民法1028条）の仕組み、評価方法、二次相続の節税効果を解説。配偶者の住居と相続の最適バランスを実現。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>国際相続の注意点｜外国籍配偶者・海外資産の相続</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/international-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/international-inheritance/</guid>
+    <description>外国籍の家族、海外不動産・銀行口座がある場合の相続準拠法、相続税の納税義務者区分、二重課税防止を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>遺産分割協議書の作り方｜雛形と必要事項</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/estate-division/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/estate-division/</guid>
+    <description>遺産分割協議書の必須記載事項・雛形・印鑑証明書の添付ルール・調印方法を解説。不動産登記・預貯金解約に必須の書類です。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続不動産の評価方法｜路線価方式と倍率方式の使い分け</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/real-estate-valuation/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/real-estate-valuation/</guid>
+    <description>土地は路線価方式または倍率方式、建物は固定資産税評価額で評価。借地権・貸家建付地等の評価減も含めて解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>預貯金の凍結と仮払い制度｜葬儀費用を引き出す方法</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/bank-account-freeze/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/bank-account-freeze/</guid>
+    <description>被相続人の口座は死亡を金融機関が知った時点で凍結。2019年新設の仮払い制度で最大150万円を引き出す手続きを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>寄与分と特別受益｜公平な遺産分割のための調整制度</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/contribution-share/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/contribution-share/</guid>
+    <description>親の介護や事業貢献に応える寄与分（民法904条の2）、生前贈与を相続時に考慮する特別受益（民法903条）の計算と請求方法を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続手続きの全体像｜何から始めればいい？フローチャート付き</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-procedure/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-procedure/</guid>
+    <description>家族が亡くなった後の相続手続きを全体像から解説。何から始めるべきか、いつまでに何をすべきか、必要な専門家は誰か。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続トラブル事例集｜兄弟仲が悪い・実家不動産・連絡取れない</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-trouble/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-trouble/</guid>
+    <description>実家不動産の押し付け合い、連絡が取れない相続人、認知症の親など、典型的な相続トラブル10事例と予防策を解説します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>兄弟間の相続争いを防ぐ｜典型パターンと予防策</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/siblings-dispute/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/siblings-dispute/</guid>
+    <description>「長男だけ優遇された」「実家を介護した姉が報われない」など兄弟相続の典型トラブルと、遺言・家族信託・生命保険を使った予防策を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>親が認知症になったら｜相続対策はどうする？</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/dementia-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/dementia-inheritance/</guid>
+    <description>認知症発症後は遺言書作成・生前贈与が原則できなくなります。家族信託・成年後見制度の活用法と、発症前にやるべき対策を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>借金を相続したくない｜放棄・限定承認・3ヶ月期限</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/debt-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/debt-inheritance/</guid>
+    <description>被相続人に借金があった場合の相続放棄・限定承認の選択、3ヶ月期限、後から発見した場合の対応を実例とともに解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>再婚家庭の相続｜連れ子・後妻の権利と養子縁組</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/step-family-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/step-family-inheritance/</guid>
+    <description>再婚相手の連れ子に相続権はあるのか？後妻と先妻の子の関係は？養子縁組の有無で大きく変わる相続関係をパターン別に解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>一人っ子の相続｜全部もらえる？知っておくべき注意点</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/only-child-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/only-child-inheritance/</guid>
+    <description>一人っ子は遺産を全部相続できるのか？両親の二次相続・相続税負担・実家の処分など、一人っ子ならではの相続論点を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>農地の相続｜納税猶予制度と農業委員会への届出</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/agricultural-succession/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/agricultural-succession/</guid>
+    <description>農地相続の手続き（農業委員会への届出）、農地等の納税猶予制度（租特法70条の6）、農地法の規制を解説します。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>美術品・骨董品の相続｜評価方法と物納の活用</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/art-collection-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/art-collection-inheritance/</guid>
+    <description>絵画・茶器・刀剣等の美術品を相続した時の評価方法、所得税のみなし譲渡、相続税物納制度の活用を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>暗号資産（仮想通貨）の相続｜評価・手続き・税負担</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/crypto-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/crypto-inheritance/</guid>
+    <description>ビットコイン等の暗号資産を相続する際の評価方法、取引所の名義変更手続き、所得税・相続税の二重課税問題を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続税の申告書の書き方｜必要書類と提出先</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/estate-tax-return/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/estate-tax-return/</guid>
+    <description>相続税申告書（第1表〜第15表）の構成と作成手順、必要な戸籍・残高証明・評価明細書を整理。期限10ヶ月・税務署提出までの流れ。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>退職金の相続税｜500万円×法定相続人数の非課税枠</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/retirement-money/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/retirement-money/</guid>
+    <description>在職中の死亡で支給される死亡退職金の相続税評価、500万円×法定相続人数の非課税枠、弔慰金の取り扱いを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>生命保険を使った相続対策｜非課税枠と代償分割原資</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/insurance-strategy/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/insurance-strategy/</guid>
+    <description>500万円×法定相続人数の非課税枠を活用した節税、代償分割の原資確保、納税資金準備など、生命保険を使った相続対策を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>非上場株式の相続税評価｜類似業種比準・純資産・配当還元</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/corporate-shares/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/corporate-shares/</guid>
+    <description>中小企業の自社株評価方法（類似業種比準方式・純資産方式・配当還元方式）、評価減のテクニック、事業承継への影響を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続専門家の費用相場｜税理士・弁護士・司法書士</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/consulting-cost/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/consulting-cost/</guid>
+    <description>税理士の相続税申告報酬、弁護士の遺産分割調停費用、司法書士の相続登記費用など、相続専門家への報酬相場を網羅解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>終活チェックリスト｜元気なうちにやるべき30項目</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/endlife-checklist/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/endlife-checklist/</guid>
+    <description>遺言書・エンディングノート・財産目録・延命治療の意思表示など、家族のために生前にやるべき30項目をチェックリスト形式で整理。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>海外居住者の相続｜在外邦人・海外財産の手続き</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-overseas/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/inheritance-overseas/</guid>
+    <description>海外に住む相続人、海外不動産・口座を持つ場合の相続手続き、サイン証明・在留証明の取得、相続税の納税義務範囲を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>遺言書の書き換え・撤回｜複数遺言がある場合の優先順位</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/will-rewrite/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/will-rewrite/</guid>
+    <description>遺言書を書き換える方法、複数遺言の優先順位、自筆証書から公正証書への変更、撤回の意思表示など民法1022〜1027条を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続税の税務調査｜対象になりやすいケースと対策</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/tax-investigation/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/tax-investigation/</guid>
+    <description>相続税申告後の税務調査の流れ、対象になりやすいケース、調査官が見るポイント、書面添付制度による調査回避策を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>相続税の延納と物納｜金銭納付困難な時の対処法</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/deferred-payment/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/deferred-payment/</guid>
+    <description>相続税を金銭一括納付できない場合の延納（最長20年分割）と物納（不動産等で納付）の要件・手続き・利子税を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>養子縁組の相続メリット・デメリット｜節税効果と注意点</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/adoption-pros-cons/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/adoption-pros-cons/</guid>
+    <description>孫を養子にする節税効果、基礎控除・生命保険非課税枠の拡大、2割加算、家族関係への影響など、養子縁組による相続対策の全体像を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>名義預金とは｜税務調査で否認されないための対策</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/nominee-deposit/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/nominee-deposit/</guid>
+    <description>子・孫名義の口座でも実質的に被相続人の財産と認定される「名義預金」の判定基準と、認定を回避するための贈与契約・口座管理のポイントを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>共有名義不動産の相続｜トラブル回避と持分整理</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/shared-property/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/shared-property/</guid>
+    <description>夫婦・兄弟の共有名義不動産が相続でさらに細分化されるリスク、共有解消の手法、持分売買・共有物分割訴訟までを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>住宅ローンと相続｜団信で残債が消える仕組み</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/mortgage-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/mortgage-inheritance/</guid>
+    <description>住宅ローン契約者が死亡した場合の団体信用生命保険（団信）による残債消滅、団信未加入時の処理、ペアローンと相続を解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>兄弟姉妹のみが相続人の場合｜遺留分なし・代襲は甥姪まで</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/siblings-only-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/siblings-only-inheritance/</guid>
+    <description>配偶者・子・親がいない場合の兄弟姉妹相続。遺留分なし、代襲は甥姪まで（一代限り）、相続税2割加算、半血兄弟の1/2など特殊ルールを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>個人事業主・フリーランスの相続｜事業と債務の引継ぎ</title>
+    <link>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/freelance-inheritance/</link>
+    <guid>https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/freelance-inheritance/</guid>
+    <description>個人事業主の事業承継、事業用資産・債務の引継ぎ、青色申告承認、消費税課税事業者の届出など、相続後の事業継続に必要な手続きを解説。</description>
+    <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+  </item>
+</channel></rss>
