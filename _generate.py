@@ -46,6 +46,25 @@ def ad_block_wide():
         '</div>'
     )
 
+
+# 税理士ドットコム（accesstrade・468x60・記事中盤向け／相続テーマと高親和性）
+_AD_TAX = (
+    '<a href="https://h.accesstrade.net/sp/cc?rk=0100npm700otmq" rel="nofollow sponsored" '
+    'referrerpolicy="no-referrer-when-downgrade" target="_blank">'
+    '<img src="https://h.accesstrade.net/sp/rr?rk=0100npm700otmq" alt="税理士ドットコム" '
+    'border="0" width="468" height="60" style="max-width:100%;height:auto;"></a>'
+)
+
+
+def ad_block_tax():
+    """中央寄せ・広告ラベル付きの税理士ドットコム広告ブロックHTMLを返す（468x60）。"""
+    return (
+        '<div style="text-align:center;margin:1.5rem 0;">'
+        '<div style="font-size:11px;color:#999;margin-bottom:4px;letter-spacing:1px;">広告</div>'
+        f'{_AD_TAX}'
+        '</div>'
+    )
+
 ARTICLES = [
     {
         "slug": "legal-share",
@@ -963,6 +982,8 @@ def render(article, related_links):
   <h2 id="faq">よくある質問</h2>
   {faq_html}
 
+  {ad_block_tax()}
+
   <div class="cta-box">
     <h3>家族構成を入力するだけで自動診断</h3>
     <p>法定相続分・相続税・遺留分を国税庁公表値準拠で計算。データ保存なしの完全無料アプリ。</p>
@@ -1162,6 +1183,8 @@ def render_pillar(pillar, meta):
   {ad_block_wide()}
 
   {groups_html}
+
+  {ad_block_tax()}
 
   <div class="cta-box">
     <h3 style="margin-bottom:.5rem;">まずは無料でシミュレーション</h3>
