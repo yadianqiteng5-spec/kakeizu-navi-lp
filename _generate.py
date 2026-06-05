@@ -65,6 +65,95 @@ def ad_block_tax():
         '</div>'
     )
 
+
+# ── 本文中の文脈内部リンク（自動相互リンク）─────────────────────────────
+# キーワード -> 記事slug。本文テキスト中の初出を関連記事へリンクする。
+import re as _re_autolink
+
+KEYWORD_LINKS = {
+    "法定相続分": "legal-share",
+    "基礎控除": "inheritance-tax",
+    "配偶者の税額軽減": "inheritance-tax",
+    "遺留分": "legal-reserve",
+    "小規模宅地等の特例": "small-residential",
+    "二次相続": "secondary-inheritance",
+    "暦年贈与": "gift-strategy",
+    "相続時精算課税": "gift-strategy",
+    "教育資金": "education-gift",
+    "家族信託": "family-trust",
+    "配偶者居住権": "spouse-residence",
+    "自筆証書遺言": "will-template",
+    "公正証書遺言": "notarized-will",
+    "遺言執行者": "will-executor",
+    "相続放棄": "inheritance-renounce",
+    "限定承認": "debt-inheritance",
+    "遺産分割協議": "estate-division",
+    "相続登記": "inheritance-procedure",
+    "事業承継税制": "business-succession",
+    "非上場株式": "corporate-shares",
+    "名義預金": "nominee-deposit",
+    "税務調査": "tax-investigation",
+    "準確定申告": "estate-tax-return",
+    "2割加算": "tax-surcharge",
+    "数次相続": "consecutive-inheritance",
+    "相次相続控除": "consecutive-inheritance",
+    "遺族年金": "survivor-pension",
+    "祭祀財産": "grave-succession",
+    "相続欠格": "disinheritance",
+    "相続廃除": "disinheritance",
+    "死因贈与": "bequest-gift",
+    "法定相続情報": "legal-heir-info",
+    "借地権": "leasehold-inheritance",
+    "小規模宅地": "small-residential",
+    "配偶者控除": "inheritance-tax",
+}
+
+_AUTOLINK_MAX = 6  # 1記事あたりの自動リンク上限（過剰リンク防止）
+
+
+def autolink(html, current_slug):
+    """本文HTML中のキーワード初出を関連記事へリンクする。
+    見出し(h1-6)・表(table)・既存リンク(a)・summary の内側はリンクしない。"""
+    parts = _re_autolink.split(r'(<[^>]+>)', html)
+    # 各テキスト片がリンク可能か（skip要素・aの外）を判定
+    linkable = [False] * len(parts)
+    depth_skip = 0
+    a_depth = 0
+    for i, p in enumerate(parts):
+        if p.startswith('<'):
+            low = p.lower()
+            if low.startswith(('<h1', '<h2', '<h3', '<h4', '<h5', '<h6', '<table', '<summary')):
+                depth_skip += 1
+            elif low.startswith(('</h1', '</h2', '</h3', '</h4', '</h5', '</h6', '</table', '</summary')):
+                depth_skip = max(0, depth_skip - 1)
+            elif low.startswith('<a'):
+                a_depth += 1
+            elif low.startswith('</a'):
+                a_depth = max(0, a_depth - 1)
+        else:
+            linkable[i] = (depth_skip == 0 and a_depth == 0)
+
+    used = set()
+    count = 0
+    for kw in sorted(KEYWORD_LINKS.keys(), key=len, reverse=True):
+        if count >= _AUTOLINK_MAX:
+            break
+        target = KEYWORD_LINKS[kw]
+        if target == current_slug or target in used:
+            continue
+        for i, p in enumerate(parts):
+            if not linkable[i]:
+                continue
+            idx = p.find(kw)
+            if idx != -1:
+                link = f'<a href="../{target}/" style="color:#16A085;">{kw}</a>'
+                parts[i] = p[:idx] + link + p[idx + len(kw):]
+                linkable[i] = False  # その片はこれ以上リンクしない（過剰防止）
+                used.add(target)
+                count += 1
+                break
+    return ''.join(parts)
+
 ARTICLES = [
     {
         "slug": "legal-share",
@@ -795,6 +884,8 @@ def render(article, related_links):
         f'<h2 id="{_slug_id(i)}">{i+1}. {h2}</h2>\n{body}'
         for i, (h2, body) in enumerate(article["sections"])
     )
+    # 本文中の文脈内部リンクを自動付与（関連記事への送客・トピカル強化）
+    sections_html = autolink(sections_html, slug)
     # 目次（TOC）
     toc_html = "\n".join(
         f'<li><a href="#{_slug_id(i)}">{h2}</a></li>'
