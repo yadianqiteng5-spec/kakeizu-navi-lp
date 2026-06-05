@@ -3077,6 +3077,12 @@ def render_about():
         "foundingDate": "2026-04",
         "areaServed": "JP",
         "knowsAbout": ["相続", "事業承継", "相続税", "遺言書", "家族信託", "事業承継税制"],
+        "sameAs": [
+            "https://mirainavi.net/",
+            "https://teso-navi.vercel.app/",
+            "https://blog.livedoor.jp/infinity_peace24/",
+            APP_URL,
+        ],
     }
     return f"""<!DOCTYPE html>
 <html lang="ja">
