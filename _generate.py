@@ -1039,7 +1039,7 @@ def render(article, related_links):
 
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 
 </body>
@@ -1237,7 +1237,7 @@ def render_pillar(pillar, meta):
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 </body>
 </html>
@@ -1331,7 +1331,7 @@ def render_guides_index():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 </body>
 </html>
@@ -1770,7 +1770,7 @@ def render_glossary():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 </body>
 </html>
@@ -2006,7 +2006,7 @@ def render_quick_table(qt):
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../glossary/">用語集</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 </body>
 </html>
@@ -2219,7 +2219,7 @@ def render_case_index():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../calculator/">計算ツール</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 </body>
 </html>
@@ -2376,7 +2376,7 @@ def render_calculator():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 
 <script>
@@ -2565,7 +2565,7 @@ def render_about():
 </main>
 <footer>
   <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
-  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a></p>
+  <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
 </footer>
 </body>
 </html>
