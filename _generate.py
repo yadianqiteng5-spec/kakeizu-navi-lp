@@ -946,7 +946,7 @@ def render(article, related_links):
         "image": ICON,
         "datePublished": "2026-05-30",
         "dateModified": "2026-05-30",
-        "author": {"@type": "Person", "name": "DrumNavi"},
+        "author": {"@type": "Person", "name": "Mirai Navi"},
         "publisher": {
             "@type": "Organization",
             "name": "家系図Navi",
@@ -1008,7 +1008,7 @@ def render(article, related_links):
   <meta name="description" content="{desc}">
   <meta name="keywords" content="{article['keywords']}">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="DrumNavi">
+  <meta name="author" content="Mirai Navi">
   <link rel="canonical" href="{url}">
   <link rel="alternate" hreflang="ja" href="{url}">
   <link rel="alternate" type="application/rss+xml" title="家系図Navi 記事フィード" href="{SITE_URL}/feed.xml">
@@ -1082,7 +1082,7 @@ def render(article, related_links):
   <h1>{h1}</h1>
   <p class="lead">{desc}</p>
   <div class="meta-info">
-    <span>✍ 著者: DrumNavi</span>
+    <span>✍ 著者: Mirai Navi</span>
     <span>📅 更新: 2026年5月30日</span>
     <span>⏱ 読了 約{read_min}分</span>
   </div>
@@ -1137,7 +1137,7 @@ def render(article, related_links):
 </main>
 
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi / Family Tree Guide</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
@@ -1251,7 +1251,7 @@ def render_pillar(pillar, meta):
         "@context": "https://schema.org", "@type": "Article",
         "headline": pillar["h1"], "description": pillar["desc"], "image": ICON,
         "datePublished": "2026-05-30", "dateModified": "2026-05-30",
-        "author": {"@type": "Person", "name": "DrumNavi"},
+        "author": {"@type": "Person", "name": "Mirai Navi"},
         "publisher": {"@type": "Organization", "name": "家系図Navi",
                       "logo": {"@type": "ImageObject", "url": ICON}},
         "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "inLanguage": "ja",
@@ -1281,7 +1281,7 @@ def render_pillar(pillar, meta):
   <meta name="description" content="{pillar['desc']}">
   <meta name="keywords" content="{pillar['keywords']}">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="DrumNavi">
+  <meta name="author" content="Mirai Navi">
   <link rel="canonical" href="{url}">
   <meta property="og:title" content="{pillar['title']}｜家系図Navi">
   <meta property="og:description" content="{pillar['desc']}">
@@ -1337,7 +1337,7 @@ def render_pillar(pillar, meta):
   {ad_block()}
 </main>
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
@@ -1432,7 +1432,7 @@ def render_guides_index():
   {ad_block()}
 </main>
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi / Family Tree Guide</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
@@ -2374,7 +2374,7 @@ def render_glossary():
   {ad_block()}
 </main>
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi / Family Tree Guide</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
@@ -2532,7 +2532,7 @@ def render_quick_table(qt):
         "image": ICON,
         "datePublished": "2026-05-30",
         "dateModified": "2026-05-30",
-        "author": {"@type": "Person", "name": "DrumNavi"},
+        "author": {"@type": "Person", "name": "Mirai Navi"},
         "publisher": {"@type": "Organization", "name": "家系図Navi",
                       "logo": {"@type": "ImageObject", "url": ICON}},
         "mainEntityOfPage": {"@type": "WebPage", "@id": url},
@@ -2557,7 +2557,7 @@ def render_quick_table(qt):
   <meta name="description" content="{qt['desc']}">
   <meta name="keywords" content="{qt['keywords']}">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="DrumNavi">
+  <meta name="author" content="Mirai Navi">
   <link rel="canonical" href="{url}">
   <meta property="og:title" content="{qt['title']}｜家系図Navi">
   <meta property="og:description" content="{qt['desc']}">
@@ -2611,7 +2611,7 @@ def render_quick_table(qt):
   {ad_block()}
 </main>
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../glossary/">用語集</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../glossary/">用語集</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
@@ -2825,7 +2825,7 @@ def render_case_index():
   </div>
 </main>
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../calculator/">計算ツール</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a> ｜ <a href="../calculator/">計算ツール</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
@@ -2983,7 +2983,7 @@ def render_calculator():
   </p>
 </main>
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi</a> ｜ <a href="../guides/">記事一覧</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
@@ -3076,11 +3076,11 @@ def render_about():
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "家系図Navi",
-        "alternateName": "DrumNavi",
+        "alternateName": "Mirai Navi",
         "url": SITE_URL + "/",
         "logo": ICON,
         "description": "民法・相続税法に準拠した相続シミュレーターと、専門家監修水準の解説記事を提供する独立系サービス。",
-        "founder": {"@type": "Person", "name": "DrumNavi"},
+        "founder": {"@type": "Person", "name": "Mirai Navi"},
         "foundingDate": "2026-04",
         "areaServed": "JP",
         "knowsAbout": ["相続", "事業承継", "相続税", "遺言書", "家族信託", "事業承継税制"],
@@ -3098,7 +3098,7 @@ def render_about():
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>家系図Naviについて｜運営方針と編集ポリシー</title>
   <meta name="description" content="家系図Naviの運営者情報・編集ポリシー・計算精度の検証方法・プライバシー設計を公開。民法・相続税法準拠を国税庁公表値で厳密検証。">
-  <meta name="keywords" content="家系図Navi,運営者,編集ポリシー,DrumNavi,相続,計算精度">
+  <meta name="keywords" content="家系図Navi,運営者,編集ポリシー,Mirai Navi,相続,計算精度">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{SITE_URL}/about/">
   <meta property="og:title" content="家系図Naviについて｜運営方針と編集ポリシー">
@@ -3181,15 +3181,15 @@ def render_about():
   <h3>開示請求・お問い合わせ窓口</h3>
   <ul>
     <li>保有個人データの利用目的の通知・開示・訂正・利用停止等を求めることができます（同法第32〜35条）。</li>
-    <li>個人情報に関するお問い合わせ窓口：DrumNavi　support@mirainavi.net</li>
+    <li>個人情報に関するお問い合わせ窓口：Mirai Navi　support@mirainavi.net</li>
   </ul>
   <p style="font-size:.85rem;color:#666;">※本記載は公開前の暫定版です。運営者名・連絡先は確定後に反映します。詳細な全文ポリシーは別途整備予定。</p>
 
   <h2>運営者</h2>
   <div class="card">
-    <h3>DrumNavi</h3>
+    <h3>Mirai Navi</h3>
     <p>○○Navi シリーズの運営者。専門家のお仕事を補完する独立系シミュレーターを開発。</p>
-    <p style="margin-top:.4rem;">運営者名／屋号：DrumNavi　｜　お問い合わせ：support@mirainavi.net（所在地はお求めに応じて遅滞なく開示します）</p>
+    <p style="margin-top:.4rem;">運営者名／屋号：Mirai Navi　｜　お問い合わせ：support@mirainavi.net（所在地はお求めに応じて遅滞なく開示します）</p>
     <p style="margin-top:.6rem;font-size:.9rem;color:#666;">本サービスは弁護士・税理士事務所ではなく、特定事案の法律事務・税務代理は行いません。個別事案は必ず専門家にご相談ください。当サイトはアフィリエイト広告を利用しています。</p>
   </div>
 
@@ -3198,7 +3198,7 @@ def render_about():
 
 </main>
 <footer>
-  <p>© 2026 DrumNavi — <a href="../">家系図Navi / Family Tree Guide</a></p>
+  <p>© 2026 Mirai Navi — <a href="../">家系図Navi / Family Tree Guide</a></p>
   <p style="margin-top:.5rem;font-size:.82rem;">🔗 姉妹サイト：<a href="https://mirainavi.net/?utm_source=note&utm_medium=article&utm_campaign=brand-story&utm_content=cta_text_bottom" target="_blank" rel="noopener" style="color:#16A085;">ミライNavi</a> ｜ <a href="https://teso-navi.vercel.app/" target="_blank" rel="noopener" style="color:#16A085;">手相ナビ</a> ｜ <a href="https://blog.livedoor.jp/infinity_peace24/" target="_blank" rel="noopener" style="color:#16A085;">運営ブログ</a></p>
   <p style="margin-top:.5rem;font-size:.78rem;color:#999;">当サイトはアフィリエイト広告（プロモーション）を利用しています。｜<a href="https://yadianqiteng5-spec.github.io/kakeizu-navi-lp/about/" style="color:#16A085;">運営者情報・プライバシー</a></p>
 </footer>
