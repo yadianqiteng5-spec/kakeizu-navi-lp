@@ -1173,9 +1173,9 @@ PILLARS = [
         "intro": "相続税は「いくらかかるのか」「どう減らせるのか」「いつ申告するのか」が分かりにくい税金です。本ガイドでは、<strong>基礎控除と税率の基本</strong>から、<strong>小規模宅地等の特例・二次相続・生前贈与などの節税策</strong>、そして<strong>申告と税務調査</strong>まで、相続税の全体像を順を追って解説します。各テーマの詳しい記事・早見表・計算ツールへリンクしています。",
         "groups": [
             ("まず基本を押さえる", ["inheritance-tax-threshold", "inheritance-tax", "table-inheritance-tax", "table-basic-deduction", "calculator", "tax-surcharge"]),
-            ("評価と特例で税額を下げる", ["small-residential", "real-estate-valuation", "corporate-shares", "nominee-deposit", "leasehold-inheritance", "spouse-tax-credit", "disability-minor-credit"]),
+            ("評価と特例で税額を下げる", ["small-residential", "real-estate-valuation", "corporate-shares", "nominee-deposit", "leasehold-inheritance", "spouse-tax-credit", "disability-minor-credit", "art-collection-inheritance", "crypto-inheritance"]),
             ("節税の王道：二次相続・生前贈与・保険", ["secondary-inheritance", "gift-strategy", "gift-vs-inheritance", "table-gift-tax", "insurance-strategy", "retirement-money", "education-gift"]),
-            ("申告・納税・調査・売却", ["estate-tax-return", "tax-investigation", "penalty-tax", "deferred-payment", "consecutive-inheritance", "sell-inherited-property", "vacant-house-deduction"]),
+            ("申告・納税・調査・売却", ["estate-tax-return", "tax-investigation", "penalty-tax", "deferred-payment", "consecutive-inheritance", "sell-inherited-property", "vacant-house-deduction", "quasi-final-tax-return", "amended-tax-return", "land-to-state"]),
         ],
     },
     {
@@ -1186,9 +1186,9 @@ PILLARS = [
         "keywords": "相続手続き,流れ,期限,必要書類,相続登記,遺産分割,完全ガイド",
         "intro": "相続手続きは「何から始めればいいか分からない」という方がほとんどです。本ガイドでは、<strong>手続きの全体像と期限</strong>、<strong>預貯金・不動産・遺産分割の進め方</strong>、<strong>借金・相続放棄の判断</strong>、そして<strong>専門家への依頼</strong>までを、時系列で整理して解説します。",
         "groups": [
-            ("全体像と期限をつかむ", ["inheritance-procedure", "post-death-timeline", "table-deadlines", "legal-heir-info", "collect-koseki"]),
-            ("財産の名義変更・解約", ["bank-account-freeze", "real-estate-valuation", "mortgage-inheritance", "estate-division", "digital-legacy", "will-probate"]),
-            ("放棄・借金・トラブル対応", ["inheritance-renounce", "debt-inheritance", "inheritance-trouble", "disinheritance"]),
+            ("全体像と期限をつかむ", ["inheritance-procedure", "post-death-timeline", "table-deadlines", "legal-heir-info", "collect-koseki", "diy-inheritance"]),
+            ("財産の名義変更・解約", ["bank-account-freeze", "real-estate-valuation", "mortgage-inheritance", "estate-division", "digital-legacy", "will-probate", "car-inheritance", "shared-property", "inheritance-registration", "international-inheritance", "inheritance-overseas"]),
+            ("放棄・借金・トラブル対応", ["inheritance-renounce", "debt-inheritance", "inheritance-trouble", "disinheritance", "renounce-still-receive", "property-division-methods", "division-mediation"]),
             ("年金・お墓・専門家相談", ["survivor-pension", "grave-succession", "consulting-cost", "inheritance-consultation"]),
         ],
     },
@@ -1212,9 +1212,36 @@ PILLARS = [
         "keywords": "遺言,終活,遺言書,書き方,遺留分,家族信託,生前対策,完全ガイド",
         "intro": "「元気なうちに準備しておけばよかった」は相続で最も多い後悔です。本ガイドでは、<strong>遺言書の作り方と書き換え</strong>、<strong>遺留分への配慮</strong>、<strong>認知症に備える家族信託</strong>、<strong>配偶者の住まいを守る配偶者居住権</strong>、そして<strong>終活の進め方</strong>までを解説します。",
         "groups": [
-            ("遺言書を正しく残す", ["will-template", "notarized-will", "will-rewrite", "will-executor", "will-probate", "legal-reserve"]),
+            ("遺言書を正しく残す", ["will-template", "notarized-will", "will-rewrite", "will-executor", "will-probate", "legal-reserve", "will-trust-bank"]),
             ("財産の渡し方", ["bequest-gift", "gift-strategy", "education-gift", "gift-vs-inheritance"]),
-            ("認知症・生前の備え", ["endlife-checklist", "family-trust", "dementia-inheritance", "adult-guardianship", "voluntary-guardianship", "spouse-residence"]),
+            ("認知症・生前の備え", ["endlife-checklist", "family-trust", "dementia-inheritance", "adult-guardianship", "voluntary-guardianship", "spouse-residence", "single-person-endlife", "pet-legacy"]),
+        ],
+    },
+    {
+        "slug": "guide-heirs",
+        "title": "相続人と相続分の完全ガイド｜誰がいくら相続するか",
+        "h1": "相続人・相続分 完全ガイド",
+        "desc": "誰が法定相続人になるのか（順位・範囲）、養子や再婚相手の連れ子の扱い、法定相続分の計算と早見表、寄与分・特別受益、兄弟姉妹間のトラブル対策までを体系的に解説する総合ガイド。",
+        "keywords": "相続人,法定相続分,順位,養子,寄与分,早見表,兄弟姉妹,完全ガイド",
+        "intro": "相続でまず確かめるべきは「<strong>誰が相続人か</strong>」と「<strong>それぞれの取り分（相続分）</strong>」です。本ガイドでは、<strong>相続人の順位と範囲</strong>、<strong>養子・連れ子・特別養子の扱い</strong>、<strong>法定相続分の計算と早見表</strong>、<strong>寄与分や兄弟間のトラブル対策</strong>までを順を追って解説します。各テーマの詳しい記事へリンクしています。",
+        "groups": [
+            ("だれが相続人になるか（順位と範囲）", ["legal-heir-info", "siblings-only-inheritance", "only-child-inheritance", "step-family-inheritance"]),
+            ("養子・特別養子と相続", ["special-adoption", "adoption-pros-cons"]),
+            ("相続分の計算・早見表・寄与分", ["legal-share", "table-legal-share", "contribution-share"]),
+            ("兄弟・親族間のトラブル対策", ["siblings-dispute", "inheritance-trouble"]),
+        ],
+    },
+    {
+        "slug": "guide-koseki",
+        "title": "戸籍と家系図の完全ガイド｜集め方・読み方・相続関係説明図",
+        "h1": "戸籍・家系図 完全ガイド",
+        "desc": "相続に必要な戸籍の集め方（広域交付・除籍・改製原戸籍）、古い戸籍の読み方、家系図・相続関係説明図の作り方、先祖をどこまで辿れるかまでを、家系図Naviが体系的に解説する総合ガイド。",
+        "keywords": "戸籍,家系図,広域交付,除籍謄本,改製原戸籍,相続関係説明図,ルーツ調査,完全ガイド",
+        "intro": "相続手続きでもルーツ調べでも、出発点になるのが「<strong>戸籍</strong>」です。本ガイドでは、<strong>戸籍の集め方（広域交付・除籍・改製原戸籍）</strong>、<strong>古い戸籍の読み方</strong>、<strong>家系図・相続関係説明図の作り方</strong>、そして<strong>先祖をどこまで辿れるか</strong>までを、順を追って解説します。各テーマの詳しい記事へリンクしています。",
+        "groups": [
+            ("戸籍を集める・取り寄せる", ["collect-koseki", "koseki-wide-area", "koseki-removed", "old-koseki-reading"]),
+            ("家系図・相続関係説明図を作る", ["kakeizu-howto", "relationship-chart"]),
+            ("ルーツ・先祖をたどる", ["how-far-back"]),
         ],
     },
 ]
