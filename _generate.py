@@ -6,6 +6,9 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 APP_URL = "https://kakeizu-navi-3joa5l78sjkams2axwbxix.streamlit.app/"
 SITE_URL = "https://yadianqiteng5-spec.github.io/kakeizu-navi-lp"
+# コンテンツの正規ドメイン(canonical)は本番 kakeizu.appsnavi.net。
+# canonicalタグのみ CANONICAL_BASE を使い、再生成してもgithub.ioへ戻らないようにする。
+CANONICAL_BASE = "https://kakeizu.appsnavi.net"
 ICON = f"{SITE_URL}/icon_512.png"
 
 # ── A8.net アフィリエイト広告（各ページ1枠） ─────────────────────────────
@@ -1009,7 +1012,7 @@ def render(article, related_links):
   <meta name="keywords" content="{article['keywords']}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Mirai Navi">
-  <link rel="canonical" href="{url}">
+  <link rel="canonical" href="{url.replace(SITE_URL, CANONICAL_BASE)}">
   <link rel="alternate" hreflang="ja" href="{url}">
   <link rel="alternate" type="application/rss+xml" title="家系図Navi 記事フィード" href="{SITE_URL}/feed.xml">
 
@@ -1309,7 +1312,7 @@ def render_pillar(pillar, meta):
   <meta name="keywords" content="{pillar['keywords']}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Mirai Navi">
-  <link rel="canonical" href="{url}">
+  <link rel="canonical" href="{url.replace(SITE_URL, CANONICAL_BASE)}">
   <meta property="og:title" content="{pillar['title']}｜家系図Navi">
   <meta property="og:description" content="{pillar['desc']}">
   <meta property="og:url" content="{url}">
@@ -1398,7 +1401,7 @@ def render_guides_index():
   <meta name="description" content="家系図Naviが提供する相続・事業承継の解説記事一覧。法定相続分・相続税・遺留分・事業承継・遺言書・生前贈与など{len(ARTICLES)}本の専門記事を公開中。">
   <meta name="keywords" content="相続,事業承継,記事一覧,ガイド,家系図Navi">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="{SITE_URL}/guides/">
+  <link rel="canonical" href="{CANONICAL_BASE}/guides/">
   <meta property="og:title" content="相続・事業承継ガイド記事一覧｜家系図Navi">
   <meta property="og:description" content="法定相続分・相続税・遺留分・事業承継・遺言書・生前贈与など{len(ARTICLES)}本の専門記事。">
   <meta property="og:url" content="{SITE_URL}/guides/">
@@ -2364,7 +2367,7 @@ def render_glossary():
   <meta name="description" content="{desc_text}">
   <meta name="keywords" content="相続,用語集,事業承継,法定相続分,遺留分,基礎控除,専門用語">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="{SITE_URL}/glossary/">
+  <link rel="canonical" href="{CANONICAL_BASE}/glossary/">
   <meta property="og:title" content="相続・事業承継用語集（{len(GLOSSARY)}語）｜家系図Navi">
   <meta property="og:description" content="{desc_text}">
   <meta property="og:url" content="{SITE_URL}/glossary/">
@@ -2585,7 +2588,7 @@ def render_quick_table(qt):
   <meta name="keywords" content="{qt['keywords']}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Mirai Navi">
-  <link rel="canonical" href="{url}">
+  <link rel="canonical" href="{url.replace(SITE_URL, CANONICAL_BASE)}">
   <meta property="og:title" content="{qt['title']}｜家系図Navi">
   <meta property="og:description" content="{qt['desc']}">
   <meta property="og:url" content="{url}">
@@ -2786,7 +2789,7 @@ def render_case_index():
   <meta name="description" content="{desc_text}">
   <meta name="keywords" content="相続,ケーススタディ,事例,家族構成,相続分,相続税,二次相続,事業承継">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="{SITE_URL}/cases/">
+  <link rel="canonical" href="{CANONICAL_BASE}/cases/">
   <meta property="og:title" content="相続ケーススタディ集（{len(CASE_STUDIES)}例）｜家系図Navi">
   <meta property="og:description" content="{desc_text}">
   <meta property="og:url" content="{SITE_URL}/cases/">
@@ -2908,7 +2911,7 @@ def render_calculator():
   <meta name="description" content="遺産総額と家族構成を入力するだけで相続税の概算・基礎控除・法定相続分をその場で自動計算。国税庁速算表準拠。登録不要・完全無料・データ保存なし。">
   <meta name="keywords" content="相続税,計算ツール,シミュレーター,基礎控除,法定相続分,無料,自動計算">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="{url}">
+  <link rel="canonical" href="{url.replace(SITE_URL, CANONICAL_BASE)}">
   <meta property="og:title" content="相続税かんたん計算ツール（無料）｜家系図Navi">
   <meta property="og:description" content="遺産総額と家族構成を入力するだけで相続税の概算をその場で自動計算。国税庁速算表準拠。">
   <meta property="og:url" content="{url}">
@@ -3127,7 +3130,7 @@ def render_about():
   <meta name="description" content="家系図Naviの運営者情報・編集ポリシー・計算精度の検証方法・プライバシー設計を公開。民法・相続税法準拠を国税庁公表値で厳密検証。">
   <meta name="keywords" content="家系図Navi,運営者,編集ポリシー,Mirai Navi,相続,計算精度">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="{SITE_URL}/about/">
+  <link rel="canonical" href="{CANONICAL_BASE}/about/">
   <meta property="og:title" content="家系図Naviについて｜運営方針と編集ポリシー">
   <meta property="og:description" content="運営者情報・編集ポリシー・計算精度の検証方法・プライバシー設計。">
   <meta property="og:url" content="{SITE_URL}/about/">

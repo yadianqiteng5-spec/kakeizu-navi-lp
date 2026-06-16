@@ -55,8 +55,8 @@ jobs:
         if: ${{ inputs.dry_run != true }}
         run: |
           if [ -n "$(git status --porcelain hatena/posted.json)" ]; then
-            git config user.name "DrumNavi Bot"
-            git config user.email "noreply@anthropic.com"
+            git config user.name "Mirai Navi Bot"
+            git config user.email "support@mirainavi.net"
             git add hatena/posted.json
             git commit -m "chore: はてな投稿記録を更新 [skip ci]"
             git push
